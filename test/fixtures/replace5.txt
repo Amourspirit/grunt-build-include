@@ -1,0 +1,34 @@
+file replace5.txt
+
+Some fenced text
+ * ```text
+How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick,
+  Baz, get my woven flax jodhpurs! "Now fax quiz Jack!
+My brave ghost pled. Five quacking zephyrs jolt my wax bed.
+Flummoxed by job, kvetching W. zaps Iraq.
+Cozy sphinx waves quart jug of bad milk.
+A very bad quack might jinx zippy fowls.
+Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox.
+The jay, pig, fox, zebra, and my wolves quack!
+Blowzy red vixens fight for a quick jump.
+Joaquin Phoenix was gazed by MTV for luck.
+A wizard’s job is to vex chumps quickly in fog.
+Watch "Jeopardy! ", Alex Trebek's fun TV quiz game.
+Woven silk pyjamas exchanged for blue quartz.
+	*	```
+
+fenced with space before ```
+    ```text
+The quick, brown fox jumps over a lazy dog.
+DJs flock by when MTV ax quiz prog.
+Junk MTV quiz graced by fox whelps.
+Bawds jog, flick quartz, vex nymphs.
+   ```
+
+some more fenced text
+```
+The quick, brown fox jumps over a lazy dog.
+DJs flock by when MTV ax quiz prog.
+Junk MTV quiz graced by fox whelps.
+Bawds jog, flick quartz, vex nymphs.
+```

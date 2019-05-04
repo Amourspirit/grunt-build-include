@@ -1,0 +1,174 @@
+Really simple *markdown* from **replace5.md**
+
+In a sentence: Really simple *markdown* from **replace5.md**
+
+/**
+ * Many options can be matched but all BUILD_INCLUDE statements must contain a valid
+ * file path. This can be a relative path or an absoulte path.  
+ * The most basic style is `// BUILD_INCLUDE(../mydir/myfile.js)`  
+ * If no options are set the BUILD_INCLUDE file is included verbatim.  
+ * File name can be optionally wrapped in quotes  
+ * 
+ * >`// BUILD_INCLUDE('../mydir/myfile.js')`  
+ * >--or--  
+ * >`// BUILD_INCLUDE("../mydir/myfile.js")`  
+ * >BUILD_INCLUDE wraped in **&lt;!-- --&gt;** is also accepted.  
+ * >`<-- BUILD_INCLUDE('../mydir/myfile.js') -->`
+ * 
+ * Options can be added to the BUILD_INCLUDE statement by using []  
+ * after the initial statement.  
+ * For example:
+ * 
+ * >`// BUILD_INCLUDE('../mydir/myfile.js')[asjsstring]`  
+ * >--or--  
+ * >`<-- BUILD_INCLUDE(../mydir/myfile.js)[asjsstring] -->`
+ * 
+ * Options are seperated by a comma.
+ * 
+ * *For example:*
+ * 
+ * >`// BUILD_INCLUDE(../mydir/myfile.js)[asjsstring,breakString?width=100]`
+ * 
+ * If an option has one or more parameters those parameters are in a query string style
+ * of **option?name=value&otherName=otherValue**  
+ * 
+ * #### Options
+ * 
+ * >**asjsstring** - Determines if the replacement file contents will be  
+ * >treated as a javascript string. *asjsstring* has no other parameters.  
+ * >**breakstring** - Determines if the replacement file contents will be
+ * >broken into multiple lines. *breakstring* is ignored if *multiline* is set.
+ * >>**Width:** A number that determines the number of characters in each line.
+ * >>If *width* is omitted then it will default to `80`.
+ * 
+ * >**text** - Determins text options
+ * 
+ * >>**before** any text to apply before content replacement.
+ * 
+ * BUILD_INCLUDE allows for recursive replacement.
+ * 
+ * For exampe:
+ * 
+ * >File `text01.txt` has a BUILD_INCLUDE this includes `text02.txt`  
+ * >>`// BUILD_INCLUDE('./text02.txt')`
+ * 
+ * >File `main.txt` includes `text01.txt`  
+ * >>`// BULID_INCLUDE('./text01.txt')`
+ * 
+ * >The output file from the grunt process of `main.txt` would contain the contents of
+ * >`text01.txt` and `text02.txt`
+ */
+
+ /**
+ * Many options can be matched but all BUILD_INCLUDE statements must contain a valid
+ * file path. This can be a relative path or an absoulte path.  
+ * The most basic style is `// BUILD_INCLUDE(../mydir/myfile.js)`  
+ * If no options are set the BUILD_INCLUDE file is included verbatim.  
+ * File name can be optionally wrapped in quotes  
+ * 
+ * >`// BUILD_INCLUDE('../mydir/myfile.js')`  
+ * >--or--  
+ * >`// BUILD_INCLUDE("../mydir/myfile.js")`  
+ * >BUILD_INCLUDE wraped in **&lt;!-- --&gt;** is also accepted.  
+ * >`<-- BUILD_INCLUDE('../mydir/myfile.js') -->`
+ * 
+ * Options can be added to the BUILD_INCLUDE statement by using []  
+ * after the initial statement.  
+ * For example:
+ * 
+ * >`// BUILD_INCLUDE('../mydir/myfile.js')[asjsstring]`  
+ * >--or--  
+ * >`<-- BUILD_INCLUDE(../mydir/myfile.js)[asjsstring] -->`
+ * 
+ * Options are seperated by a comma.
+ * 
+ * *For example:*
+ * 
+ * >`// BUILD_INCLUDE(../mydir/myfile.js)[asjsstring,breakString?width=100]`
+ * 
+ * If an option has one or more parameters those parameters are in a query string style
+ * of **option?name=value&otherName=otherValue**  
+ * 
+ * #### Options
+ * 
+ * >**asjsstring** - Determines if the replacement file contents will be  
+ * >treated as a javascript string. *asjsstring* has no other parameters.  
+ * >**breakstring** - Determines if the replacement file contents will be
+ * >broken into multiple lines. *breakstring* is ignored if *multiline* is set.
+ * >>**Width:** A number that determines the number of characters in each line.
+ * >>If *width* is omitted then it will default to `80`.
+ * 
+ * >**text** - Determins text options
+ * 
+ * >>**before** any text to apply before content replacement.
+ * 
+ * BUILD_INCLUDE allows for recursive replacement.
+ * 
+ * For exampe:
+ * 
+ * >File `text01.txt` has a BUILD_INCLUDE this includes `text02.txt`  
+ * >>`// BUILD_INCLUDE('./text02.txt')`
+ * 
+ * >File `main.txt` includes `text01.txt`  
+ * >>`// BULID_INCLUDE('./text01.txt')`
+ * 
+ * >The output file from the grunt process of `main.txt` would contain the contents of
+ * >`text01.txt` and `text02.txt`
+ */
+
+      /**
+       * Many options can be matched but all BUILD_INCLUDE statements must contain a valid
+       * file path. This can be a relative path or an absoulte path.  
+       * The most basic style is `// BUILD_INCLUDE(../mydir/myfile.js)`  
+       * If no options are set the BUILD_INCLUDE file is included verbatim.  
+       * File name can be optionally wrapped in quotes  
+       * 
+       * >`// BUILD_INCLUDE('../mydir/myfile.js')`  
+       * >--or--  
+       * >`// BUILD_INCLUDE("../mydir/myfile.js")`  
+       * >BUILD_INCLUDE wraped in **&lt;!-- --&gt;** is also accepted.  
+       * >`<-- BUILD_INCLUDE('../mydir/myfile.js') -->`
+       * 
+       * Options can be added to the BUILD_INCLUDE statement by using []  
+       * after the initial statement.  
+       * For example:
+       * 
+       * >`// BUILD_INCLUDE('../mydir/myfile.js')[asjsstring]`  
+       * >--or--  
+       * >`<-- BUILD_INCLUDE(../mydir/myfile.js)[asjsstring] -->`
+       * 
+       * Options are seperated by a comma.
+       * 
+       * *For example:*
+       * 
+       * >`// BUILD_INCLUDE(../mydir/myfile.js)[asjsstring,breakString?width=100]`
+       * 
+       * If an option has one or more parameters those parameters are in a query string style
+       * of **option?name=value&otherName=otherValue**  
+       * 
+       * #### Options
+       * 
+       * >**asjsstring** - Determines if the replacement file contents will be  
+       * >treated as a javascript string. *asjsstring* has no other parameters.  
+       * >**breakstring** - Determines if the replacement file contents will be
+       * >broken into multiple lines. *breakstring* is ignored if *multiline* is set.
+       * >>**Width:** A number that determines the number of characters in each line.
+       * >>If *width* is omitted then it will default to `80`.
+       * 
+       * >**text** - Determins text options
+       * 
+       * >>**before** any text to apply before content replacement.
+       * 
+       * BUILD_INCLUDE allows for recursive replacement.
+       * 
+       * For exampe:
+       * 
+       * >File `text01.txt` has a BUILD_INCLUDE this includes `text02.txt`  
+       * >>`// BUILD_INCLUDE('./text02.txt')`
+       * 
+       * >File `main.txt` includes `text01.txt`  
+       * >>`// BULID_INCLUDE('./text01.txt')`
+       * 
+       * >The output file from the grunt process of `main.txt` would contain the contents of
+       * >`text01.txt` and `text02.txt`
+       */

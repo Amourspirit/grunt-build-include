@@ -1,0 +1,1 @@
+Merges two enums together as a type for the purpose of extending enum.  

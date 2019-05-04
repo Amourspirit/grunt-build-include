@@ -1,0 +1,1 @@
+Type: [IFence](/interfaces/_modules_interfaces_.ifence.html)  

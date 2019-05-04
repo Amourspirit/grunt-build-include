@@ -1,0 +1,47 @@
+Escapes are as follows
+  [     is to be escaped as \[
+  ]     is to be escaped as \]
+  &     is to be escaped as \&
+  ,     is to be escaped as \,
+  =     is to be escaped as \=
+  \     is to be escaped as \\
+  \n    is to be escaped as \\n
+  \r\n  is to be escaped as \\r\\n
+  \t    is to be escaped as \\t
+
+any javascript escape char such as \n can be escaped by add extra \ such as \\n
+also any \ preceeding a word or character such as \break would requires being escaped as \\break
+backslashes must be escaped, that is \ must be escaped as \\
+
+-------file:    ("./fixtures/replace1.txt")
+-------options: [text?before=\\n not double \\\\  single \\ to start as new line but to end as newline \n]
+\n not double \\  single \ to start as new line but to end as newline 
+This is the text from replacement 1
+
+-------file:    ("./fixtures/replace1.txt")
+-------options: [text?before=\\n not to start as new line but to end as newline after \u2014\n&after=\ntab here\t but not here\\t]
+\n not to start as new line but to end as newline after —
+This is the text from replacement 1
+tab here	 but not here\t
+
+-------file:    ("./fixtures/replace1.txt")
+-------options: [text?before=\\before is a single comma\,\n\[&after=\]\nafter is two commas\,\,]
+\before is a single comma,
+[This is the text from replacement 1]
+after is two commas,,
+
+-------file:    ("./fixtures/replace1.txt")
+-------options: [text?before=\[before\] is a single \\n comma\,\n&after=\n\[after is two commas\,\,and \&\]&padleft=\&\&\&\& \= ]
+[before] is a single \n comma,
+&&&& = This is the text from replacement 1
+[after is two commas,,and &]
+
+-------file:    ("./fixtures/replace1.txt")
+-------options: [comment?type=single&padleft=\t,text?before=\\n not to start as new line but to end as newline \n]
+\n not to start as new line but to end as newline 
+	// This is the text from replacement 1
+
+-------file:    ("./fixtures/replace1.txt")
+-------options: [comment?type=html&padleft=\t\t,text?padleft=\\t\\t &after=\nstart as newline but not end \\n]
+<!-- 		\t\t This is the text from replacement 1 -->
+start as newline but not end \n

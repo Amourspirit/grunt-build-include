@@ -1,0 +1,2 @@
+asJsString option with breakString width=100
+var css = '// BUILD_INCLUDE(./fixtures/style.min.css)[asjsstring,breakstring?width=80]';

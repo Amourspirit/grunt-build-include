@@ -1,0 +1,65 @@
+-------file: "./fixtures/replace3.txt")
+-------options: [comment?type=Single]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=Single]
+
+-------file: "./fixtures/replace3.txt")
+-------options: [comment?type=Single, breakstring?width=90&flags=word&eol=none]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=Single, breakstring?width=90&flags=word&eol=none]
+
+-------file: "./fixtures/replace3.txt")
+-------options: [comment?type=Single, breakstring?width=90&flags=word&eol=none,text?padleft=]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=Single, breakstring?width=90&flags=word&eol=none,text?padleft=]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=multi]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=multi]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=jsdoc, breakstring?width=80&flags=word&eol=none]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=jsdoc, breakstring?width=80&flags=word&eol=none]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=jsdoc&padleft=0,text?padleft=0]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=jsdoc&padleft=0,text?padleft=0]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=jsdoc&padleft=4]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=jsdoc&padleft=4]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=jsdoc&padleft=4,, , text?padleft=6,, ]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=jsdoc&padleft=4,, , text?padleft=6,, ]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=jsdoc,text?padleft= — , breakstring?width=70&flags=word&eol=none]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=jsdoc,text?padleft= — , breakstring?width=70&flags=word&eol=none]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=bad, breakstring?width=100&flags=word]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=bad, breakstring?width=100&flags=word]
+
+
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=pound]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=pound]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=html, breakstring?width=100&flags=word]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=html, breakstring?width=100&flags=word]
+
+-------file: ("./fixtures/replace1.txt")
+-------options: [comment?type=html, breakstring?width=100&flags=word]
+// BUILD_INCLUDE("./fixtures/replace1.txt")[comment?type=html, breakstring?width=100&flags=word]
+
+-------file: ("./fixtures/replace1.txt")
+-------options: [comment?type=jsAuto, breakstring?width=100&flags=word]
+// BUILD_INCLUDE("./fixtures/replace1.txt")[comment?type=jsAuto, breakstring?width=100&flags=word]
+
+-------file: ("./fixtures/replace3.txt")
+-------options: [comment?type=jsAuto, breakstring?width=100&flags=word]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=jsAuto, breakstring?width=100&flags=word]
+
+-------file: ("./fixtures/replace4.txt")
+-------options: [comment?type=jsAuto, breakstring?width=200&eol=none&flags=word]
+// BUILD_INCLUDE("./fixtures/replace4.txt")[comment?type=jsAuto, breakstring?width=200&eol=none&flags=word]

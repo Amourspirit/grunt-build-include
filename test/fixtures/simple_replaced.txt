@@ -1,0 +1,38 @@
+without quotes file: (./fixtures/replace1.txt)
+This is the text from replacement 1
+
+with single quotes file: ('./fixtures/replace1.txt')
+This is the text from replacement 1
+
+with double quotes file: ("./fixtures/replace1.txt")
+This is the text from replacement 1
+
+with extra space file: ("./fixtures/replace1.txt")
+This is the text from replacement 1
+
+with no space file: ("./fixtures/replace1.txt")
+This is the text from replacement 1
+
+with html comments, no quotes, no space file: (./fixtures/replace1.txt)
+This is the text from replacement 1
+
+with html comments, quotes, space file: ( './fixtures/replace1.txt' )
+This is the text from replacement 1
+
+In a sentence, file: ("./fixtures/replace1.txt")
+This part is permanent. THIS IS NOT: This is the text from replacement 1
+
+Lower case build_include, flie: ("./fixtures/replace1.txt")
+This is the text from replacement 1
+
+Mixed case build_include file: (  ./fixtures/replace1.txt  )
+This is the text from replacement 1
+
+with space on both sides of quote, file: (  "  ./fixtures/replace1.txt  "   )
+This is the text from replacement 1
+
+with file that spaces in the name, file: ( "./fixtures/replacement file 01.txt" )
+This is the text from replacement file 01
+
+with file that spaces in the name not using quotes, file: ( ./fixtures/replacement file 01.txt )
+This is the text from replacement file 01

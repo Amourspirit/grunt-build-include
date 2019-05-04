@@ -1,0 +1,129 @@
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected: ]
+// this is injected: This is the text from replacement 1
+
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected:\n]
+// this is injected:
+This is the text from replacement 1
+
+text with file (./fixtures/replace1.txt) options: [text?after= // the previous is injected]
+This is the text from replacement 1 // the previous is injected
+
+text with file: (./fixtures/replace1.txt) options: [text?after=\n// the previous is injected]
+This is the text from replacement 1
+// the previous is injected
+
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected: &after= // the previous is injected]
+// this is injected: This is the text from replacement 1 // the previous is injected
+
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected:\n&after=\n// the previous is injected]
+// this is injected:
+This is the text from replacement 1
+// the previous is injected
+
+text with file: (./fixtures/replace1.txt) options: [text?padleft=    ]
+    This is the text from replacement 1
+
+text with file: (./fixtures/replace1.txt) options: [text?padleft=4]
+    This is the text from replacement 1
+
+text with file: (./fixtures/replace1.txt) options: [text?padright=    ]
+This is the text from replacement 1    
+
+text with file: (./fixtures/replace1.txt) options: [text?padRight=4]
+This is the text from replacement 1    
+
+-------file:    (./fixtures/replace1.txt)
+-------options: [text?padRight=4&PadLeft=4]
+    This is the text from replacement 1    
+
+-------file:    (./fixtures/replace1.txt)
+-------options: [text?padLeft=// &PadRight=####]
+// This is the text from replacement 1####
+
+-------file:    ("./fixtures/replace2.txt")
+-------options: [text?padleft=    ,breakstring?break=line]
+    This is the text from replacement 2 
+    A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+    
+    I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+    
+            -->intentional space before I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+    
+    I should be incapable of drawing a single stroke at the present moment;
+    
+
+-------file:    ('./fixtures/replace2.txt')
+-------options: [text?padleft=8,breakstring?width=90]
+        This is the text from replacement 2 A wonderful serenity has taken possession of my entire
+         soul, like these sweet mornings of spring which I enjoy with my whole heart.I am alone, a
+        nd feel the charm of existence in this spot, which was created for the bliss of souls like
+         mine.        -->intentional space before I am so happy, my dear friend, so absorbed in th
+        e exquisite sense of mere tranquil existence, that I neglect my talents.I should be incapa
+        ble of drawing a single stroke at the present moment;
+
+-------file:    (./fixtures/replace2.txt)
+-------options: [text?code=base64]
+This is the text from replacement 2 
+A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
+
+I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+
+        -->intentional space before I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+
+I should be incapable of drawing a single stroke at the present moment;
+
+
+-------file:    (./fixtures/replace2.txt)
+-------options: [text?code=base64&kind=0]
+VGhpcyBpcyB0aGUgdGV4dCBmcm9tIHJlcGxhY2VtZW50IDIgCkEgd29uZGVyZnVsIHNlcmVuaXR5IGhhcyB0YWtlbiBwb3NzZXNzaW9uIG9mIG15IGVudGlyZSBzb3VsLCBsaWtlIHRoZXNlIHN3ZWV0IG1vcm5pbmdzIG9mIHNwcmluZyB3aGljaCBJIGVuam95IHdpdGggbXkgd2hvbGUgaGVhcnQuCgpJIGFtIGFsb25lLCBhbmQgZmVlbCB0aGUgY2hhcm0gb2YgZXhpc3RlbmNlIGluIHRoaXMgc3BvdCwgd2hpY2ggd2FzIGNyZWF0ZWQgZm9yIHRoZSBibGlzcyBvZiBzb3VscyBsaWtlIG1pbmUuCgogICAgICAgIC0tPmludGVudGlvbmFsIHNwYWNlIGJlZm9yZSBJIGFtIHNvIGhhcHB5LCBteSBkZWFyIGZyaWVuZCwgc28gYWJzb3JiZWQgaW4gdGhlIGV4cXVpc2l0ZSBzZW5zZSBvZiBtZXJlIHRyYW5xdWlsIGV4aXN0ZW5jZSwgdGhhdCBJIG5lZ2xlY3QgbXkgdGFsZW50cy4KCkkgc2hvdWxkIGJlIGluY2FwYWJsZSBvZiBkcmF3aW5nIGEgc2luZ2xlIHN0cm9rZSBhdCB0aGUgcHJlc2VudCBtb21lbnQ7Cg==
+
+-------file:    (./fixtures/replace2.txt)
+-------options: [text?code=base64&kind=encode,breakstring]
+VGhpcyBpcyB0aGUgdGV4dCBmcm9tIHJlcGxhY2VtZW50IDIgCkEgd29uZGVyZnVsIHNlcmVuaXR5IGhh
+cyB0YWtlbiBwb3NzZXNzaW9uIG9mIG15IGVudGlyZSBzb3VsLCBsaWtlIHRoZXNlIHN3ZWV0IG1vcm5p
+bmdzIG9mIHNwcmluZyB3aGljaCBJIGVuam95IHdpdGggbXkgd2hvbGUgaGVhcnQuCgpJIGFtIGFsb25l
+LCBhbmQgZmVlbCB0aGUgY2hhcm0gb2YgZXhpc3RlbmNlIGluIHRoaXMgc3BvdCwgd2hpY2ggd2FzIGNy
+ZWF0ZWQgZm9yIHRoZSBibGlzcyBvZiBzb3VscyBsaWtlIG1pbmUuCgogICAgICAgIC0tPmludGVudGlv
+bmFsIHNwYWNlIGJlZm9yZSBJIGFtIHNvIGhhcHB5LCBteSBkZWFyIGZyaWVuZCwgc28gYWJzb3JiZWQg
+aW4gdGhlIGV4cXVpc2l0ZSBzZW5zZSBvZiBtZXJlIHRyYW5xdWlsIGV4aXN0ZW5jZSwgdGhhdCBJIG5l
+Z2xlY3QgbXkgdGFsZW50cy4KCkkgc2hvdWxkIGJlIGluY2FwYWJsZSBvZiBkcmF3aW5nIGEgc2luZ2xl
+IHN0cm9rZSBhdCB0aGUgcHJlc2VudCBtb21lbnQ7Cg==
+
+-------file:    (./fixtures/replace1.txt)
+-------options: [text?code=uri&kind=encode]
+This%20is%20the%20text%20from%20replacement%201
+
+-------file:    (./fixtures/style.min.css)
+-------options: [text?code=jsstring&kind=encode,breakstring?width=100]
+.mem-fs-button::after{content:\"\";background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUg
+AAADIAAAAyCAYAAAAeP4ixAAACk0lEQVR42mNgGAWjYBSMUFAlx8RQI69IJJanyK5qOS4S7BIjzfAaeVmGFbr/icYLtH4zNClmkO
+yJXpXjDEt1iLdnktp92noEhGdqfCTJjnoFV5LtoItHpqu/JcmOOnnzgfXIciBerP0PBc/QeA8MYTeSk1aH8mKGeVo/UcxaovOPfh
+5pVeqhSSEDyvhT1B7TL2nRwjMQTzyhbdICOXyZDu08g8sT6CUaxR4BpdtWpS6aeAaXJ+Zq/mBoV5pLfY+AALU9g88TtfJaDC2KDb
+TxCH7P9FHVEyBABY9IoxiwGMkj+DzTrFhOtB2T1O7h9QRVPAICoGYHzIAZGh8w5LF5ZqbGJ7JrdXRPYFPXrbKHdI80KiSBPTBd/Q
+3YQGygVakbxTNT1V8SZXatvCE4BvF5AgbalRYyzNb8yjBR9SZDtbwI7VrKTYrF4HbWVPUXwGaHPdH62pQmMczS+AxMLneBntAY7X
+KMglEwCkbBKBgFgwY0KIQCa3UbElu/LOBmEK6mCZUdGAJsZznjbYpPVnsAb/22K80j0hNs4AELWC8Q1GbDrZYH6OEU8j3cp3oW3q
+jrVN5AVH9ituY3IhuksUR1zqrl+BhmaX6B94lAMUhyp2c52kgiMZ2iycAREOJavzoY/XFsnmlSLERRM0H1OvV6iPh7dsS3YonpNt
+Osq0tM95QUQMgzNPEItT1BjGdo4hFaeIKQZyaq3ab9IDa1PIHPMzQfMqW2J4j1DFU9ArKoQ3kleBwLgnuAlaYHmQN0fMAitgDJrD
+6wYwd0fqRDeRmJnmADDx8NuokeYmt1RPMnfHDOWE1Uu0myHfgmdajiEdBAGKi5QRx+BBwB3EXW4BkoVvpVLxNtV6fy2tGuxigYBa
+Ng+AAAZ7k6IXnaMaQAAAAASUVORK5CYII=);background-size:cover;opacity:.4;top:0;left:0;bottom:0;right:0;p
+osition:absolute;z-index:100;-webkit-filter:grayscale(1);filter:grayscale(1)}.mem-fs-button-parent{w
+idth:50px;height:50px;position:fixed;top:10px;right:10px;z-index:101}.mem-fs-button{position:absolut
+e;top:0;left:0;right:0;bottom:0}.mem-fs-button:hover{cursor:pointer;opacity:1;filter:grayscale(0);-w
+ebkit-filter:grayscale(0);-webkit-filter:drop-shadow(4px 4px 4px #d107c0);filter:drop-shadow(4px 4px
+ 4px #d107c0)}.mem-fs-button:hover::after{content:\"\";cursor:pointer;opacity:1;filter:grayscale(0);
+-webkit-filter:grayscale(0)}.mem-fs-button-parent .mem-fs-btntooltip{visibility:hidden;width:120px;b
+ackground-color:#272822;color:#fff;text-align:center;border-radius:6px;padding:5px 0;position:absolu
+te;z-index:1;top:2px;right:105%;opacity:0;transition:opacity 1s}.mem-fs-button-parent:hover .mem-fs-
+btntooltip{visibility:visible;opacity:1}.mem-fs-button-parent .mem-fs-btntooltip::after{content:\"\"
+;position:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-colo
+r:transparent transparent transparent #272822}.mem-fs-game{background-color:#8d6b15}.mem-fs-no-sel{-
+webkit-user-select:none;user-select:none;-o-user-select:none;-webkit-touch-callout:none;-khtml-user-
+select:none;-moz-user-select:none;-ms-user-select:none}.mem-fs-wrap-ctl{background-color:brown}div.m
+em-fs-ctl{display:block;width:100%;text-align:center}div#mem-fs-game-wrap div#game{border:0!importan
+t}div#mem-ctl-wrap div.mem-fs-ctl{display:inline-block;margin:0 0 10px 0}div.mem-fs-toggle-ctl{displ
+ay:inline-block;width:100%;text-align:center}div.mem-fs-div-tog{display:inline-block}div.mem-fs-div-
+tog:hover{cursor:pointer}i.mem-fs-tog{border:solid #000;border-width:0 3px 3px 0;display:inline-bloc
+k;padding:3px}i.mem-fs-tog.right{transform:rotate(-45deg);-webkit-transform:rotate(-45deg)}i.mem-fs-
+tog.left{transform:rotate(135deg);-webkit-transform:rotate(135deg)}i.mem-fs-tog.up{transform:rotate(
+-135deg);-webkit-transform:rotate(-135deg)}i.mem-fs-tog.down{transform:rotate(45deg);-webkit-transfo
+rm:rotate(45deg)}

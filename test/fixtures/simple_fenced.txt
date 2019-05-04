@@ -1,0 +1,12 @@
+-------file: (./fixtures/replace1.txt)
+-------options:	[comment?type=jsdoc]
+// BUILD_INCLUDE("./fixtures/md/replace6.md")[comment?type=jsdoc]
+
+-------file: 	(./fixtures/replace1.txt)
+-------options:	[comment?type=jsdoc,text?indent=true]
+		// BUILD_INCLUDE("./fixtures/md/replace6.md")[comment?type=jsdoc,text?indent=true]
+
+-------file: 	(./fixtures/replace1.txt)
+-------options:	[comment?type=single,text?indent=true]
+	// BUILD_INCLUDE("./fixtures/md/replace6.md")[comment?type=single,text?indent=true]
+

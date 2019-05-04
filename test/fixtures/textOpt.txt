@@ -1,0 +1,67 @@
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected: ]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?before=// this is injected: ]
+
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected:\n]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?before=// this is injected:\n]
+
+text with file (./fixtures/replace1.txt) options: [text?after= // the previous is injected]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?after= // the previous is injected]
+
+text with file: (./fixtures/replace1.txt) options: [text?after=\n// the previous is injected]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?after=\n// the previous is injected]
+
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected: &after= // the previous is injected]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?before=// this is injected: &after= // the previous is injected]
+
+text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected:\n&after=\n// the previous is injected]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?before=// this is injected:\n&after=\n// the previous is injected]
+
+text with file: (./fixtures/replace1.txt) options: [text?padleft=    ]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?padleft=    ]
+
+text with file: (./fixtures/replace1.txt) options: [text?padleft=4]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?padleft=4]
+
+text with file: (./fixtures/replace1.txt) options: [text?padright=    ]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?padright=    ]
+
+text with file: (./fixtures/replace1.txt) options: [text?padRight=4]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?padRight=4]
+
+-------file:    (./fixtures/replace1.txt)
+-------options: [text?padRight=4&PadLeft=4]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?padRight=4&PadLeft=4]
+
+-------file:    (./fixtures/replace1.txt)
+-------options: [text?padLeft=// &PadRight=####]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?padLeft=// &PadRight=####]
+
+-------file:    ("./fixtures/replace2.txt")
+-------options: [text?padleft=    ,breakstring?break=line]
+// BUILD_INCLUDE("./fixtures/replace2.txt")[text?padleft=    ,breakstring?break=line]
+
+-------file:    ('./fixtures/replace2.txt')
+-------options: [text?padleft=8,breakstring?width=90]
+//BUILD_INCLUDE('./fixtures/replace2.txt')[text?padleft=8,breakstring?width=90]
+
+-------file:    (./fixtures/replace2.txt)
+-------options: [text?code=base64]
+//	 BUILD_INCLUDE(./fixtures/replace2.txt)[text?code=base64]
+
+-------file:    (./fixtures/replace2.txt)
+-------options: [text?code=base64&kind=0]
+// BUILD_INCLUDE(./fixtures/replace2.txt)
+[text?code=base64&kind=0]
+
+-------file:    (./fixtures/replace2.txt)
+-------options: [text?code=base64&kind=encode,breakstring]
+//	 BUILD_INCLUDE(./fixtures/replace2.txt)
+[text?code=base64&kind=encode,breakstring]
+
+-------file:    (./fixtures/replace1.txt)
+-------options: [text?code=uri&kind=encode]
+// BUILD_INCLUDE(./fixtures/replace1.txt)[text?code=uri&kind=encode]
+
+-------file:    (./fixtures/style.min.css)
+-------options: [text?code=jsstring&kind=encode,breakstring?width=100]
+// BUILD_INCLUDE(./fixtures/style.min.css)[text?code=jsstring&kind=encode,breakstring?width=100]
