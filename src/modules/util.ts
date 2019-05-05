@@ -1,6 +1,11 @@
 import { splitByOpt, lnEndOpt } from "string-breaker";
 
 export class Util {
+  /**
+   * Test if an object is a function
+   * @param obj Object to test
+   * @returns `true` if obj is a function; Otherwise, `false`
+   */
     public static IsFunction(obj: any): boolean {
       return !!(obj && obj.constructor && obj.call && obj.apply);
     };

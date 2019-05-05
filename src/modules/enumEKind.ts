@@ -1,3 +1,6 @@
+/**
+ * @module enums
+ */
 import { eKind as kind } from 'multi-encoder';
 
 export enum meKind {
@@ -55,8 +58,8 @@ export namespace meKind {
   };
 }
 /**
- * [[include:docs/enums/ekindType.md]]
- * [[include:docs/enums/eKind.md]]
+ * [[include:docs/enums/ekind/ekindType.md]]
+ * [[include:docs/enums/ekind/eKind.md]]
  */
 export type eKindType = meKind | kind;
 /**

@@ -105,7 +105,7 @@ export interface IText {
    */
   padding: IPadding;
   /**
-   * [[include:docs/enums/eKind.md]]
+   * [[include:docs/enums/ekind/eKind.md]]
    */
   code: eKindType;
   /**
@@ -131,6 +131,9 @@ export interface IText {
  * Type that represents process method for grunt
  */
 export type ProcessFn = (contents: string, srcpath: string, destpath: string) => (string | boolean);
+/**
+ * Represents an anonymous function
+ */
 export type AnonymousFn = () => any;
 
 /** Options for Grunt files */
@@ -344,30 +347,24 @@ export interface IFence {
 }
 // #endregion
 // #region IMatchType
+/**
+ * Interface for creating objects kind and value.
+ * Used for fencing methods such as [[BuildProcess.processMatch]]
+ */
 export interface IMatchType {
+  /**
+   * The kind of match
+   */
   kind: matchKind;
+  /**
+   * The match value
+   */
   value: string;
 }
 // #endregion
 // #regoin IKeyValueGeneric
 /**
- * Represents a generic item with a string key value
- * @example
- ```ts
-const lst: IKeyValueGeneric<string> = {
-    src: 'https://someUrl.come/js/myjs.js',
-    scrolling: 'yes',
-    type: 'text/javascript'
-};
-for (const key in lst) {
-    if (lst.hasOwnProperty(key)) {
-    const value = lst[key];
-    console.log(key, value);
-    }
-}
-console.log('src: ', lst['src']);
-console.log('type: ', lst.type);
- ```
+ * [[include:docs/IKeyValueGeneric/IKeyValueGeneric.md]]
  */
 export interface IKeyValueGeneric<T> {
   [key: string]: T;

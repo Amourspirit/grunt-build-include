@@ -5,4 +5,4 @@ Can be string value such as:
 
 --or-- regular expression such as
 
-    /```(?:(?:$)|(?:[\r\n]+))/  
+    /^```(?:[ \t]+)?([a-zA-Z\r\n])(?:[\s\S]+?)/  

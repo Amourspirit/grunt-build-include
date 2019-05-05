@@ -87,7 +87,7 @@ const getPerferedMatch = (kind: regexKind): IMatchOpt => {
 // #endregion
 // #region getMatchOptions
 /**
- * Sets that match options from grunt task current and assigns any missing values that
+ * Sets that match options from current grunt options and assigns any missing values that
  * may of been ommited in the grunt file configuration.
  * @param options current grunt options.
  */
@@ -211,6 +211,12 @@ export const getBiOptionsDefault = (): IBuildIncludeOpt => {
   return biOpt;
 }
 // #endregion
+/**
+ * Merges Options together giving priority to `currentBiOpt`
+ * @param currentBiOpt Current internal Options
+ * @param currentGruntOptions Current grunt file options
+ * @returns Returns `true` if there any options are merged; Otherwise, `false`
+ */
 export const biMergeOptions = (currentBiOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt): boolean => {
   let hasOpt: boolean = false;
   hasOpt = mergeBiComments(currentBiOpt, currentGruntOptions) || hasOpt;
@@ -406,55 +412,69 @@ export const getFenceKind = (kind: fenceKind): IGruntOptFence | undefined => {
   }
 }
 /**
- * Gets that Regex from grunt task current that is used to define fencing.
- * @param options current grunt options.
+ * Creates a regular expression from fence.
+ * The regular expression is used to match fences in content.
+ * 
+ * Example Fenced text:  
+ * 
+ *     ```text  
+ *     This text is fenced  
+ *     ```
+ *
+ * @param fence [[fenceKind]] enumeration value or object instance of [[IGruntOptFence]]
+ * or `undefined`.
+ * 
+ * If fence is string then it is parsed as [[fenceKind]].
+ * If fence is `undefined` then return result will also be `undefined`.
+ * @returns If fence can be converted to regular expression then a regular
+ * expression is returned; Otherwise, `undefined`.
  */
-export const getFenceOptions = (fenceGrunt: string | IGruntOptFence | undefined): RegExp | undefined => {
-  if (fenceGrunt === undefined) {
+export const getFenceOptions = (fence: string | IGruntOptFence | undefined): RegExp | undefined => {
+  if (fence === undefined) {
     return undefined;
   }
   let fceKind = fenceKind.none;
-  let fence: IGruntOptFence | undefined;
-  if (typeof fenceGrunt === 'string') {
-    fceKind = fenceKind.parse(fenceGrunt);
-    fence = getFenceKind(fceKind);
-    if (fence === undefined) {
+  let localFence: IGruntOptFence | undefined;
+  if (typeof fence === 'string') {
+    fceKind = fenceKind.parse(fence);
+    localFence = getFenceKind(fceKind);
+    if (localFence === undefined) {
       return undefined;
     }
   }
-  if (typeof fenceGrunt === 'object') {
+  if (typeof fence === 'object') {
     // if any properties are missing defalut to to strictFence
     const standInFence = fen.strictFence;
     let hasProp: boolean = false;
-    if (fenceGrunt.hasOwnProperty('start')) {
+    if (fence.hasOwnProperty('start')) {
       hasProp = true;
-      standInFence.start = fenceGrunt.start;
+      standInFence.start = fence.start;
     } 
-    if (fenceGrunt.hasOwnProperty('end')) {
+    if (fence.hasOwnProperty('end')) {
       hasProp = true;
-      standInFence.end = fenceGrunt.end;
+      standInFence.end = fence.end;
     }
     if (hasProp === true) {
-      fence = standInFence;
+      localFence = standInFence;
     }
   }
-  if (fence === undefined) {
+  if (localFence === undefined) {
     return undefined;
   }
   
   // we ahve a IFence instance to work with
   let regStart: RegExp | undefined;
-  if (typeof fence.start === 'string') {
+  if (typeof localFence.start === 'string') {
     /// expect simple fence start such as ```
-    if (fence.start.length === 0) {
+    if (localFence.start.length === 0) {
       return undefined;
     }
-    regStart = new RegExp(DEFAULT_FENCE_START.replace('{0}', Util.EscapeRegex(fence.start)));
+    regStart = new RegExp(DEFAULT_FENCE_START.replace('{0}', Util.EscapeRegex(localFence.start)));
   }
   // can't use typeof here as typeof regex is object
   // see: https://stackoverflow.com/questions/4339288/typeof-for-regexp
-  if (fence.start instanceof RegExp) {
-    regStart = fence.start;
+  if (localFence.start instanceof RegExp) {
+    regStart = localFence.start;
   }
   // without start no sense in continuing
   if (regStart === undefined) {
@@ -462,17 +482,17 @@ export const getFenceOptions = (fenceGrunt: string | IGruntOptFence | undefined)
   }
 
   let regEnd: RegExp | undefined;
-  if (typeof fence.end === 'string') {
+  if (typeof localFence.end === 'string') {
     /// expect simple fence start such as ```
-    if (fence.end.length === 0) {
+    if (localFence.end.length === 0) {
       return undefined;
     }
-    regEnd = new RegExp(DEFAULT_FENCE_END.replace('{0}', Util.EscapeRegex(fence.end)));
+    regEnd = new RegExp(DEFAULT_FENCE_END.replace('{0}', Util.EscapeRegex(localFence.end)));
   }
   // can't use typeof here as typeof regex is object
   // see: https://stackoverflow.com/questions/4339288/typeof-for-regexp
-  if (fence.end instanceof RegExp) {
-    regEnd = fence.end;
+  if (localFence.end instanceof RegExp) {
+    regEnd = localFence.end;
   }
   // without end no sense in continuing
   if (regEnd === undefined) {

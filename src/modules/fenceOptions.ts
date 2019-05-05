@@ -16,7 +16,17 @@ export const strictFence: IGruntOptFence = {
   end: '```'
 }
 // #endregion
+/**
+ * [[include:docs/IFence/IFence.md]]
+ * [[include:docs/fenceOpt/flexFence/flexFence.md]]
+ */
 export const flexFence: IGruntOptFence = {
+  /**
+   * [[include:docs/fenceOpt/flexFence/start.md]]
+   */
   start: /^(?:[ \t]+)?(?:\*)?(?:[ \t]+)?(?:(```)(?:[^ \t])([a-zA-Z\r\n]+)?)(?:[\s\S]+?)/,
+  /**
+   * [[include:docs/fenceOpt/flexFence/end.md]]
+   */
   end: /^(?:[ \t]+)?(?:\*)?(?:[ \t]+)?(```)(?:(?:$)|(?:[\r\n]+))/
 }

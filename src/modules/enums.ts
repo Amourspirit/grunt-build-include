@@ -1,4 +1,7 @@
 /**
+ * @module enums
+ */
+/**
  *[[include:docs/enums/commentKind/commentKind.md]]
  */
 export enum commentKind {

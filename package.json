@@ -60,6 +60,7 @@
     "tslint": "^5.15.0",
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.14.2",
+    "typedoc-plugin-external-module-name": "^2.0.0",
     "typedoc-plugin-markdown": "^1.2.0",
     "typescript": "^3.4.3"
   },

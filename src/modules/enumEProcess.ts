@@ -1,3 +1,6 @@
+/**
+ * @module enums
+ */
 import { eProcess as meProc } from 'multi-encoder';
 export enum meProcess {
   none = -1
