@@ -62,6 +62,7 @@
     "typedoc": "^0.14.2",
     "typedoc-plugin-external-module-name": "^2.0.0",
     "typedoc-plugin-markdown": "^1.2.0",
+    "typedoc-plugin-markdown-pages": "^0.3.0",
     "typescript": "^3.4.3"
   },
   "dependencies": {

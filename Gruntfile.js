@@ -278,7 +278,7 @@ module.exports = function (grunt) {
     var done = this.async();
     grunt.log.writeln('Building Docs');
     // var cmd = 'typedoc --out docs ./src --mode modules --theme minimal';
-    var cmd = 'node_modules/.bin/typedoc --out docs ./src --includes ./examples';
+    var cmd = 'node_modules/.bin/typedoc --out docs ./src --includes ./doc --mdPagesSourcePath ./doc/pagesmd --theme markdown-pages';
     require('child_process').exec(cmd, function (err, stdout) {
       grunt.log.write(stdout);
       done(err);

@@ -1,10 +1,8 @@
-# Include text inside a javascript string
+# Asjsstring to Include Text In Javascript
 
-## Include minified css file
+## BUILD_INCLUDE
 
-Include file as javascript string.  
-In this case we have a file that has been minified in the build process an outputed to *./scratch/css/style.min.css*.  
-The output file style.min.css is one long line. BUILD_INCLUDE can be used to inlcude the file and make it a little more readable.
+<div class="nowrapcode">
 
 ```js
 var getStyleCss = function () {
@@ -13,7 +11,50 @@ var getStyleCss = function () {
 };
 ```
 
-The final output would look similar to this:
+</div>
+
+### Include minified css file
+
+Include file as javascript string.  
+In this case we have a file that has been minified in the build process an outputed to `./scratch/css/style.min.css`.  
+The output file `style.min.css` is one long line. **BUILD_INCLUDE** can be used to inlcude the file and make it a little more readable.
+
+### Options
+
+`[asjsstring,breakString?width=80]`
+
+[[include:options/asjsstring/asjsstring.md]]
+[[include:options/breakstring/breakstring.md]]
+[[include:options/breakstring/width.md]]
+
+### Option
+
+`breakString?width=80`
+
+`Width=80` determines that each line will be broken at 80 characers.
+
+### Config
+
+#### GruntFile.js
+
+```js
+module.exports = function (grunt) {
+  grunt.initConfig({
+    build_include: {
+      default: {
+        src: './lib/main.js',
+        dest: './scratch/main.js'
+      }
+    }
+  });
+  grunt.loadNpmTasks('grunt-build-include');
+  grunt.registerTask('default', ['build_include:default']);
+};
+```
+
+### Output
+
+<div class="nowrapcode">
 
 ```js
 var getStyleCss = function () {
@@ -62,3 +103,7 @@ eg);-webkit-transform:rotate(45deg)};';
 };
 
 ```
+
+</div>
+
+[[include:style/nowrapcode.html]]

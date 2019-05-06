@@ -1,0 +1,5 @@
+nowrapcode.html is basicaly a hack.
+using typedoc plugin typedoc-plugin-markdown-pages
+allows inclusion of markdonw in docs output.
+Plugin allows [[include:filename]] in the markdown.
+This file in injected into the outputted html for the markdown file.
