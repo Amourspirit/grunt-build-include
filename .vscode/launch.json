@@ -2,6 +2,9 @@
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  // "Launch test gruntfile does not work in windows properly. For unknow reason grunt.task.current.options()
+  // loses scope by the time BuildProcees class is called. This does not affect build_include.test.ts so it
+  // seems there is no reason to fix this if debugin can be done in linux for test gruntfiles if needed.
   "version": "0.2.0",
   "configurations": [
     {

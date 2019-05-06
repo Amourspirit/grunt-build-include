@@ -110,7 +110,7 @@ describe('Build include Plugin', function () {
         done();
       });
     });
-  it('should write a commetsl01_replaced.txt file and replace the build_replace contents matching fixture commetsl01_replaced.txt\
+  it.only('should write a commetsl01_replaced.txt file and replace the build_replace contents matching fixture commetsl01_replaced.txt\
   \n\tThis test uses gruntfile-commentsl.js',
     function (done) {
       callGruntfile('gruntfile-commentsl.js', function (error: any, stdout: any, stderr: any) {

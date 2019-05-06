@@ -8,7 +8,7 @@
 
 -------file: "./fixtures/replace3.txt")
 -------options: [comment?type=Single, breakstring?width=90&flags=word&eol=none,text?padleft=]
-// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=Single, breakstring?width=90&flags=word&eol=none,text?padleft=\\t\\t]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[comment?type=Single, breakstring?width=90&flags=word&eol=none,text?padleft=]
 
 -------file: ("./fixtures/replace3.txt")
 -------options: [comment?type=multi]

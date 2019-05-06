@@ -68,6 +68,9 @@ export class BuildProcess {
    * @param srcpath The source path of the contents
    */
   public buildInclude(contents: string, srcpath: string): string {
+    // for unkown reason grunt.task.current.options() becomes undefined
+    // in windows with debugging one of the test gruntfiles. All test still
+    // pass just not when debug using call-grunt.js. This works fine in linux.
     const options: IBiGruntOpt = grunt.task.current.options(defaultOptions);
     // merge any unset options with potential match options in grunt
     setMatchOptions(options);
