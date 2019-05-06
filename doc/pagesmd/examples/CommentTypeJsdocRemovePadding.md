@@ -5,12 +5,14 @@
 <div class="nowrapcode">
 
 ```text
-// BUILD_INCLUDE("./fixtures/replace1.txt")[comment?type=jsdoc&padleft=0,text?padleft=0]
+// BUILD_INCLUDE("./scratch/replace1.txt")[comment?type=jsdoc&padleft=0,text?padleft=0]
 ```
 
 </div>
 
 File [replace01.txt](replacements/replace01.txt.html) is to be included in output file.
+
+Comment in jsDoc style and remove padding between * and start of lines.
 
 ### Options
 
