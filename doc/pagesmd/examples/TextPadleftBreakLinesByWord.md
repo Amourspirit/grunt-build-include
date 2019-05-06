@@ -21,8 +21,12 @@ Also `# ` is required at the start of each line.
 
 `[text?padleft=# ,breakstring?width=75&flags=word]`  
 
-[[include:options/text/padleft.md]]
+[[include:options/text/text.md]]
+
+[[include:options/text/padding/padleft.md]]
+
 [[include:options/breakstring/width.md]]
+
 [[include:options/breakstring/flags/word.md]]
 
 ### Option
