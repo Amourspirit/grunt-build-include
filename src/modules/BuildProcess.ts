@@ -1725,15 +1725,18 @@ export class BuildProcess {
     // escaped here as 
     // text?PadRight=\breakstring?width=60,flags=word
     // need to match \, but not \\,
+    str = str.replace(/\\\\/g, '\uFEFF');
     str = str.replace(/\\,/g, '\uFFFE');
-
+   
+   
     // replace \[ with [ and \] with ]
     str = str.replace(/\\\[/g, '[')
       .replace(/\\\]/g, ']');
     // Split on ,
     return str.split(',').map((s) => {
       // Restore place-held ,
-      return s.replace(/\uFFFE/g, ',');
+      return s.replace(/\uFFFE/g, ',')
+        .replace(/\uFEFF/g, '\\\\');
     });
   }
   //  #endregion
@@ -1761,11 +1764,13 @@ export class BuildProcess {
       str = str.substr(1);
     }
     // Store placeholder for \&
+    str = str.replace(/\\\\/g, '\uFEFF');
     str = str.replace(/\\&/g, '\uFFFE');
     // Split on &
     return str.split('&').map((s) => {
       // Restore place-held &
-      return s.replace(/\uFFFE/g, '&');
+      return s.replace(/\uFFFE/g, '&')
+        .replace(/\uFEFF/g, '\\\\');
     });
   };
   //  #endregion
@@ -1783,11 +1788,13 @@ export class BuildProcess {
       return [];
     }
     // Store placeholder for \=
+    str = str.replace(/\\\\/g, '\uFEFF');
     str = str.replace(/\\=/g, '\uFFFE');
     // Split on =
     return str.split('=').map((s) => {
       // Restore place-held =
-      return s.replace(/\uFFFE/g, '=');
+      return s.replace(/\uFFFE/g, '=')
+        .replace(/\uFEFF/g, '\\\\');
     });
   }
   //  #endregion
