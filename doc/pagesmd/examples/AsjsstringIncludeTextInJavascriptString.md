@@ -106,4 +106,5 @@ eg);-webkit-transform:rotate(45deg)};';
 
 </div>
 
-[[include:style/nowrapcode.html]]
+[[include:style/nowrapcode.html]]  
+[[include:style/heading.html]]

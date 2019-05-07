@@ -5,7 +5,7 @@
 <div class="nowrapcode">
 
 ```text
-// BUILD_INCLUDE("./fixtures/replace3.txt")[text?before=\[\n&after=\n\]&PadRight=%5C,breakstring?width=60]
+// BUILD_INCLUDE("./scratch/replace01.txt")[text?before=\[\n&after=\n\]&PadRight=\\,breakstring?width=60]
 ```
 
 </div>
@@ -15,7 +15,7 @@
 <div class="nowrapcode">
 
 ```text
-// BUILD_INCLUDE("./fixtures/replace3.txt")[text?before=%5B\n&after=\n%5D&PadRight=%5C,breakstring?width=60]
+// BUILD_INCLUDE("./scratch/replace01.txt")[text?before=%5B\n&after=\n%5D&PadRight=%5C,breakstring?width=60]
 ```
 
 </div>
@@ -28,7 +28,7 @@ See: [Escaping Parameters](/pages/Docs/misc/EscapingParameters.html)
 
 ### Options
 
-`[text?before=\[\n&after=\n\]&PadRight=%5C,breakstring?width=60]`  
+`[text?before=\[\n&after=\n\]&PadRight=\\,breakstring?width=60]`  
 --or--  
 `[text?before=%5B\n&after=\n%5D&PadRight=%5C,breakstring?width=60]`
 
@@ -54,7 +54,7 @@ Inserts [ followed by a new line. The rest of the input contents will start on t
 
 ```
 
-`PadRight=%5C`  
+`PadRight=\\` or `PadRight=%5C`  
 Inserts \ at the end of each line.
 
 `after=\n\]` or `after=\n%5D`  
@@ -114,4 +114,5 @@ tz.\
 
 </div>
 
-[[include:style/nowrapcode.html]]
+[[include:style/nowrapcode.html]]  
+[[include:style/heading.html]]

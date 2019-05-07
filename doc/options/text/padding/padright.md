@@ -1,4 +1,4 @@
-#### Text Padright
+##### Text Padright
 
 `text?padright=num` where as `num` is any whole number number, pads the right side of each line with a number of spaces
 equal to the value of `num`.  

@@ -75,4 +75,5 @@ module.exports = function (grunt) {
 // ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 ```
 
-[[include:style/nowrapcode.html]]
+[[include:style/nowrapcode.html]]  
+[[include:style/heading.html]]

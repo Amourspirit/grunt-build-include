@@ -4,7 +4,7 @@ Format using: &lt;!-- --&gt;
 Single-line
 
 ```html
-<!--my single line comments-->
+<!-- my single line comments -->
 ```
 
 Multi-line

@@ -86,4 +86,5 @@ module.exports = function (grunt) {
 
 </div>
 
-[[include:style/nowrapcode.html]]
+[[include:style/nowrapcode.html]]  
+[[include:style/heading.html]]
