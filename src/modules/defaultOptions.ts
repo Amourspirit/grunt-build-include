@@ -11,7 +11,7 @@ import { Util } from './util';
 // #endregion
 // #regionn CONSTANTS
 export const DEFAULT_MATCH_KIND = 'buildInclude';
-export const DEFAULT_FENCE_START = `^{0}(?:[ \\t]+)?([a-zA-Z\\r\\n])(?:[\\s\\S]+?)`;
+export const DEFAULT_FENCE_START = `^{0}(?:([a-zA-Z]+)?(?:[\\r\\n]+))(?:[\\s\\S]+?)`;
 export const DEFAULT_FENCE_END = `^{0}(?:(?:$)|(?:[\\r\\n]+))`;
 // #endregion
 // #region defaultOptions
@@ -407,6 +407,10 @@ export const getFenceKind = (kind: fenceKind): IGruntOptFence | undefined => {
       return fen.strictFence;
     case fenceKind.flex:
       return fen.flexFence;
+    case fenceKind.escape:
+      return fen.escapeFence;
+    case fenceKind.tilde:
+      return fen.tildeFence;
     default:
       return undefined;
   }

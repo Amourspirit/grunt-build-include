@@ -33,6 +33,7 @@ import {
 } from './defaultOptions';
 import { Util } from './util';
 import * as grunt from 'grunt';
+import { strictFence, tildeFence, escapeFence } from './fenceOptions';
 // #endregion
 
 /**
@@ -801,6 +802,9 @@ export class BuildProcess {
       if (!biOpt.regexFence && biOpt.fence.type === fenceKind.none) {
         biOpt.regexFence = this.buildFenceRegex(biOpt.fence);
       }
+      if (!biOpt.regexFence && biOpt.fence.type === fenceKind.multiFlex) {
+        biOpt.regexFence = this.buildFenceMultiRegex();
+      }
       if (biOpt.regexFence) {
         return true;
       }
@@ -1155,6 +1159,23 @@ export class BuildProcess {
     return result;
   }
   // #endregion
+  /**
+   * Combines [[strictFence]], [[tildeFence]] and [[escapeFence]] into one regular expression.
+   */
+  private buildFenceMultiRegex(): RegExp | undefined {
+    const fStrict = getFenceOptions(strictFence);
+    const fTilde = getFenceOptions(tildeFence);
+    const fEscape = getFenceOptions(escapeFence);
+    if (fStrict && fTilde && fEscape) {
+      // It seems to me that order matters here.
+      // first check for escape then tilde and lastly strict.
+      // want to avoid selecting strict inside of escape or tilde.
+      // https://markdownmonster.west-wind.com/docs/_5eg1brc0z.htm
+      const re = new RegExp(`(?:${fEscape.source})|(?:${fTilde.source})|(?:${fStrict.source})`, 'm');
+      return re;
+    }
+    return undefined;
+  }
   // #endregion
   // #region Comment Methods
   //  #region commentJsAuto

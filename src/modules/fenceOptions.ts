@@ -24,9 +24,38 @@ export const flexFence: IGruntOptFence = {
   /**
    * [[include:docs/fenceOpt/flexFence/start.md]]
    */
-  start: /^(?:[ \t]+)?(?:\*)?(?:[ \t]+)?(?:(```)(?:[^ \t])([a-zA-Z\r\n]+)?)(?:[\s\S]+?)/,
+  start: /^(?:[ \t]+)?(?:\*)?(?:[ \t]+)?(?:(```)(?:[^` \t])([a-zA-Z\r\n]+)?)(?:[\s\S]+?)/,
   /**
    * [[include:docs/fenceOpt/flexFence/end.md]]
    */
   end: /^(?:[ \t]+)?(?:\*)?(?:[ \t]+)?(```)(?:(?:$)|(?:[\r\n]+))/
+}
+
+/**
+ * [[include:docs/IFence/IFence.md]]
+ * [[include:docs/fenceOpt/tildeFence/tildeFence.md]]
+ */
+export const tildeFence: IGruntOptFence = {
+  /**
+   * [[include:docs/fenceOpt/flexFence/start.md]]
+   */
+  start: '~~~',
+  /**
+   * [[include:docs/fenceOpt/flexFence/end.md]]
+   */
+  end: '~~~'
+}
+/**
+ * [[include:docs/IFence/IFence.md]]
+ * [[include:docs/fenceOpt/escapeFence/escapeFence.md]]
+ */
+export const escapeFence: IGruntOptFence = {
+  /**
+   * [[include:docs/fenceOpt/flexFence/start.md]]
+   */
+  start: '````',
+  /**
+   * [[include:docs/fenceOpt/flexFence/end.md]]
+   */
+  end: '````'
 }

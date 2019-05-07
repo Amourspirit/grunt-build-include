@@ -184,7 +184,24 @@ export enum fenceKind {
   * Apply flex.
   * See: [[flexFence]]
   */
-  flex
+  flex,
+  // https://regexr.com/4dipp
+  /**
+   * Pseudo Fence.
+   * 
+   * Combines [[escapeFence]], [[tildeFence]] and [[strictFence]]
+   */
+  multiFlex,
+  /**
+  * Apply tilde.
+  * See: [[tildeFence]]
+  */
+  tilde,
+  /**
+  * Apply tilde.
+  * See: [[escapeFence]]
+  */
+  escape
 }
 /** Extend enum fenceKind to have a parse method */
 export namespace fenceKind {
