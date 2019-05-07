@@ -27,6 +27,8 @@ Includes [replace01.txt](replacements/replace01.txt.html) and places text before
 
 [[include:options/text/after/after.md]]
 
+[[include:options/breakstring/breakstring.md]]
+
 [[include:options/breakstring/width.md]]
 
 [[include:options/breakstring/flags/word.md]]

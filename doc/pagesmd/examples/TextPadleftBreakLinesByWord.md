@@ -25,6 +25,8 @@ Also `# ` is required at the start of each line.
 
 [[include:options/text/padding/padleft.md]]
 
+[[include:options/breakstring/breakstring.md]]
+
 [[include:options/breakstring/width.md]]
 
 [[include:options/breakstring/flags/word.md]]

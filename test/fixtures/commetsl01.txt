@@ -1,6 +1,14 @@
 -------file: "./fixtures/replace3.txt")
--------options: [comment?type=Single]
-// BUILD_INCLUDE("./fixtures/replace3.txt")[text?before=\&\[\n&after=\n\]&PadRight=\\ ,breakstring?width=60,flags=word]
+-------options: [text?before=\[\n&after=\n\]&PadRight=%5C,breakstring?width=60]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[text?before=\[\n&after=\n\]&PadRight=%5C,breakstring?width=60]
+
+-------file: "./fixtures/replace3.txt")
+-------options: [text?&PadRight=\\before=[text?before=[\n&after=\n]&PadRight=\\,breakstring?width=60]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[text?before=[\n&after=\n]&PadRight=\\,breakstring?width=60]
+
+-------file: "./fixtures/replace3.txt")
+-------options: [text?before=%5B\n&after=\n%5D&PadRight=%5C,breakstring?width=60]
+// BUILD_INCLUDE("./fixtures/replace3.txt")[text?before=%5B\n&after=\n%5D&PadRight=%5C,breakstring?width=60]
 
 -------file: "./fixtures/replace3.txt")
 -------options: [comment?type=Single, breakstring?width=90&flags=word&eol=none]

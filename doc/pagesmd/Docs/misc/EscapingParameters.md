@@ -2,14 +2,17 @@ Some parameters that can accept text as there value such `text?before=` and `tex
 
 Escapes are as follows:  
 
-| character   |  escaped value  |
-|:-----------:|:---------------:|
-|     [       |       \\[        |
-|     ]       |       \\]        |
-|     &       |       \\&        |
-|     ,       |       \\,        |
-|     =       |       \\=        |
-|     \\      |       \\\\       |
-|     \\n     |       \\\\n      |
-|    \\r\\n   |      \\\\r\\\\n  |
-|     \\t     |       \\\\t      |
+| character   |   escaped value  | URI escaped value |
+|:-----------:|:----------------:|:-----------------:|
+|     [       |       \\[        |       %5B         |
+|     ]       |       \\]        |       %5D         |
+|     &       |       \\&        |       %26         |
+|     ,       |       \\,        |       %2C         |
+|     =       |       \\=        |       %3D         |
+|     \\      |      &nbsp;      |       %5C         |
+|     \\n     |       \\\\n      |       %0A         |
+|     \\r     |       \\\\r      |       %0D         |
+|    \\r\\n   |      \\\\r\\\\n  |      %0D%0A       |
+|     \\t     |       \\\\t      |        %X9        | 
+
+Example: [Text Before After With Special Chars](/pages/examples/TextBeforeAfterWithSpecialChars.html)

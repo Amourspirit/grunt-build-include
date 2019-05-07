@@ -1719,6 +1719,12 @@ export class BuildProcess {
     }
 
     // Store placeholder for \,
+    // there is an issue here
+    // [text?PadRight=\\,breakstring?width=60,flags=word]
+    // padright=\\ is ecpected to pad a sing \ however it is getting
+    // escaped here as 
+    // text?PadRight=\breakstring?width=60,flags=word
+    // need to match \, but not \\,
     str = str.replace(/\\,/g, '\uFFFE');
 
     // replace \[ with [ and \] with ]
