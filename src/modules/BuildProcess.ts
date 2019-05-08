@@ -33,7 +33,9 @@ import {
 } from './defaultOptions';
 import { Util } from './util';
 import * as grunt from 'grunt';
-import { strictFence, tildeFence, escapeFence } from './fenceOptions';
+import { StrictFence } from './fences/StrictFence';
+import { TildeFence } from './fences/TildeFence';
+import { EscapeFence } from './fences/EscapeFence';
 // #endregion
 
 /**
@@ -1163,9 +1165,9 @@ export class BuildProcess {
    * Combines [[strictFence]], [[tildeFence]] and [[escapeFence]] into one regular expression.
    */
   private buildFenceMultiRegex(): RegExp | undefined {
-    const fStrict = getFenceOptions(strictFence);
-    const fTilde = getFenceOptions(tildeFence);
-    const fEscape = getFenceOptions(escapeFence);
+    const fStrict = getFenceOptions(new StrictFence());
+    const fTilde = getFenceOptions(new TildeFence());
+    const fEscape = getFenceOptions(new EscapeFence());
     if (fStrict && fTilde && fEscape) {
       // It seems to me that order matters here.
       // first check for escape then tilde and lastly strict.

@@ -1,13 +1,16 @@
 // #region imports
 import { IBiGruntOpt, IMatchOpt, IBuildIncludeOpt, IGruntOptComment, IComment, IText, IGruntOptFence } from "./interfaces";
 import * as mo from './matchOptions';
-import * as fen from './fenceOptions';
 import { regexKind, commentKind, fenceKind } from './enums';
 import * as grunt from 'grunt';
 import { splitByOpt, lnEndOpt, widthFlags } from 'string-breaker';
 import { eKind } from './enumEKind';
 import { eProcess } from './enumEProcess';
 import { Util } from './util';
+import { StrictFence } from "./fences/StrictFence";
+import { FlexFence } from "./fences/FlexFence";
+import { TildeFence } from "./fences/TildeFence";
+import { EscapeFence } from "./fences/EscapeFence";
 // #endregion
 // #regionn CONSTANTS
 export const DEFAULT_MATCH_KIND = 'buildInclude';
@@ -404,13 +407,13 @@ const mergeBiFence = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt)
 export const getFenceKind = (kind: fenceKind): IGruntOptFence | undefined => {
   switch (kind) {
     case fenceKind.strict:
-      return fen.strictFence;
+      return new StrictFence();
     case fenceKind.flex:
-      return fen.flexFence;
+      return new FlexFence();
     case fenceKind.escape:
-      return fen.escapeFence;
+      return new EscapeFence();
     case fenceKind.tilde:
-      return fen.tildeFence;
+      return new TildeFence();
     default:
       return undefined;
   }
@@ -448,7 +451,7 @@ export const getFenceOptions = (fence: string | IGruntOptFence | undefined): Reg
   }
   if (typeof fence === 'object') {
     // if any properties are missing defalut to to strictFence
-    const standInFence = fen.strictFence;
+    const standInFence = new StrictFence();
     let hasProp: boolean = false;
     if (fence.hasOwnProperty('start')) {
       hasProp = true;

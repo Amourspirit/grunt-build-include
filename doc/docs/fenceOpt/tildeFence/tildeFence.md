@@ -1,5 +1,3 @@
-Type: [IFence](/interfaces/_modules_interfaces_.ifence.html)  
-
 Matches the pattern of:  
 (reguired &#126;&#126;&#126;)(optional type)  
 fenced text  

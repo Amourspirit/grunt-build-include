@@ -285,4 +285,19 @@ describe('Build include Plugin', function () {
         done();
       });
     });
+  it('should write a file using fence multiflex options.\
+  \n\tReplace the build_replace contents matching fixture fence_multi_replaced.txt\
+  \n\tThis searches for various fences and applies settings based on inline build_include options\
+  \n\tThis test uses gruntfile-fence-multi.js',
+    function (done) {
+      callGruntfile('gruntfile-fence-multi.js', function (error: any, stdout: any, stderr: any) {
+        expect(stdout).to.not.be.null;
+        // console.log(stdout);
+        expect(error).to.be.null;
+        let src = fs.readFileSync(`${fixDir}/fence_multi_replaced.txt`);
+        let dest = fs.readFileSync(`${outDir}/fence_multi_replaced.txt`);
+        expect(src.equals(dest)).equal(true);
+        done();
+      });
+    });
 });
