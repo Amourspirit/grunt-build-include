@@ -1,7 +1,7 @@
 // #region imports
 import { IBiGruntOpt, IMatchOpt, IBuildIncludeOpt, IGruntOptComment, IComment, IText, IGruntOptFence } from "./interfaces";
 import * as mo from './matchOptions';
-import { regexKind, commentKind, fenceKind } from './enums';
+import { regexKind, commentKind, fenceKind, whiteSpLn } from './enums';
 import * as grunt from 'grunt';
 import { splitByOpt, lnEndOpt, widthFlags } from 'string-breaker';
 import { eKind } from './enumEKind';
@@ -198,6 +198,7 @@ export const getBiOptionsDefault = (): IBuildIncludeOpt => {
       code: eKind.none,
       codeKind: eProcess.none,
       noLineBreaks: false,
+      whiteSpaceLine: whiteSpLn.noAction,
       indent: false,
       isSet: false,
       isCode: false
@@ -316,6 +317,13 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
     if (biOpt.text.codeKind === eProcess.none && txt.codekind !== undefined) {
       biOpt.text.codeKind = eProcess.parse(txt.codekind.toString());
       if (biOpt.text.codeKind > eProcess.none) {
+        biOpt.text.isSet = true;
+        hasOpt = true;
+      }
+    }
+    if (biOpt.text.whiteSpaceLine === whiteSpLn.noAction && txt.whiteSpaceLine !== undefined) {
+      biOpt.text.whiteSpaceLine = whiteSpLn.parse(txt.whiteSpaceLine.toString());
+      if (biOpt.text.whiteSpaceLine > whiteSpLn.noAction) {
         biOpt.text.isSet = true;
         hasOpt = true;
       }

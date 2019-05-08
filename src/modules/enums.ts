@@ -266,3 +266,82 @@ export enum matchKind {
   fence
 }
 // #endregion
+// #region whiteSpLn
+/**
+ * Enumeration options on how to handle whitespace lines
+ */
+export enum whiteSpLn {
+  /**
+   * Take no action.
+   */
+  noAction,
+  /**
+   * If two or more white space line are together then they
+   * are reduced to one white space line.
+   */
+  noTwoWsLn,
+  /** If two or more empty lines are together then they
+   * are reduced to one empty line.
+   */
+  noTwoEmptyLn,
+  /**
+   * All white space line are removed.
+   */
+  removeAllWs,
+  /**
+   * All empty lines are removed.
+   */
+  removeAlEmpty
+}
+/** Extend enum whiteSpLn to have a parse method */
+export namespace whiteSpLn {
+  /**
+   * Parses a value to enum of fewhiteSpLnnceKind
+   * @param value The string or number to convert into enum
+   * @param anyCase If true will match an enum value of any case; Otherwise, case must match.
+  * @returns The value converted into whiteSpLn
+   */
+  export const parse = (value: string | number, anyCase: boolean = true): whiteSpLn => {
+    const num: number = parseInt(value.toString(), 10);
+    let v: string | number;
+    if (isNaN(num) === true) {
+      v = value;
+    } else {
+      v = num;
+    }
+    if (typeof v === 'number') {
+      const e: whiteSpLn = v;
+      return e;
+    } else if (typeof v === 'string' && v.length > 0) {
+      if (anyCase === true) {
+        v = v.toLowerCase();
+        for (const k in whiteSpLn) {
+          if (whiteSpLn.hasOwnProperty(k)) {
+            const val = whiteSpLn[k]
+            if (typeof val === 'number') {
+              const kLc = k.toLowerCase();
+              if (kLc === v) {
+                const e: whiteSpLn = val;
+                return e;
+              }
+            }
+          }
+        }
+      } else {
+        for (const k in whiteSpLn) {
+          if (whiteSpLn.hasOwnProperty(k)) {
+            const val = whiteSpLn[k]
+            if (typeof val === 'number') {
+              if (k === v) {
+                const e: whiteSpLn = val;
+                return e;
+              }
+            }
+          }
+        }
+      }
+    }
+    return whiteSpLn.noAction;
+  };
+}
+// #endregion

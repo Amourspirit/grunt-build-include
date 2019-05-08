@@ -19,7 +19,8 @@ import {
 import {
   commentKind,
   matchKind,
-  fenceKind
+  fenceKind,
+  whiteSpLn
 } from "./enums";
 import { 
   setMatchOptions,
@@ -36,6 +37,8 @@ import * as grunt from 'grunt';
 import { StrictFence } from './fences/StrictFence';
 import { TildeFence } from './fences/TildeFence';
 import { EscapeFence } from './fences/EscapeFence';
+import { MatchItem } from './MatchItem';
+import { EOL } from 'os';
 // #endregion
 
 /**
@@ -255,8 +258,16 @@ export class BuildProcess {
    */
   private processMatch(biOpt: IBuildIncludeOpt, matches: Array<IMatchType>): string {
     let strA: string[] = []
-
-    matches.forEach(mt => {
+    // it is possible the matches contain a lot of empty
+    // lines. This espically can happen if fencing is to remove
+    // and there was a number of fences in a row.
+    let mA: Array<IMatchType>;
+    if (biOpt.text.isSet === true && biOpt.text.whiteSpaceLine > whiteSpLn.noAction) {
+      mA = this.processWhiteSpLns(biOpt, matches);
+    } else {
+      mA = matches;
+    }
+    mA.forEach(mt => {
       if (mt.kind === matchKind.fence) {
         strA.push(mt.value);
       } else if (mt.kind === matchKind.normal) {
@@ -292,7 +303,6 @@ export class BuildProcess {
               });
           }
         } // if (biOpt.bs.isSet === true)
-
 
         if (biOpt.comment.isSet === true) {
           biOpt.lines = this.processComment(biOpt);
@@ -341,7 +351,7 @@ export class BuildProcess {
       strA = biOpt.lines;
       biOpt.lines = [];
     }
-    return strA.join('\n');
+    return strA.join(EOL);
   }
   //  #endregion
   //  #region processComment
@@ -954,6 +964,16 @@ export class BuildProcess {
                     biOpt.text.indent = true;
                   }
                   break;
+                case 'whitespaceline':
+                  if (eqArgs.length === 2) {
+                    v = eqArgs[1];
+                    v = v.trim();
+                    if (v.length > 0) {
+                      hasOption = true;
+                      biOpt.text.whiteSpaceLine = whiteSpLn.parse(v);
+                    }
+                  }
+                  break;
                 default:
                   break;
               }
@@ -1133,7 +1153,7 @@ export class BuildProcess {
    * No padding is applied in this process
    */
   private buildBreakStringNormal(biOpt: IBuildIncludeOpt): string {
-    return biOpt.lines.join('\n');
+    return biOpt.lines.join(EOL);
   };
   // #endregion
   //  #region buildFenceRegex
@@ -1983,5 +2003,130 @@ export class BuildProcess {
       });
     }
     return result;
+  }
+  private processWhiteSpLns(biOpt: IBuildIncludeOpt, matches: Array<IMatchType>): Array<IMatchType> {
+    if (matches.length === 0) {
+      return [];
+    }
+    const result: Array<IMatchType> = [];
+    const lineOpt = biOpt.text.whiteSpaceLine;
+    let emptyCount = 0;
+    matches.forEach(mt => {
+      const strA = this.processMatchItem(mt.value, lineOpt);
+      // need to count how many
+      if (strA.length > 1) {
+        // StrA will become a single string.
+        // and then appended after any existeing values in the array.
+        // check the frist line of strA and see if it is whitespace
+        // If there is only a single line then allow the whitespace
+        // processing to take place below.
+        switch (lineOpt) {
+          case whiteSpLn.noTwoEmptyLn:
+            if (strA[0].length === 0) {
+              emptyCount++;
+            }
+            break;
+          case whiteSpLn.noTwoWsLn:
+            if (Util.IsEmptyOrWhiteSpace(strA[0])) {
+              emptyCount++;
+            }
+            break;
+          default:
+            break;
+        }
+      }
+      const item = new MatchItem({
+        kind: mt.kind,
+        value: strA.join(EOL) // this produces '' if strA.length = 0
+      });
+
+      switch (lineOpt) {
+        case whiteSpLn.noTwoEmptyLn:
+          if (item.isEmpty() === true) {
+            emptyCount++;
+            if (emptyCount === 1) {
+              result.push(item);
+            }
+          } else {
+            result.push(item);
+            emptyCount = 0;
+          }
+          break;
+        case whiteSpLn.noTwoWsLn:
+          if (item.isWhiteSpace() === true) {
+            emptyCount++;
+            if (emptyCount === 1) {
+              result.push(item);
+            }
+          } else {
+            result.push(item);
+            emptyCount = 0;
+          }
+          break;
+        case whiteSpLn.removeAlEmpty:
+          if (item.isEmpty() === false) {
+            result.push(item);
+          }
+          break;
+        case whiteSpLn.removeAllWs:
+          if (item.isWhiteSpace() === false) {
+            result.push(item);
+          }
+          break;
+        default:
+          result.push(item);
+          break;
+      }
+    });
+    return result;
+  }
+  private processMatchItem(str: string, lineOpt: whiteSpLn): string[] {
+    const newLines: string[] = [];
+    if (str.length === 0) {
+      return newLines;
+    }
+    let emptyCount = 0;
+    const lines: string[] = stringBreaker(str, { splitOpt: splitByOpt.line });
+    
+    lines.forEach(ln => {
+      switch (lineOpt) {
+        case whiteSpLn.noTwoEmptyLn:
+          if (ln.length === 0) {
+            emptyCount++;
+            if (emptyCount === 1) {
+              newLines.push(ln);
+            }
+          } else {
+            newLines.push(ln);
+            emptyCount = 0;
+          }
+          break;
+        case whiteSpLn.noTwoWsLn:
+          if (Util.IsEmptyOrWhiteSpace(ln) === true) {
+            emptyCount++;
+            if (emptyCount === 1) {
+              newLines.push(ln);
+            }
+          } else {
+            newLines.push(ln);
+            emptyCount = 0;
+          }
+          break;
+        case whiteSpLn.removeAlEmpty:
+          if (ln.length > 0) {
+            newLines.push(ln);
+          }
+          break;
+        case whiteSpLn.removeAllWs:
+          if (Util.IsEmptyOrWhiteSpace(ln) === false) {
+            newLines.push(ln);
+          }
+          break;
+        default:
+          newLines.push(ln);
+          break;
+      }
+    });
+    return newLines;
   }
 }

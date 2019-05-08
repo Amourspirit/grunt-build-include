@@ -1,7 +1,7 @@
 import { eKindType } from "./enumEKind";
 import { eProcessType } from "./enumEProcess";
 import { lnEndOpt, splitByOpt, widthFlags } from 'string-breaker';
-import { commentKind, matchKind, fenceKind } from "./enums";
+import { commentKind, matchKind, fenceKind, whiteSpLn } from "./enums";
 /**
  * Options for buildInclude
  */
@@ -122,6 +122,10 @@ export interface IText {
    * 
   */
   noLineBreaks: boolean;
+  /**
+   * How to process white space lines.
+   */
+  whiteSpaceLine: whiteSpLn;
   /** Boolean flag that is true when encoding or decoding options are set */
   isCode: boolean;
   /** Boolean flag that is true when text options are set */
@@ -301,6 +305,10 @@ export interface IGruntOptText {
    */
   indent?: boolean | string;
   /**
+   * How to process white space lines.
+   */
+  whiteSpaceLine?: whiteSpLn;
+  /**
    * Boolean flag that determins if line breaks should be removed from contents of a file that is
    * to be inserted. Default is false.
    * 
@@ -370,3 +378,10 @@ export interface IKeyValueGeneric<T> {
   [key: string]: T;
 }
 // #endregion
+/**
+ * Generic Clone method
+ */
+export interface IClone<T> {
+  /** Clone object and return cloned object */
+  clone(): T;
+}
