@@ -1171,7 +1171,7 @@ export class BuildProcess {
       // first check for escape then tilde and lastly strict.
       // want to avoid selecting strict inside of escape or tilde.
       // https://markdownmonster.west-wind.com/docs/_5eg1brc0z.htm
-      const re = new RegExp(`(?:${fEscape.source})|(?:${fTilde.source})|(?:${fStrict.source})`, 'm');
+      const re = new RegExp(`${fEscape.source}|${fTilde.source}|${fStrict.source}`, 'm');
       return re;
     }
     return undefined;
