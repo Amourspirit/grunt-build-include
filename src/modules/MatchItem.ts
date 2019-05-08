@@ -1,14 +1,25 @@
-import { IMatchType, IClone } from "./interfaces";
+import { IMatchType, IClone, IMatchItemWsItm } from "./interfaces";
 import { matchKind} from "./enums";
 import { Util } from "./util";
+import { EOL } from 'os';
 
 export class MatchItem implements IMatchType, IClone<MatchItem> {
+  public static FromMatchItemWsItm(mtWdItm: IMatchItemWsItm) {
+    const mt: IMatchType = {
+      kind: mtWdItm.kind,
+      value: mtWdItm.lines.join(EOL)
+    }
+    const result = new MatchItem(mt);
+    return result;
+  }
   public kind: matchKind;
   public value: string;
+
   public constructor(mt: IMatchType) {
     this.kind = mt.kind;
     this.value = mt.value;
   }
+
   public clone(): MatchItem {
     const mt: IMatchType = this.toMatchType();
     const copy = new MatchItem(mt);

@@ -3,7 +3,7 @@ Represents a generic item with a string key value
 **Example:**
 
  ```ts
-const lst: IKeyValueGeneric<string> = {
+const lst: IKeyValuec<string> = {
     src: 'https://someUrl.come/js/myjs.js',
     scrolling: 'yes',
     type: 'text/javascript'

@@ -8,7 +8,12 @@ import {
   IBiGruntOpt,
   IMatchType,
   IFence,
-  IGruntOptFence
+  IGruntOptFence,
+  IIndex,
+  IKeyValue,
+  IIndexAny,
+  IKeyValueAny,
+  IMatchItemWsItm
 } from "./interfaces";
 import {
   stringBreaker,
@@ -2010,106 +2015,84 @@ export class BuildProcess {
     }
     const result: Array<IMatchType> = [];
     const lineOpt = biOpt.text.whiteSpaceLine;
-    let emptyCount = 0;
+    let endEmptyCount = 0;
+    const items: Array<IMatchItemWsItm> = [];
     matches.forEach(mt => {
-      const strA = this.processMatchItem(mt.value, lineOpt);
-      // need to count how many
-      if (strA.length > 1) {
-        // StrA will become a single string.
-        // and then appended after any existeing values in the array.
-        // check the frist line of strA and see if it is whitespace
-        // If there is only a single line then allow the whitespace
-        // processing to take place below.
-        switch (lineOpt) {
-          case whiteSpLn.noTwoEmptyLn:
-            if (strA[0].length === 0) {
-              emptyCount++;
-            }
-            break;
-          case whiteSpLn.noTwoWsLn:
-            if (Util.IsEmptyOrWhiteSpace(strA[0])) {
-              emptyCount++;
-            }
-            break;
-          default:
-            break;
-        }
-      }
-      const item = new MatchItem({
-        kind: mt.kind,
-        value: strA.join(EOL) // this produces '' if strA.length = 0
-      });
-
+      const pMI = this.processMatchItem(mt, lineOpt);
+      items.push(pMI);
+    });
+    // now that all of the matched items are processed
+    // filter out all of the lines that are breaking the rules
+    let prevItem: IMatchItemWsItm | undefined;
+    items.forEach(item => {
+      let endCount: number;
       switch (lineOpt) {
         case whiteSpLn.noTwoEmptyLn:
-          if (item.isEmpty() === true) {
-            emptyCount++;
-            if (emptyCount === 1) {
-              result.push(item);
-            }
-          } else {
-            result.push(item);
-            emptyCount = 0;
-          }
-          break;
         case whiteSpLn.noTwoWsLn:
-          if (item.isWhiteSpace() === true) {
-            emptyCount++;
-            if (emptyCount === 1) {
-              result.push(item);
+          if (prevItem !== undefined) {
+            endCount = prevItem.countEnd + item.countStart;
+            if (endCount > 1) {
+              
+            } else {
+              result.push(MatchItem.FromMatchItemWsItm(item));
             }
-          } else {
-            result.push(item);
-            emptyCount = 0;
           }
           break;
-        case whiteSpLn.removeAlEmpty:
-          if (item.isEmpty() === false) {
-            result.push(item);
-          }
-          break;
-        case whiteSpLn.removeAllWs:
-          if (item.isWhiteSpace() === false) {
-            result.push(item);
-          }
-          break;
+      
         default:
-          result.push(item);
           break;
       }
+      prevItem = Util.DeepCopy(item);
     });
     return result;
   }
-  private processMatchItem(str: string, lineOpt: whiteSpLn): string[] {
+  
+  private processMatchItem(mt: IMatchType, lineOpt: whiteSpLn): IMatchItemWsItm {
+    let result: IMatchItemWsItm = {
+      lines: [],
+      countEnd: 0,
+      countStart: 0,
+      kind: mt.kind
+    };
     const newLines: string[] = [];
     if (str.length === 0) {
-      return newLines;
+      return result;
     }
-    let emptyCount = 0;
-    const lines: string[] = stringBreaker(str, { splitOpt: splitByOpt.line });
+    let endEmptyCount: number = 0;
+    let startEmptyCount: number = 0;
+    let startDone: boolean = false;
+    const lines: string[] = stringBreaker(mt.value, { splitOpt: splitByOpt.line });
     
     lines.forEach(ln => {
       switch (lineOpt) {
         case whiteSpLn.noTwoEmptyLn:
           if (ln.length === 0) {
-            emptyCount++;
-            if (emptyCount === 1) {
+            endEmptyCount++;
+            if (endEmptyCount === 1) {
               newLines.push(ln);
             }
           } else {
             newLines.push(ln);
-            emptyCount = 0;
+            endEmptyCount = 0;
+          }
+          if (startDone === false && endEmptyCount > 0) {
+            startEmptyCount = endEmptyCount;
+            startDone = true;
           }
           break;
         case whiteSpLn.noTwoWsLn:
           if (Util.IsEmptyOrWhiteSpace(ln) === true) {
-            emptyCount++;
-            if (emptyCount === 1) {
+            endEmptyCount++;
+            if (endEmptyCount === 1) {
               newLines.push(ln);
             }
           } else {
             newLines.push(ln);
-            emptyCount = 0;
+            endEmptyCount = 0;
+          }
+          if (startDone === false && endEmptyCount > 0) {
+            startEmptyCount = endEmptyCount;
+            startDone = true;
           }
           break;
         case whiteSpLn.removeAlEmpty:
@@ -2127,6 +2110,13 @@ export class BuildProcess {
           break;
       }
     });
-    return newLines;
+    result = {
+      lines: newLines,
+      countEnd: endEmptyCount,
+      countStart: startEmptyCount,
+      kind: mt.kind
+    };
+
+    return result;
   }
 }

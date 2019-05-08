@@ -27,7 +27,7 @@ export interface IBuildIncludeOpt {
    */
   regexFence?: RegExp;
   /** Options that can me passed from one method to the next */
-  opt: IKeyValueGeneric<string>;
+  opt: IKeyValue<string>;
 }
 /** break string options */
 export interface IBreakString {
@@ -372,16 +372,32 @@ export interface IMatchType {
 // #endregion
 // #regoin IKeyValueGeneric
 /**
- * [[include:docs/IKeyValueGeneric/IKeyValueGeneric.md]]
+ * [[include:docs/IKeyValue/IKeyValue.md]]
  */
-export interface IKeyValueGeneric<T> {
+export interface IKeyValue<T> {
   [key: string]: T;
 }
+export interface IKeyValueAny {
+  [key: string]: any;
+}
 // #endregion
+export interface IIndex<T> {
+  [key: number]: T;
+}
+export interface IIndexAny {
+  [key: number]: any;
+}
 /**
  * Generic Clone method
  */
 export interface IClone<T> {
   /** Clone object and return cloned object */
   clone(): T;
+}
+
+export interface IMatchItemWsItm {
+  lines: string[],
+  countStart: number,
+  countEnd: number,
+  kind: matchKind
 }
