@@ -1,6 +1,29 @@
+-------file: ('./fixtures/md/replace8.md')
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllWs]
+/**
+ // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllWs]
+ */
+
+-------file: ('./fixtures/md/replace8.md')
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAlEmpty]
+/**
+ // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAlEmpty]
+ */
+
+-------file: ('./fixtures/md/replace8.md')
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=noTwoWsLn]
 /**
  // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=noTwoWsLn]
  */
+
+-------file: ('./fixtures/md/replace8.md')
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=noTwoEmptyLn]
+/**
+ // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=noTwoEmptyLn]
+ */
+
+-------file: ('./fixtures/md/replace8.md')
+-------options: [fence?type=multiflex,comment?type=singleAsterisk,text?indent=true]
 /**
  // build_include('./fixtures/md/replace8.md')[fence?type=multiflex,comment?type=singleAsterisk,text?indent=true]
  */

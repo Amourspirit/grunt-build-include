@@ -286,6 +286,7 @@ describe('Build include Plugin', function () {
       });
     });
   it('should write a file using fence multiflex options.\
+  \nAlso Test text whiteSpaceLine options.\
   \n\tReplace the build_replace contents matching fixture fence_multi_replaced.txt\
   \n\tThis searches for various fences and applies settings based on inline build_include options\
   \n\tThis test uses gruntfile-fence-multi.js',

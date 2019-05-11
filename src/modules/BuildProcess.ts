@@ -2015,7 +2015,6 @@ export class BuildProcess {
     }
     const result: Array<IMatchType> = [];
     const lineOpt = biOpt.text.whiteSpaceLine;
-    let endEmptyCount = 0;
     const items: Array<IMatchItemWsItm> = [];
     matches.forEach(mt => {
       const pMI = this.processMatchItem(mt, lineOpt);
@@ -2025,24 +2024,51 @@ export class BuildProcess {
     // filter out all of the lines that are breaking the rules
     let prevItem: IMatchItemWsItm | undefined;
     items.forEach(item => {
-      let endCount: number;
       switch (lineOpt) {
         case whiteSpLn.noTwoEmptyLn:
         case whiteSpLn.noTwoWsLn:
           if (prevItem !== undefined) {
-            endCount = prevItem.countEnd + item.countStart;
-            if (endCount > 1) {
-              
-            } else {
-              result.push(MatchItem.FromMatchItemWsItm(item));
+            // countStart or countEnd cannot be > 1 for any item at this point.
+            if (prevItem.countEnd > 0) {
+              if (item.countStart > 0) {
+                // remove empty lines as needed
+                  while (item.countStart > 0) {
+                    item.lines.shift();
+                    item.countStart--;
+                  }
+              }
+            } else if (item.countStart > 1) {
+              while (item.countStart > 1) {
+                item.lines.shift();
+                item.countStart--;
+              }
+            }
+          } else {
+            if (item.countStart > 1) {
+              while (item.countStart > 1) {
+                item.lines.shift();
+                item.countStart--;
+              }
             }
           }
+          if (item.lines.length > 0) {
+            result.push(MatchItem.FromMatchItemWsItm(item));
+          }
           break;
-      
+        case whiteSpLn.removeAlEmpty:
+        case whiteSpLn.removeAllWs:
+          if (item.lines.length > 0) {
+            result.push(MatchItem.FromMatchItemWsItm(item));
+          }
+          break;
         default:
+          result.push(MatchItem.FromMatchItemWsItm(item));
           break;
       }
-      prevItem = Util.DeepCopy(item);
+      if (item.lines.length > 0) {
+        // prevItem will act as last added item
+        prevItem = Util.DeepCopy(item);
+      }
     });
     return result;
   }
@@ -2055,44 +2081,61 @@ export class BuildProcess {
       kind: mt.kind
     };
     const newLines: string[] = [];
-    if (str.length === 0) {
+    if (mt.value.length === 0) {
       return result;
     }
-    let endEmptyCount: number = 0;
-    let startEmptyCount: number = 0;
+    let startEmpty: number = 0;
+    let endEmpty: number = 0;
     let startDone: boolean = false;
+    let isEmpty: boolean = false;
     const lines: string[] = stringBreaker(mt.value, { splitOpt: splitByOpt.line });
     
     lines.forEach(ln => {
       switch (lineOpt) {
         case whiteSpLn.noTwoEmptyLn:
           if (ln.length === 0) {
-            endEmptyCount++;
-            if (endEmptyCount === 1) {
-              newLines.push(ln);
-            }
+            isEmpty = true;
           } else {
             newLines.push(ln);
-            endEmptyCount = 0;
-          }
-          if (startDone === false && endEmptyCount > 0) {
-            startEmptyCount = endEmptyCount;
+            isEmpty = false
+            endEmpty = 0;
             startDone = true;
+          }
+          if (isEmpty === true) {
+            if (startDone === false) {
+              if (startEmpty < 1) {
+                newLines.push(ln);
+                startEmpty++
+              }
+            } else {
+              if (endEmpty < 1) {
+                newLines.push(ln);
+                endEmpty++;
+              }
+            }
           }
           break;
         case whiteSpLn.noTwoWsLn:
           if (Util.IsEmptyOrWhiteSpace(ln) === true) {
-            endEmptyCount++;
-            if (endEmptyCount === 1) {
-              newLines.push(ln);
-            }
+            isEmpty = true;
           } else {
             newLines.push(ln);
-            endEmptyCount = 0;
-          }
-          if (startDone === false && endEmptyCount > 0) {
-            startEmptyCount = endEmptyCount;
+            isEmpty = false
+            endEmpty = 0;
             startDone = true;
+          }
+          if (isEmpty === true) {
+            if (startDone === false) {
+              if (startEmpty < 1) {
+                newLines.push(ln);
+                startEmpty++
+              }
+            } else {
+              if (endEmpty < 1) {
+                newLines.push(ln);
+                endEmpty++;
+              }
+            }
           }
           break;
         case whiteSpLn.removeAlEmpty:
@@ -2112,8 +2155,8 @@ export class BuildProcess {
     });
     result = {
       lines: newLines,
-      countEnd: endEmptyCount,
-      countStart: startEmptyCount,
+      countEnd: endEmpty,
+      countStart: startEmpty,
       kind: mt.kind
     };
 

@@ -3,7 +3,7 @@
 
 ## Repace8
 
-
+  
 
 `type=multiflex` Apply multiflex fencing options.  
 
@@ -76,4 +76,8 @@ fenced text
 ```
 ~~~
 
+
+
 See Also: [flexFence](/modules/_modules_fenceoptions_.html#flexfence)  
+
+    
