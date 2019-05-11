@@ -2009,6 +2009,14 @@ export class BuildProcess {
     }
     return result;
   }
+  /**
+   * Processes `matches` and returns an array with lines ommited based upon
+   * [[IBuildIncludeOpt.text]] [[IText.noLineBreaks]] setting
+   * @param biOpt The arguments from the options string values
+   * The type of string nreaking will be terminde by args.asJsString
+   * @param matches Array of matches
+   * @returns New array of [[IMatchType]] filtered by any white space settings.
+   */
   private processWhiteSpLns(biOpt: IBuildIncludeOpt, matches: Array<IMatchType>): Array<IMatchType> {
     if (matches.length === 0) {
       return [];
@@ -2072,7 +2080,12 @@ export class BuildProcess {
     });
     return result;
   }
-  
+  /**
+   * Processses a item of [[IMatchType]] and filters white space.
+   * @param mt Current MatchItem to filter
+   * @param lineOpt What filtering to apply.
+   * @See [[processWhiteSpLns]]
+   */
   private processMatchItem(mt: IMatchType, lineOpt: whiteSpLn): IMatchItemWsItm {
     let result: IMatchItemWsItm = {
       lines: [],

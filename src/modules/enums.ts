@@ -296,7 +296,7 @@ export enum whiteSpLn {
 /** Extend enum whiteSpLn to have a parse method */
 export namespace whiteSpLn {
   /**
-   * Parses a value to enum of fewhiteSpLnnceKind
+   * Parses a value to enum of whiteSpLn
    * @param value The string or number to convert into enum
    * @param anyCase If true will match an enum value of any case; Otherwise, case must match.
   * @returns The value converted into whiteSpLn

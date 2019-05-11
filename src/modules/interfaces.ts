@@ -377,10 +377,16 @@ export interface IMatchType {
 export interface IKeyValue<T> {
   [key: string]: T;
 }
+/**
+ * Represents any item with a string key value
+ */
 export interface IKeyValueAny {
   [key: string]: any;
 }
 // #endregion
+/**
+ * Represents a generic item with a index key value
+ */
 export interface IIndex<T> {
   [key: number]: T;
 }
@@ -394,10 +400,17 @@ export interface IClone<T> {
   /** Clone object and return cloned object */
   clone(): T;
 }
-
+/**
+ * Interface fro working with match Items white space
+ * @see [[BuildProcess.processWhiteSpLns]]
+ */
 export interface IMatchItemWsItm {
+  /** Array of lines */
   lines: string[],
+  /** number of empty lines at start of lines */
   countStart: number,
+  /** number of empty lines as end of lines */
   countEnd: number,
+  /** Kind of matche being processed */
   kind: matchKind
 }
