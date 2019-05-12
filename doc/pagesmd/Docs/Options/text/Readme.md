@@ -1,11 +1,11 @@
 [[include:options/text/text.md]]
 
-* [Before After](BeforeAfter/BeforeAfter.html)
-* [Codekind](CodeKind/CodeKind.html)
-* [Code](code/code.html)
-* [Indent](indent/indent.html)
-* [NoLineBreaks](NoLineBreaks/NoLineBreaks.html)
-* [padding](padding/padding.html)
-* [whiteSpaceLine](whiteSpaceLine/whiteSpaceLine.html)
+* [Before After](BeforeAfter/)
+* [Codekind](CodeKind/)
+* [Code](code/)
+* [Indent](indent/)
+* [NoLineBreaks](NoLineBreaks/)
+* [padding](padding/)
+* [whiteSpaceLine](whiteSpaceLine/)
 
 [Options](../)

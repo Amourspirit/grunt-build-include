@@ -51,4 +51,4 @@ fenced text
 ```
 ````
 
-See Also: [flexFence](/modules/_modules_fenceoptions_.html#flexfence)  
+See Also: [flexFence](/classes/fences.flexfence.html)  
