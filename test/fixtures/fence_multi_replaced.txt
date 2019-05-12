@@ -13,7 +13,7 @@
  */
 
 -------file: ('./fixtures/md/replace8.md')
--------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAlEmpty]
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllEmpty]
 /**
  * # Fence Test
  * ## Repace8

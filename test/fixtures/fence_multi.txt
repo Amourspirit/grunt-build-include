@@ -1,13 +1,13 @@
 -------file: ('./fixtures/md/replace8.md')
--------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true]
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllWs]
 /**
- // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true]
+ // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllWs]
  */
 
 -------file: ('./fixtures/md/replace8.md')
--------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAlEmpty]
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllEmpty]
 /**
- // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAlEmpty]
+ // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllEmpty]
  */
 
 -------file: ('./fixtures/md/replace8.md')
