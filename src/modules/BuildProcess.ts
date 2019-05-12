@@ -2063,7 +2063,7 @@ export class BuildProcess {
             result.push(MatchItem.FromMatchItemWsItm(item));
           }
           break;
-        case whiteSpLn.removeAlEmpty:
+        case whiteSpLn.removeAllEmpty:
         case whiteSpLn.removeAllWs:
           if (item.lines.length > 0) {
             result.push(MatchItem.FromMatchItemWsItm(item));
@@ -2151,7 +2151,7 @@ export class BuildProcess {
             }
           }
           break;
-        case whiteSpLn.removeAlEmpty:
+        case whiteSpLn.removeAllEmpty:
           if (ln.length > 0) {
             newLines.push(ln);
           }

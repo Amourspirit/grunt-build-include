@@ -291,7 +291,7 @@ export enum whiteSpLn {
   /**
    * All empty lines are removed.
    */
-  removeAlEmpty
+  removeAllEmpty
 }
 /** Extend enum whiteSpLn to have a parse method */
 export namespace whiteSpLn {
