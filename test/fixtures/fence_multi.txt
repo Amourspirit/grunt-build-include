@@ -1,7 +1,7 @@
 -------file: ('./fixtures/md/replace8.md')
--------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllWs]
+-------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true]
 /**
- // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllWs]
+ // build_include('./fixtures/md/replace8.md')[fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true]
  */
 
 -------file: ('./fixtures/md/replace8.md')

@@ -285,7 +285,7 @@ describe('Build include Plugin', function () {
         done();
       });
     });
-  it('should write a file using fence multiflex options.\
+  it.only('should write a file using fence multiflex options.\
   \n\tAlso Test text whiteSpaceLine options.\
   \n\tReplace the build_replace contents matching fixture fence_multi_replaced.txt\
   \n\tThis searches for various fences and applies settings based on inline build_include options\
