@@ -6,11 +6,12 @@ module.exports = function (grunt) {
         options: {
           expand: true,
           match: {
+            // see: https://regexr.com/4d0sd
+            // see entire regular expression: https://regexr.com/4d13t
+            // (?:(?:#))[ \t]*include_build\((?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\)(?:[\n\r]+)?(?:\[(.*)\])?
             name: 'include_build',
             // options must be on the same line set parameters to do this.
             parameters: `(?:\\[(.*)\\])?`,
-            // see: https://regexr.com/4d0sd
-            // see entire regular expression: https://regexr.com/4d13t
             prefix: '(?:(?:#))[ \\t]*',
             suffix: ''
           }
@@ -22,6 +23,7 @@ module.exports = function (grunt) {
         options: {
           match: {
             // see: https://regexr.com/4dr4m
+            // ^----[ ]*minus_plus\[(?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\](?:\{(.*)\})?(?:(?:[ ]+)?\+\+\+\+(?:(?:$)|(?:[\r\n]+)))
             name: 'minus_plus',
             fileName: `\\[(?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\\]`,
             parameters: `(?:\\{(.*)\\})?`,
