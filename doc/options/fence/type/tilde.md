@@ -1,6 +1,6 @@
-##### Fence Type Escape
+##### Fence Type Tilde
 
-`type=escape` Apply escape fencing options.  
+`type=tilde` Apply escape fencing options.  
 
 Matches the pattern of:
 

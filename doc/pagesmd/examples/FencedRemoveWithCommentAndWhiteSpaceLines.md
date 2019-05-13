@@ -1,4 +1,4 @@
-# Comment Type & Text Options
+# Fenced, Comment, Text Example
 
 ## BUILD_INCLUDE
 
@@ -23,6 +23,15 @@ File [replace02.txt](replacements/replace02.txt.html) is to be included in outpu
 ```
 
 </div>
+
+[[include:options/fence/fence.md]]
+
+[[include:options/fence/type/type.md]]
+
+[[include:options/fence/type/multiflex.md]]
+See: Fence Type [MultiFlex](/pages/Docs/Options/fence/type/MultiFlex/)
+
+[[include:options/fence/remove/remove.md]]
 
 [[include:options/comment/comment.md]]
 

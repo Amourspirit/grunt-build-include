@@ -1,0 +1,6 @@
+/**
+  * [[include:md/replace9.md]]
+  */
+export interface IKeyValue<T> {
+  [key: string]: T;
+}

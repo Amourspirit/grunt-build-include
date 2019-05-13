@@ -1,4 +1,4 @@
-# Comment Type & Text Options
+# Fenced, Comment, Text Example
 
 ## BUILD_INCLUDE
 
@@ -16,7 +16,7 @@ File [replace02.txt](replacements/replace02.txt.html) is to be included in outpu
 File [replace02.txt](replacements/replace02.txt.html) contains fences and enpty lines.  
 When fences are removed it may result in extra lines that are not the most desired output.  
 When you need to remove empty lines and or white space lines you can use the `text` `whiteSpaceLine` options.  
-See example: [Comment Remove Fenced And White Space Lines](CommentRemoveFencedAndWhiteSpaceLines.html)
+See example: [Comment Remove Fenced And White Space Lines](FencedRemoveWithCommentAndWhiteSpaceLines.html)
 
 ### Options
 
@@ -27,6 +27,15 @@ See example: [Comment Remove Fenced And White Space Lines](CommentRemoveFencedAn
 ```
 
 </div>
+
+[[include:options/fence/fence.md]]
+
+[[include:options/fence/type/type.md]]
+
+[[include:options/fence/type/multiflex.md]]
+See: Fence Type [MultiFlex](/pages/Docs/Options/fence/type/MultiFlex/)
+
+[[include:options/fence/remove/remove.md]]
 
 [[include:options/comment/comment.md]]
 

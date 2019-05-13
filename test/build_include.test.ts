@@ -255,6 +255,22 @@ describe('Build include Plugin', function () {
         done();
       });
     });
+  it.only('should write a file using grunt kind option of bracketIncludeMulti.\
+  \n\tReplace the build_replace contents matching fixture includeBracketFence_replaced.txt\
+  \n\tThis is a simulation of replacing inline includes for comments in format of [[include:somefile]]\
+  \n\tFence is in grunt file of type strict\
+  \n\tThis test uses gruntfile-bracketIncludeFence.js',
+    function (done) {
+      callGruntfile('gruntfile-bracketIncludeFence.js', function (error: any, stdout: any, stderr: any) {
+        expect(stdout).to.not.be.null;
+        // console.log(stdout);
+        expect(error).to.be.null;
+        let src = fs.readFileSync(`${fixDir}/includeBracketFence_replaced.txt`);
+        let dest = fs.readFileSync(`${outDir}/includeBracketFence_replaced.txt`);
+        expect(src.equals(dest)).equal(true);
+        done();
+      });
+    });
   it('should write a file using grunt fence option of strict.\
   \n\tReplace the build_replace contents matching fixture simple_fenced_replaced.txt\
   \n\tThis searches for fences ``` and omitts any formating from fenced text.\
@@ -285,7 +301,7 @@ describe('Build include Plugin', function () {
         done();
       });
     });
-  it.only('should write a file using fence multiflex options.\
+  it('should write a file using fence multiflex options.\
   \n\tAlso Test text whiteSpaceLine options.\
   \n\tReplace the build_replace contents matching fixture fence_multi_replaced.txt\
   \n\tThis searches for various fences and applies settings based on inline build_include options\

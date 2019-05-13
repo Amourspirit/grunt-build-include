@@ -1,4 +1,4 @@
-[[include:options/fence/type/tidle.md]]
+[[include:options/fence/type/tilde.md]]
 
 [Fence Type](../)
 
