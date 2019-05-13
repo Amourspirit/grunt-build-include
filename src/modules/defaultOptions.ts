@@ -1,6 +1,12 @@
 // #region imports
-import { IBiGruntOpt, IMatchOpt, IBuildIncludeOpt, IGruntOptComment, IComment, IText, IGruntOptFence } from "./interfaces";
-import * as mo from './matchOptions';
+import { IBiGruntOpt, IMatchOpt, IBuildIncludeOpt, IGruntOptFence } from "./interfaces";
+// import * as mo from './matchOptions';
+import { MatchBuildInclude } from "./matches/MatchBuildInclude";
+import { MatchBuildIncludeHtml } from "./matches/MatchBuildIncludeHtml";
+import { MatchBuildIncludePound } from "./matches/MatchBuildIncludePound";
+import { MatchBuildIncludeSlash } from "./matches/MatchBuildIncludeSlash";
+import { MatchBracketInclude } from "./matches/MatchBracketInclude";
+import { MatchBracketIncludeMulti } from "./matches/MatchBracketIncludeMulti";
 import { regexKind, commentKind, fenceKind, whiteSpLn } from './enums';
 import * as grunt from 'grunt';
 import { splitByOpt, lnEndOpt, widthFlags } from 'string-breaker';
@@ -46,9 +52,7 @@ export const defaultOptions: IBiGruntOpt = {
   /**
    * [[include:docs/GruntOptions/match.md]]
    */
-  match: {
-    ...mo.matchBuildInclude
-  }
+  match: new MatchBuildInclude()
 }
 // #endregion
 // #region getPerferedMatch
@@ -74,17 +78,17 @@ build_include: {
 const getPerferedMatch = (kind: regexKind): IMatchOpt => {
   switch (kind) {
     case regexKind.bracketInclude:
-      return mo.matchBracketInclude;
+      return new MatchBracketInclude();
     case regexKind.buildIncludeHtml:
-      return mo.matchBuildIncludeHtml;
+      return new MatchBuildIncludeHtml();
     case regexKind.buildIncludePound:
-      return mo.matchBuildIncludePound;
+      return new MatchBuildIncludePound();
     case regexKind.buildIncludeSlash:
-      return mo.matchBuildIncludeSlash;
+      return new MatchBuildIncludeSlash();
     case regexKind.bracketIncludeMulti:
-      return mo.matchBracketIncludeMulti;
+      return new MatchBracketIncludeMulti();
     default:
-      return mo.matchBuildInclude;
+      return new MatchBuildInclude();
   }
 }
 // #endregion

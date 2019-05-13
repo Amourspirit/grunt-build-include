@@ -4,7 +4,7 @@ import { IMatchOpt } from "./interfaces";
  * [[include:docs/matchOpt/IMatchOpt.md]]
  * [[include:docs/enums/regexKind/buildInclude.md]]
  */
-export const matchBuildInclude: IMatchOpt = {
+export const matchBuildIncludeOld: IMatchOpt = {
   /**
    * [[include:docs/matchOpt/path.md]]
    * Default: empty string
@@ -53,7 +53,7 @@ export const matchBuildInclude: IMatchOpt = {
  * [[include:docs/matchOpt/IMatchOpt.md]]
  * [[include:docs/enums/regexKind/buildIncludeHtml.md]]
  */
-export const matchBuildIncludeHtml: IMatchOpt = {
+export const matchBuildIncludeHtmlOld: IMatchOpt = {
   /**
    * [[include:docs/matchOpt/path.md]]
    * Default: empty string
@@ -102,7 +102,7 @@ export const matchBuildIncludeHtml: IMatchOpt = {
  * [[include:docs/matchOpt/IMatchOpt.md]]
  * [[include:docs/enums/regexKind/buildIncludePound.md]]
  */
-export const matchBuildIncludePound: IMatchOpt = {
+export const matchBuildIncludePoundOld: IMatchOpt = {
   /**
    * [[include:docs/matchOpt/path.md]]
    * Default: empty string
@@ -152,7 +152,7 @@ export const matchBuildIncludePound: IMatchOpt = {
  * [[include:docs/matchOpt/IMatchOpt.md]]
  * [[include:docs/enums/regexKind/buildIncludeSlash.md]]
  */
-export const matchBuildIncludeSlash: IMatchOpt = {
+export const matchBuildIncludeSlashOld: IMatchOpt = {
   /**
    * [[include:docs/matchOpt/path.md]]
    * Default: empty string
@@ -201,7 +201,7 @@ export const matchBuildIncludeSlash: IMatchOpt = {
  * [[include:docs/matchOpt/matchOpt.md]]
  * [[include:docs/enums/regexKind/bracketInclude.md]]
  */
-export const matchBracketInclude: IMatchOpt = {
+export const matchBracketIncludeOld: IMatchOpt = {
   /**
    * [[include:docs/matchOpt/path.md]]
    * Default: empty string
@@ -250,7 +250,7 @@ export const matchBracketInclude: IMatchOpt = {
  * [[include:docs/matchOpt/matchOpt.md]]
  * [[include:docs/enums/regexKind/bracketIncludeMulti.md]]
  */
-export const matchBracketIncludeMulti: IMatchOpt = {
+export const matchBracketIncludeMultiOld: IMatchOpt = {
   /**
    * [[include:docs/matchOpt/path.md]]
    * Default: empty string

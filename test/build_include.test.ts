@@ -226,7 +226,7 @@ describe('Build include Plugin', function () {
         done();
       });
     });
-  it('should write a file using grunt kind option of bracketInclude.\
+  it.only('should write a file using grunt kind option of bracketInclude.\
   \n\tReplace the build_replace contents matching fixture includeBracket_replaced.txt\
   \n\tThis test uses gruntfile-bracketInclude.js',
     function (done) {

@@ -1,0 +1,63 @@
+/**
+ * @module MatchOptions
+ */
+import { IMatchOpt } from "../interfaces";
+/**
+ * [[include:docs/matchOpt/matchOpt.md]]
+ * [[include:docs/enums/regexKind/bracketIncludeMulti.md]]
+ */
+export class MatchBracketIncludeMulti implements IMatchOpt {
+  /**
+   * [[include:docs/matchOpt/path.md]]
+   */
+  public path: string;
+  /**
+   * [[include:docs/matchOpt/name.md]]
+   * Default: BUILD_INCLUDE
+   */
+  public name: string;
+  /**
+   * [[include:docs/matchOpt/fileName.md]]
+   */
+  public fileName: string;
+  /**
+   * [[include:docs/matchOpt/parameters.md]]
+   */
+  public parameters: string;
+  /**
+   * [[include:docs/matchOpt/prefix.md]]
+   */
+  public prefix: string;
+  /**
+  * [[include:docs/matchOpt/suffix.md]]
+  */
+  public suffix: string;
+  /**
+   * [[include:docs/matchOpt/options.md]]
+   */
+  public options: string;
+  /**
+   * [[include:docs/matchOpt/kind.md]]
+   */
+  public kind: string;
+  /**
+  * [[include:docs/matchOpt/matchFileIndex.md]]
+  */
+  public indexFile: number;
+  /**
+  * [[include:docs/matchOpt/matchOptionsIndex.md]]
+  */
+  public indexOptions: number;
+  public constructor() {
+    this.path = '';
+    this.name = 'include';
+    this.fileName = `([^\\s].+)\\]\\]`;
+    this.parameters = `(?:\\(([^\\s].*)\\))?`;
+    this.prefix = `(?:(?:(?:\\*)|(?:\\/\\/))[ \\t]*)?(?:\\[\\[)`;
+    this.suffix = '';
+    this.options = '';
+    this.kind = 'bracketIncludeMulti';
+    this.indexFile = 1;
+    this.indexOptions = 2;
+  }
+}
