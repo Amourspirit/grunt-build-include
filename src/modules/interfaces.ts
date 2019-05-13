@@ -219,9 +219,9 @@ export interface IMatchOpt {
    */
   indexFile: number;
   /**
-  * [[include:docs/matchOpt/matchOptionsIndex.md]]
+  * [[include:docs/matchOpt/matchParamIndex.md]]
   */
-  indexOptions: number;
+  indexParam: number;
 }
 /** break string options for grunt file */
 export interface IGruntOptBreakString {

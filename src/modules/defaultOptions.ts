@@ -109,27 +109,57 @@ export const setMatchOptions = (options: IBiGruntOpt): void => {
   const matchDefaults = getPerferedMatch(reKind);
   if (match.path === undefined) {
     match.path = matchDefaults.path;
+  } else if (typeof match.path !== 'string') {
+    grunt.log.error(`Expected type string for match.path`);
+    // throw new TypeError(`Expected type string for match.path`);
   }
   if (match.name === undefined) {
     match.name = matchDefaults.name;
+  } else if (typeof match.name !== 'string') {
+    grunt.log.error(`Expected type string for match.name`);
+    // throw new TypeError(`Expected type string for match.name`);
   }
   if (!match.fileName) {
     match.fileName = matchDefaults.fileName;
+  } else if (typeof match.fileName !== 'string') {
+    grunt.log.error(`Expected type string for match.nfileNameame`);
+    // throw new TypeError(`Expected type string for match.nfileNameame`);
   }
   if (!match.options) {
     match.options = matchDefaults.options;
+  } else if (typeof match.options !== 'string') {
+    grunt.log.error(`Expected type string for match.options`);
+    // throw new TypeError(`Expected type string for match.options`);
   }
   if (!match.parameters) {
     match.parameters = matchDefaults.parameters;
+  } else if (typeof match.parameters !== 'string') {
+    grunt.log.error(`Expected type string for match.parameters`);
+    // throw new TypeError(`Expected type string for match.parameters`);
   }
   if (match.prefix === undefined) {
     match.prefix = matchDefaults.prefix;
+  } else if (typeof match.prefix !== 'string') {
+    grunt.log.error(`Expected type string for match.prefix`);
+    // throw new TypeError(`Expected type string for match.prefix`);
   }
   if (match.suffix === undefined) {
     match.suffix = matchDefaults.suffix;
+  } else if (typeof match.suffix !== 'string') {
+    grunt.log.error(`Expected type string for match.suffix`);
+    // throw new TypeError(`Expected type string for match.suffix`);
   }
   if (match.indexFile === undefined) {
     match.indexFile = 1;
+  } else if (typeof match.indexFile !== 'number' && typeof match.indexFile !== 'string') {
+    grunt.log.error(`Expected type number for match.indexFile`);
+    // throw new TypeError(`Expected type number for match.indexFile`);
+  }
+  if (match.indexParam === undefined) {
+    match.indexParam = matchDefaults.indexParam;
+  } else if (typeof match.indexParam !== 'number' && typeof match.indexParam !== 'string') {
+    grunt.log.error(`Expected type number for match.indexParam`);
+    // throw new TypeError(`Expected type number for match.indexParam`);
   }
   // can be assignd from grunt file
   if (typeof match.indexFile === 'string') {
@@ -145,27 +175,23 @@ export const setMatchOptions = (options: IBiGruntOpt): void => {
     match.indexFile = Math.abs(match.indexFile);
   }
   match.indexFile = Math.round(match.indexFile);
-
-
-  if (match.indexOptions === undefined) {
-    match.indexOptions = 2;
-  }
+  
   // can be assignd from grunt file
-  if (typeof match.indexOptions === 'string') {
+  if (typeof match.indexParam === 'string') {
     try {
-      match.indexOptions = parseInt(match.indexOptions, 10);
+      match.indexParam = parseInt(match.indexParam, 10);
     } catch (error) {
       grunt.log.warn(`Unable to parse match.indexOptions. Expected a whole number`);
-      match.indexOptions = 2;
+      match.indexParam = 2;
     }
-    match.indexOptions = 2;
+    match.indexParam = 2;
   }
-  if (match.indexOptions < 2) {
-    match.indexOptions = Math.abs(match.indexOptions);
+  if (match.indexParam < 2) {
+    match.indexParam = Math.abs(match.indexParam);
   }
-  match.indexOptions = Math.round(match.indexOptions);
-  if (match.indexFile === match.indexOptions) {
-    grunt.log.warn(`match.indexOptions and match.indexFile have the same value of '${match.indexOptions}'. This should never be the case!`);
+  match.indexParam = Math.round(match.indexParam);
+  if (match.indexFile === match.indexParam) {
+    grunt.log.warn(`match.indexOptions and match.indexFile have the same value of '${match.indexParam}'. This should never be the case!`);
   }
   options.match = match;
 }

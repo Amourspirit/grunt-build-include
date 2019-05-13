@@ -23,6 +23,7 @@ export class MatchBuildIncludePound implements IMatchOpt {
   public fileName: string;
   /**
    * [[include:docs/matchOpt/parameters.md]]
+   * Parameters are optinally matched for this class.
    */
   public parameters: string;
   /**
@@ -46,9 +47,9 @@ export class MatchBuildIncludePound implements IMatchOpt {
   */
   public indexFile: number;
   /**
-  * [[include:docs/matchOpt/matchOptionsIndex.md]]
+  * [[include:docs/matchOpt/matchParamIndex.md]]
   */
-  public indexOptions: number;
+  public indexParam: number;
   public constructor() {
     this.path = '';
     this.name = 'BUILD_INCLUDE';
@@ -59,6 +60,6 @@ export class MatchBuildIncludePound implements IMatchOpt {
     this.options = 'i';
     this.kind = 'buildIncludePound';
     this.indexFile = 1;
-    this.indexOptions = 2;
+    this.indexParam = 2;
   }
 }

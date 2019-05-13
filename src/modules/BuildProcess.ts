@@ -120,11 +120,11 @@ export class BuildProcess {
         // match[optMatch.indexFile + 2] will be the file segment
         // match[optMatch.indexOptions + 2] will be the options segment
         indexFile = optMatch.indexFile + 2;   // adjust for indent
-        indexOpt = optMatch.indexOptions + 2; // adjust for indent.
+        indexOpt = optMatch.indexParam + 2; // adjust for indent.
         indexOrigMatch = 2;
       } else {
         indexFile = optMatch.indexFile;
-        indexOpt = optMatch.indexOptions;
+        indexOpt = optMatch.indexParam;
         indexOrigMatch = 0;
       }
       

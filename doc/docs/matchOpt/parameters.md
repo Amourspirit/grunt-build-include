@@ -1,6 +1,3 @@
 Type: `String`  
-Regular expression used to match the options.
-Allows for options to be on the next line.  
-
-This pattern contains match 2 ($2).  
-Match 2 is optional.  
+Regular expression used to match the options.  
+This patterns position is required to match the value of [[indexParam]] that has been set for current instance.  

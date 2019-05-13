@@ -23,6 +23,7 @@ export class MatchBracketInclude implements IMatchOpt {
   public fileName: string;
   /**
    * [[include:docs/matchOpt/parameters.md]]
+   * Parameters are optinally matched for this class.
    */
   public parameters: string;
   /**
@@ -46,12 +47,12 @@ export class MatchBracketInclude implements IMatchOpt {
   */
   public indexFile: number;
   /**
-  * [[include:docs/matchOpt/matchOptionsIndex.md]]
+  * [[include:docs/matchOpt/matchParamIndex.md]]
   */
-  public indexOptions: number;
+  public indexParam: number;
   public constructor() {
     this.path = '';
-    this.name = 'include';
+    this.name = 'include:';
     this.fileName = `([^\\s].+)\\]\\]`;
     this.parameters = `(?:\\(([^\\s].*)\\))?`;
     this.prefix = `(?:\\[\\[)`;
@@ -59,6 +60,6 @@ export class MatchBracketInclude implements IMatchOpt {
     this.options = '';
     this.kind = 'bracketInclude';
     this.indexFile = 1;
-    this.indexOptions = 2;
+    this.indexParam = 2;
   }
 }

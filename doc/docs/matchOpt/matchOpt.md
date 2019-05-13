@@ -1,1 +1,1 @@
-Type: [IMatchOpt](/interfaces/_modules_interfaces_.imatchopt.html)  
+Implements: [IMatchOpt](/interfaces/_modules_interfaces_.imatchopt.html)  

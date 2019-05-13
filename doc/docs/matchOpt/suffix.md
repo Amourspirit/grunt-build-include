@@ -1,2 +1,2 @@
 Type: `String`  
-Regular expression used to match what comes after BUILD_INCLUDE and options.  
+Regular expression used to match what comes after BUILD_INCLUDE and [[parameters]].  
