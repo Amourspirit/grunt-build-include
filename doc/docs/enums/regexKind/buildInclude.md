@@ -19,4 +19,6 @@
 &lt;!--BUILD_INCLUDE(filePath)--&gt;  
 &lt;!--BUILD_INCLUDE(filePath)&#91;options&#93;--&gt;  
 &lt;!--BUILD_INCLUDE(filePath)  
-&#91;options&#93;--&gt;  
+&#91;options&#93;--&gt;
+
+**See Also:** [Class MatchBuildInclude](/classes/matchoptions.matchbuildinclude.html)  

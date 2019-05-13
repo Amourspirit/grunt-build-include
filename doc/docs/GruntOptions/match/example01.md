@@ -1,10 +1,11 @@
-**MATCH EXAMPLE**
+### MATCH EXAMPLE
 
 Matchs options such as:  
 `# INCLUDE_BUILD(scratch/main.ts)`  
 `#include_build(scratch/modules/myfile.ts)`
 
 The Regex will example can be see on [regexr.com](https://regexr.com/4d13t)
+
 ```js
 module.exports = function (grunt) {
   grunt.initConfig({
@@ -18,11 +19,12 @@ module.exports = function (grunt) {
             suffix: ''
           }
         },
-        src: './src/maintst',
+        src: './src/maint.ts',
         dest: './scratch/ts/main.ts'
       }
     }
   });
   grunt.loadNpmTasks('grunt-build-include');
+  grunt.registerTask('default', ['build_include:default']);
 };
 ```

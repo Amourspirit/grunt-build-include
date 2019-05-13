@@ -5,7 +5,7 @@ import { IMatchOpt } from "../interfaces";
 /**
  * [[include:docs/matchOpt/matchOpt.md]]
  * 
- * This is the default matching option if not other matching options are specified.
+ * This is the default matching option if no other matching options are specified.
  * 
  * [[include:docs/matchOpt/IMatchOpt.md]]
  * [[include:docs/enums/regexKind/buildInclude.md]]
