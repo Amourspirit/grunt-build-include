@@ -23,6 +23,9 @@ export namespace meKind {
       v = num;
     }
     if (typeof v === 'number') {
+      if (v < -1 || v > 5) {
+        return eKind.none;
+      }
       const e: eKindType = v;
       return e;
     } else if (typeof v === 'string' && v.length > 0) {

@@ -198,6 +198,36 @@ describe('Build include Plugin', function () {
         done();
       });
     });
+  it('should write a file using grunt kind option of buildIncludeSlash.\
+  \n\tIn this case the match will be set with a string value\
+  \n\tReplace the build_replace contents matching fixture textOpt_repalced.txt\
+  \n\tThis test uses gruntfile-slash-string.js',
+    function (done) {
+      callGruntfile('gruntfile-slash-string.js', function (error: any, stdout: any, stderr: any) {
+        expect(stdout).to.not.be.null;
+        // console.log(stdout);
+        expect(error).to.be.null;
+        let src = fs.readFileSync(`${fixDir}/textOpt_replaced.txt`);
+        let dest = fs.readFileSync(`${outDir}/textOpt_slash_replaced.txt`);
+        expect(src.equals(dest)).equal(true);
+        done();
+      });
+    });
+  it('should write a file using grunt kind option of buildIncludeSlash.\
+  \n\tIn this case the match will be set with a numeric value\
+  \n\tReplace the build_replace contents matching fixture textOpt_repalced.txt\
+  \n\tThis test uses gruntfile-slash-num.js',
+    function (done) {
+      callGruntfile('gruntfile-slash-num.js', function (error: any, stdout: any, stderr: any) {
+        expect(stdout).to.not.be.null;
+        // console.log(stdout);
+        expect(error).to.be.null;
+        let src = fs.readFileSync(`${fixDir}/textOpt_replaced.txt`);
+        let dest = fs.readFileSync(`${outDir}/textOpt_slash_replaced.txt`);
+        expect(src.equals(dest)).equal(true);
+        done();
+      });
+    });
   it('should write a file using grunt kind option of buildIncludePound.\
   \n\tReplace the build_replace contents matching fixture simple_regex_replaced.txt\
   \n\tThis test uses gruntfile-pound.js',

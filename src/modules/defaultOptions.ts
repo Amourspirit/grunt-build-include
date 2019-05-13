@@ -100,11 +100,23 @@ const getPerferedMatch = (kind: regexKind): IMatchOpt => {
  */
 export const setMatchOptions = (options: IBiGruntOpt): void => {
   // const options: IBiGruntOpt = grunt.task.current.options(defaultOptions);
+  let reKind: regexKind;
+  // if grunt file match is set as string or number then parse it as regex value
+  if (typeof options.match === 'string' || typeof options.match === 'number') {
+    reKind = regexKind.parse(options.match.toString());
+    options.match = getPerferedMatch(reKind);
+    return;
+  }
+  if (typeof options.match !== 'object') {
+    grunt.log.error(`Expected match to be string, number or object`);
+    options.match = getPerferedMatch(regexKind.buildInclude);
+    return;
+  }
   const match: IMatchOpt = options.match;
   if (!match.kind) {
     match.kind = DEFAULT_MATCH_KIND;
   }
-  const reKind = regexKind.parse(match.kind);
+  reKind = regexKind.parse(match.kind);
 
   const matchDefaults = getPerferedMatch(reKind);
   if (match.path === undefined) {

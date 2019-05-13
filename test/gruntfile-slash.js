@@ -11,6 +11,22 @@ module.exports = function (grunt) {
         },
         src: './fixtures/textOpt.txt',
         dest: '../scratch/test/textOpt_slash_replaced.txt'
+      },
+      by_string: {
+        options: {
+          expand: true,
+          match: 'buildIncludeSlash'
+        },
+        src: './fixtures/textOpt.txt',
+        dest: '../scratch/test/textOpt_slash_replaced.txt'
+      },
+      by_number: {
+        options: {
+          expand: true,
+          match: 'buildIncludeSlash'
+        },
+        src: './fixtures/textOpt.txt',
+        dest: '../scratch/test/textOpt_slash_replaced.txt'
       }
     }
   });

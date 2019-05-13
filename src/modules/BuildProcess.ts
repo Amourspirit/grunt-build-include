@@ -86,6 +86,14 @@ export class BuildProcess {
     // merge any unset options with potential match options in grunt
     setMatchOptions(options);
 
+    // this should never be able to happen because setMatchOptions
+    // takes care of this condition already and returns default match options
+    // if there is an error.
+    // this block is here because typescript would argue otherwise.
+    if (typeof options.match !== 'object') {
+      grunt.log.error(`Expected match to be string, number or object`);
+      return contents;
+    }
     // capture if options.suffix contain a ^ (start of line value)
     let allowIndent = true;
     if (options.match.prefix.indexOf('^') >= 0) {

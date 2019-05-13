@@ -23,6 +23,9 @@ export namespace meProcess {
       v = num;
     }
     if (typeof v === 'number') {
+      if (v < -1 || v > 1) {
+        return eProcess.none;
+      }
       const e: eProcessType = v;
       return e;
     } else if (typeof v === 'string' && v.length > 0) {

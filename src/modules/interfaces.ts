@@ -163,9 +163,9 @@ export interface IBiGruntOpt {
    */
   mode: boolean;
   /**
-   * [[include:docs/GruntOptions/match.md]]
+   * [[include:docs/GruntOptions/match/match.md]]
    */
-  match: IMatchOpt;
+  match: IMatchOpt | string | number;
   /** Comment option for grunt. */
   comment?: IGruntOptComment;
   /** Text option for grunt. */
