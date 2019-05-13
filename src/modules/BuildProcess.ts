@@ -86,6 +86,12 @@ export class BuildProcess {
     // merge any unset options with potential match options in grunt
     setMatchOptions(options);
 
+    // capture if options.suffix contain a ^ (start of line value)
+    let allowIndent = true;
+    if (options.match.prefix.indexOf('^') >= 0) {
+      allowIndent = false;
+    }
+
     const optMatch: IMatchOpt = options.match;
 
     if (!optMatch.name) {
@@ -103,21 +109,41 @@ export class BuildProcess {
       // https://regexr.com/4cjvh
       // https://regexr.com/4d14r revised April 27, 2019
       // const re = /(?:(?:\/\/)|(?:<\!\-\-)|(?:\/\*))[ \t]*BUILD_INCLUDE\((?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\)(?:(?:[\n\r]+)?\[(.*)\])?(?:(?:[ \t]*\-\->)|(?:[ \t]*\*\/))?/i;
-
-      // match[1] will be the padding
-      // match[2] will be the total replacement without padding
-      // match[optMatch.indexFile + 2] will be the file segment
-      // match[optMatch.indexOptions + 2] will be the options segment
-      const indexFile: number = optMatch.indexFile + 2;   // adjust for indent
-      const indexOpt: number = optMatch.indexOptions + 2; // adjust for indent.
+      
+      let indexFile: number;
+      let indexOpt: number;
+      let indexOrigMatch: number;
       const indexIndent: number = 1;
-      const indexOrigMatch: number = 2;
+      if (allowIndent === true) {
+        // match[1] will be the padding
+        // match[2] will be the total replacement without padding
+        // match[optMatch.indexFile + 2] will be the file segment
+        // match[optMatch.indexOptions + 2] will be the options segment
+        indexFile = optMatch.indexFile + 2;   // adjust for indent
+        indexOpt = optMatch.indexOptions + 2; // adjust for indent.
+        indexOrigMatch = 2;
+      } else {
+        indexFile = optMatch.indexFile;
+        indexOpt = optMatch.indexOptions;
+        indexOrigMatch = 0;
+      }
+      
       // regex capture group to capture indent
       const reGroup1 = `(^[ \\t]+)?`;
-      const reGroup2 = `(${optMatch.prefix}${optMatch.name}${optMatch.fileName}${optMatch.parameters}${optMatch.suffix})`;
+      let reGroup2: string = '';
+      let reStr: string;
+      if (allowIndent === true) {
+        reGroup2 += '(';
+      }
+      reGroup2 += `${optMatch.prefix}${optMatch.name}${optMatch.fileName}${optMatch.parameters}${optMatch.suffix}`;
 
-      // also include indent at the start of the regex
-      const reStr: string = `${reGroup1}${reGroup2}`;
+      if (allowIndent === true) {
+        reGroup2 += ')';
+        // also include indent at the start of the regex
+        reStr = `${reGroup1}${reGroup2}`;
+      } else {
+        reStr = reGroup2;
+      }
       let mOpt: string = optMatch.options;
       // multi line is required to check for start of line ^
       if (mOpt) {
@@ -207,6 +233,12 @@ export class BuildProcess {
         // check to see if any options were set at the grunt file level.
         // and merge them if exist.
         hasOptions = biMergeOptions(biOpt, options) || hasOptions;
+        if (allowIndent === false) {
+          // if allow indent is false this will be an exception to 
+          // what may be set with text options for indent.
+          // in this case grunt file will win if match prefix contains ^
+          biOpt.text.indent = false;
+        }
         // now that all the options have been parsed process based upon options
         // if no options are set then do a straight replace;
         if (hasOptions === false) {
@@ -223,13 +255,16 @@ export class BuildProcess {
         // next section add it to the string[] and and the next fence to string[] and so on...
         // The fenced section would be not be subject to padding.
 
-        if (biOpt.text.isSet === true && biOpt.text.indent === true) {
+        if (allowIndent === true
+          && biOpt.text.isSet === true
+          && biOpt.text.indent === true) {
           biOpt.indent = match[1];
         }
 
         // do not replace indent
         let replaceIndex: number = indexOrigMatch;
-        if (biOpt.text.isSet && biOpt.text.indent === true) {
+        if (allowIndent === false
+          || (biOpt.text.isSet && biOpt.text.indent === true)) {
           // replace indent as well.
           replaceIndex = 0;
         }

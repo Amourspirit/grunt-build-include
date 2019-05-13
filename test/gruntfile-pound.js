@@ -10,8 +10,8 @@ module.exports = function (grunt) {
             name: 'INCLUDE_BUILD'
           }
         },
-        src: './fixtures/simple_regex.txt',
-        dest: '../scratch/test/simple_regex_pound_replaced.txt'
+        src: './fixtures/regex_simple.txt',
+        dest: '../scratch/test/regex_simple_pound_replaced.txt'
       }
     }
   });

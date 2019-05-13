@@ -2,21 +2,7 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     build_include: {
-      minus_plus: {
-        options: {
-          match: {
-            name: 'minus_plus',
-            fileName: `\\[(?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\\]`,
-            parameters: `(?:\\{(.*)\\})?`,
-            prefix: '^----[ ]*',
-            suffix: '\\+\\+\\+\\+(?:(?:$)|(?:[\\r\\n]+)))',
-            options: 'im'
-          }
-        },
-        src: './fixtures/regex_minus_plus.txt',
-        dest: '../scratch/test/regex_minus_plus_replaced.txt'
-      },
-      default: {
+       default: {
         options: {
           expand: true,
           match: {
@@ -29,8 +15,23 @@ module.exports = function (grunt) {
             suffix: ''
           }
         },
-        src: './fixtures/simple_regex.txt',
-        dest: '../scratch/test/simple_regex_replaced.txt'
+        src: './fixtures/regex_simple.txt',
+        dest: '../scratch/test/regex_simple_replaced.txt'
+      },
+      minus_plus: {
+        options: {
+          match: {
+            // see: https://regexr.com/4dr4m
+            name: 'minus_plus',
+            fileName: `\\[(?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\\]`,
+            parameters: `(?:\\{(.*)\\})?`,
+            prefix: '^----[ ]*',
+            suffix: '(?:(?:[ ]+)?\\+\\+\\+\\+(?:(?:$)|(?:[\\r\\n]+)))',
+            options: 'im'
+          }
+        },
+        src: './fixtures/regex_minus_plus.txt',
+        dest: '../scratch/test/regex_minus_plus_replaced.txt'
       }
     }
   });

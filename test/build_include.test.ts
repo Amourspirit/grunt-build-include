@@ -206,8 +206,8 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        let src = fs.readFileSync(`${fixDir}/simple_regex_replaced.txt`);
-        let dest = fs.readFileSync(`${outDir}/simple_regex_pound_replaced.txt`);
+        let src = fs.readFileSync(`${fixDir}/regex_simple_replaced.txt`);
+        let dest = fs.readFileSync(`${outDir}/regex_simple_pound_replaced.txt`);
         expect(src.equals(dest)).equal(true);
         done();
       });
@@ -255,7 +255,7 @@ describe('Build include Plugin', function () {
         done();
       });
     });
-  it.only('should write a file using grunt kind option of bracketIncludeMulti.\
+  it('should write a file using grunt kind option of bracketIncludeMulti.\
   \n\tReplace the build_replace contents matching fixture includeBracketFence_replaced.txt\
   \n\tThis is a simulation of replacing inline includes for comments in format of [[include:somefile]]\
   \n\tFence is in grunt file of type strict\
