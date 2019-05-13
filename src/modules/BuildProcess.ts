@@ -93,7 +93,7 @@ export class BuildProcess {
       grunt.log.writeln(` options.match.name is missing`);
       return contents;
     }
-    const nameRegex = new RegExp(`${optMatch.prefix}${optMatch.name}`, 'i');
+    const nameRegex = new RegExp(`${optMatch.prefix}${optMatch.name}`, optMatch.options);
     if (nameRegex.exec(contents)) {
       if (srcpath && srcpath.length > 0) {
         grunt.log.write('GRUNT-BUILD-INCLUDE: ');

@@ -2,6 +2,20 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     build_include: {
+      minus_plus: {
+        options: {
+          match: {
+            name: 'minus_plus',
+            fileName: `\\[(?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\\]`,
+            parameters: `(?:\\{(.*)\\})?`,
+            prefix: '^----[ ]*',
+            suffix: '\\+\\+\\+\\+(?:(?:$)|(?:[\\r\\n]+)))',
+            options: 'im'
+          }
+        },
+        src: './fixtures/regex_minus_plus.txt',
+        dest: '../scratch/test/regex_minus_plus_replaced.txt'
+      },
       default: {
         options: {
           expand: true,
@@ -22,5 +36,5 @@ module.exports = function (grunt) {
   });
 
   grunt.loadTasks('./../tasks');
-  grunt.registerTask('default', ['build_include:default']);
+  grunt.registerTask('default', ['build_include']);
 };

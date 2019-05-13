@@ -1,0 +1,4 @@
+-------file:    ("./fixtures/replace1.txt")
+-------options: none
+-------name: # INCLUDE_BUILD
+---- minus_plus[./fixtures/replace1.txt] ++++
