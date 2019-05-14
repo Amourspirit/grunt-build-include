@@ -1,4 +1,5 @@
 # BUILD_INCLUDE
 
+* [Grunt File](GruntFile/)
 * [Options](Options/)
-* [Escaping Parameters](misc/EscapingParameters.html)
+* [Misc](misc/)

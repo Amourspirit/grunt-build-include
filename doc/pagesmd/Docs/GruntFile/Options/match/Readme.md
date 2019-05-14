@@ -6,6 +6,8 @@ Any omitted values are included from the values of default match [MatchBuildIncl
 It is also possible to merge current [matches](/enums/enums.regexkind.html) with new values.  
 See <a href="#example05">example below</a>
 
+**See Also:** [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html)
+
 [[include:docs/GruntOptions/match/example03.md]]
 [[include:docs/enums/regexKind/buildIncludeSlash.md]]
 
@@ -18,3 +20,5 @@ See <a href="#example05">example below</a>
 
 <a name="example05"></a>  
 [[include:docs/GruntOptions/match/example05.md]]
+
+[Grunt File Options](../)  

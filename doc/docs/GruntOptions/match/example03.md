@@ -16,7 +16,6 @@ module.exports = function (grunt) {
       }
     }
   });
-  });
   grunt.loadNpmTasks('grunt-build-include');
   grunt.registerTask('default', ['build_include:default']);
 };

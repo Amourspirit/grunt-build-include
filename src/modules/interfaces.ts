@@ -161,9 +161,11 @@ export interface IBiGruntOpt {
   /**
    * [[include:docs/GruntOptions/mode.md]]
    */
-  mode: boolean;
+  mode: boolean | number;
   /**
    * [[include:docs/GruntOptions/match/match.md]]
+   * 
+   * @See [build_include option match](/pages/Docs/GruntFile/Options/match/)
    */
   match: IMatchOpt | string | number;
   /** Comment option for grunt. */
