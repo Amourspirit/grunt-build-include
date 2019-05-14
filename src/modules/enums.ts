@@ -183,33 +183,29 @@ export namespace regexKind {
  * The kind of fencing to apply to build_includ replcement
  */
 export enum fenceKind {
-  /** No fencing */
+  /**
+   * [[include:docs/enums/fenceKind/none.md]]
+  */
   none = 0,
   /**
-   * Apply strict.  
-   * See: [[strictFence]]
+   * [[include:docs/enums/fenceKind/strict.md]]
    */
   strict = 1,
   /**
-  * Apply flex.
-  * See: [[flexFence]]
+  * [[include:docs/enums/fenceKind/flex.md]]
   */
   flex = 2,
   // https://regexr.com/4dipp
   /**
-   * Pseudo Fence.
-   * 
-   * Combines [[escapeFence]], [[tildeFence]] and [[strictFence]]
+   * [[include:docs/enums/fenceKind/multiFlex.md]]
    */
   multiFlex = 3,
   /**
-  * Apply tilde.
-  * See: [[tildeFence]]
+  * [[include:docs/enums/fenceKind/tilde.md]]
   */
   tilde = 4,
   /**
-  * Apply tilde.
-  * See: [[escapeFence]]
+  * [[include:docs/enums/fenceKind/escape.md]]
   */
   escape = 5
 }

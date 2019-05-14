@@ -1,15 +1,19 @@
-### MATCH EXAMPLE
+### FENCE EXAMPLE
 
-Matches build in match rules of [MatchBuildIncludeSlash](/classes/matchoptions.matchbuildincludeslash.html)
-by seting match to string value of [regexKind.buildIncludeSlash](/enums/enums.regexkind.html#buildincludeslash)
+Matches built in fence rules of [StrictFence](/classes/fences.strictfence.html)
+by seting fence to string value of [regexKind.strict](/enums/enums.fencekind.html#strict)
+
+#### Config
+
+##### GruntFile.js
 
 ```js
 module.exports = function (grunt) {
   grunt.initConfig({
-   build_include: {
+    build_include: {
       default: {
         options: {
-          match: 'BuildIncludeSlash'
+          fence: 'strict'
         },
         src: './src/maint.ts',
         dest: './scratch/ts/main.ts'

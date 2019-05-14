@@ -4,6 +4,7 @@ The [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html) interface o
 Grunt config Options for `build_include`:
 
 * [Encoding](encoding/)
+* [Fence](fence/)
 * [match](match/)
 * [mode](mode/)
 * [noProcess](noProcess/)

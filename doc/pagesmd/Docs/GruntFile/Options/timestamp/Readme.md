@@ -1,3 +1,3 @@
-[[include:docs/GruntOptions/timestamp.md]]
+[[include:GruntOptions/timestamp.md]]
 
 [Grunt File Options](../)

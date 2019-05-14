@@ -1,4 +1,4 @@
-[[include:docs/GruntOptions/noProcess.md]]
+[[include:GruntOptions/noProcess.md]]
 
 **See Also:** [IBiGruntOpt.noProcess](/interfaces/_modules_interfaces_.ibigruntopt.html#noprocess)
 

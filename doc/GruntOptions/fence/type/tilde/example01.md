@@ -1,15 +1,19 @@
-### MATCH EXAMPLE
+### FENCE EXAMPLE
 
-Matches build in match rules of [MatchBuildIncludeSlash](/classes/matchoptions.matchbuildincludeslash.html)
-by seting match to numeric value of [regexKind.buildIncludeSlash](/enums/enums.regexkind.html#buildincludeslash)
+Matches built in fence rules of [TildeFence](/classes/fences.tildefence.html)
+by seting fence to string value of [regexKind.tidle](/enums/enums.fencekind.html#tilde)
+
+#### Config
+
+##### GruntFile.js
 
 ```js
 module.exports = function (grunt) {
   grunt.initConfig({
-   build_include: {
+    build_include: {
       default: {
         options: {
-          match: 3
+          fence: 'tilde'
         },
         src: './src/maint.ts',
         dest: './scratch/ts/main.ts'

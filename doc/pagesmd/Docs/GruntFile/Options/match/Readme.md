@@ -1,4 +1,4 @@
-[[include:docs/GruntOptions/match/match.md]]
+[[include:GruntOptions/match/match.md]]
 
 When needed custom expressions can be written into a task using the `match` option.  
 `match` follows the inteface [IMatchOpt](/interfaces/_modules_interfaces_.imatchopt.html).
@@ -8,17 +8,17 @@ See <a href="#example05">example below</a>
 
 **See Also:** [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html)
 
-[[include:docs/GruntOptions/match/example03.md]]
-[[include:docs/enums/regexKind/buildIncludeSlash.md]]
+[[include:GruntOptions/match/example03.md]]
+[[include:enums/regexKind/buildIncludeSlash.md]]
 
-[[include:docs/GruntOptions/match/example04.md]]
-[[include:docs/enums/regexKind/buildIncludeSlash.md]]
+[[include:GruntOptions/match/example04.md]]
+[[include:enums/regexKind/buildIncludeSlash.md]]
 
-[[include:docs/GruntOptions/match/example01.md]]
+[[include:GruntOptions/match/example01.md]]
 
-[[include:docs/GruntOptions/match/example02.md]]
+[[include:GruntOptions/match/example02.md]]
 
 <a name="example05"></a>  
-[[include:docs/GruntOptions/match/example05.md]]
+[[include:GruntOptions/match/example05.md]]
 
 [Grunt File Options](../)  
