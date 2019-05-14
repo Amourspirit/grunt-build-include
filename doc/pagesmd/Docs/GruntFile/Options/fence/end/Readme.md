@@ -1,4 +1,8 @@
-[[include:options/fence/end/end.md]]
+## Fence End
+
+[[include:docs/IGruntOptFence/end.md]]
+
+[[include:GruntOptions/fence/example01.md]]
 
 [[include:style/heading.html]]
 
