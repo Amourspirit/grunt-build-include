@@ -486,19 +486,20 @@ export const getFenceKind = (kind: fenceKind): IGruntOptFence | undefined => {
  * @returns If fence can be converted to regular expression then a regular
  * expression is returned; Otherwise, `undefined`.
  */
-export const getFenceOptions = (fence: string | IGruntOptFence | undefined): RegExp | undefined => {
+export const getFenceOptions = (fence: string | number | IGruntOptFence | undefined): RegExp | undefined => {
   if (fence === undefined) {
     return undefined;
   }
   let fceKind = fenceKind.none;
   let localFence: IGruntOptFence | undefined;
-  if (typeof fence === 'string') {
+  if (typeof fence === 'string' || typeof fence === 'number') {
     fceKind = fenceKind.parse(fence);
     localFence = getFenceKind(fceKind);
     if (localFence === undefined) {
       return undefined;
     }
   }
+
   if (typeof fence === 'object') {
     // if any properties are missing defalut to to strictFence
     const standInFence = new StrictFence();

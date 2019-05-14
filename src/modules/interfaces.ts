@@ -178,7 +178,7 @@ export interface IBiGruntOpt {
    * Fence Options If string then will be parsed as [[fenceKind]] using
    * [[fenceKind.parse]]
    */
-  fence?: IGruntOptFence | string;
+  fence?: IGruntOptFence | string | number;
 }
 /**
  * [[include:docs/matchOpt/IMatchOpt.md]]
