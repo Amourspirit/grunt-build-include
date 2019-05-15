@@ -1,4 +1,4 @@
-asJsString option with breakString width=100
+asJsString option with breakString width=80
 var css = '\
 .mem-fs-button::after{content:\"\";background-image:url(data:image/png;base64,i\
 VBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACk0lEQVR42mNgGAWjYBSMUFAlx8RQI69I\

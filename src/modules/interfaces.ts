@@ -189,6 +189,12 @@ export interface IBiGruntOpt {
    * If `true` BUILD_INCLUDE replacements files are treated as javascript strings.
    */
   asJsString?: boolean;
+  /**
+   * Determines if any settings in the file should be overriden by the settings in the gruntfile.
+   * `true` Gruntfile Setting are overriden; Otherwise, any options in the inline BREAKSTRING_INCLUDE will
+   * take priority.
+   */
+  override?: boolean;
 }
 /**
  * [[include:docs/matchOpt/IMatchOpt.md]]

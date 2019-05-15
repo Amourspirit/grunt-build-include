@@ -187,7 +187,7 @@ export const setMatchOptions = (options: IBiGruntOpt): void => {
     match.indexFile = Math.abs(match.indexFile);
   }
   match.indexFile = Math.round(match.indexFile);
-  
+
   // can be assignd from grunt file
   if (typeof match.indexParam === 'string') {
     try {
@@ -272,15 +272,22 @@ export const biMergeOptions = (currentBiOpt: IBuildIncludeOpt, currentGruntOptio
   hasOpt = mergeBiFence(currentBiOpt, currentGruntOptions) || hasOpt;
   return hasOpt;
 }
+const mergeHasOverride = (currentGruntOptions: IBiGruntOpt): boolean => {
+  let override: boolean = false;
+  const ov = currentGruntOptions.override;
+  if (ov && typeof ov === 'boolean') {
+    override = ov;
+  }
+  return override;
+}
 const mergeAsJsString = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt): boolean => {
   let hasOpt: boolean = false;
   const asjs = currentGruntOptions.asJsString;
   if (asjs && typeof asjs === 'boolean') {
-    if (asjs === true) {
-      if (biOpt.asJsString === false) {
-        biOpt.asJsString = true;
-        hasOpt = true;
-      }
+    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    if (biOpt.asJsString === false || ov === true) {
+      biOpt.asJsString = true;
+      hasOpt = true;
     }
   }
   return hasOpt;
@@ -289,13 +296,14 @@ const mergeBiComments = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntO
   const c = currentGruntOptions.comment;
   let hasOpt: boolean = false;
   if (c) {
-    if (biOpt.comment.padLeftAssigned === false && c.padleft !== undefined) {
+    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    if ((biOpt.comment.padLeftAssigned === false || ov === true) && c.padleft !== undefined) {
       biOpt.comment.padLeft = c.padleft;
       biOpt.comment.padLeftAssigned = true;
       biOpt.comment.isSet = true;
       hasOpt = true;
     }
-    if (biOpt.comment.type === commentKind.none && c.type !== undefined) {
+    if ((biOpt.comment.type === commentKind.none || ov === true) && c.type !== undefined) {
       biOpt.comment.type = commentKind.parse(c.type);
       if (biOpt.comment.type > commentKind.none) {
         biOpt.comment.isSet = true;
@@ -309,48 +317,51 @@ const mergeBiBreakString = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGru
   const bs = currentGruntOptions.breakstring;
   let hasOpt: boolean = false;
   if (bs) {
-    if (typeof bs === 'number') {
-      biOpt.bs.width = Math.abs(Math.round(bs));
-      biOpt.bs.isSet = true;
-      hasOpt = true;
-    } else if (typeof bs === 'object') {
-      if (bs.break) {
-        if (typeof bs.break === 'number') {
-          // parse just in case not a correct number
-          biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break);
-        } else {
-          biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break.toString());
-        }
-      }
-      if (bs.flags) {
-        let v: string = bs.flags.toString();
-        if (v.length > 0) {
-          v = v.toLowerCase();
-          if (v === 'word') {
-            biOpt.bs.flags = widthFlags.nearestWord;
+    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    if (biOpt.bs.isSet === false || ov === true) {
+      if (typeof bs === 'number') {
+        biOpt.bs.width = Math.abs(Math.round(bs));
+        biOpt.bs.isSet = true;
+        hasOpt = true;
+      } else if (typeof bs === 'object') {
+        if (bs.break) {
+          if (typeof bs.break === 'number') {
+            // parse just in case not a correct number
+            biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break);
+          } else {
+            biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break.toString());
           }
         }
-      }
-      if (bs.lineEnd) {
-        if (typeof bs.lineEnd === 'number') {
-          // parse just in case not a correct number
-          biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd);
-        } else {
-          biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd.toString());
-        }
-      }
-      if (bs.width) {
-        if (typeof bs.width === 'number') {
-          biOpt.bs.width = Math.round(Math.abs(bs.width));
-        } else {
-          const num: number = parseInt(bs.width.toString(), 10);
-          if (isNaN(num) === false) {
-            biOpt.bs.width = Math.round(Math.abs(num));
+        if (bs.flags) {
+          let v: string = bs.flags.toString();
+          if (v.length > 0) {
+            v = v.toLowerCase();
+            if (v === 'word') {
+              biOpt.bs.flags = widthFlags.nearestWord;
+            }
           }
         }
+        if (bs.lineEnd) {
+          if (typeof bs.lineEnd === 'number') {
+            // parse just in case not a correct number
+            biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd);
+          } else {
+            biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd.toString());
+          }
+        }
+        if (bs.width) {
+          if (typeof bs.width === 'number') {
+            biOpt.bs.width = Math.round(Math.abs(bs.width));
+          } else {
+            const num: number = parseInt(bs.width.toString(), 10);
+            if (isNaN(num) === false) {
+              biOpt.bs.width = Math.round(Math.abs(num));
+            }
+          }
+        }
+        biOpt.bs.isSet = true;
+        hasOpt = true;
       }
-      biOpt.bs.isSet = true;
-      hasOpt = true;
     }
   }
   return hasOpt;
@@ -359,38 +370,39 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
   const txt = currentGruntOptions.text;
   let hasOpt: boolean = false;
   if (txt) {
-    if (biOpt.text.after.length === 0 && txt.after !== undefined) {
-      biOpt.text.after = txt.after.toString();
-      biOpt.text.isSet = true;
-      hasOpt = true;
-    }
-    if (biOpt.text.before.length === 0 && txt.before !== undefined) {
-      biOpt.text.before = txt.before.toString();
-      biOpt.text.isSet = true;
-      hasOpt = true;
-    }
-    if (biOpt.text.code === eKind.none && txt.code !== undefined) {
-      biOpt.text.code = eKind.parse(txt.code.toString());
-      if (biOpt.text.code > eKind.none) {
+    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    if (biOpt.text.isSet === false || ov === true) {
+      if (txt.after !== undefined) {
+        biOpt.text.after = txt.after.toString();
         biOpt.text.isSet = true;
         hasOpt = true;
       }
-    }
-    if (biOpt.text.codeKind === eProcess.none && txt.codekind !== undefined) {
-      biOpt.text.codeKind = eProcess.parse(txt.codekind.toString());
-      if (biOpt.text.codeKind > eProcess.none) {
+      if (txt.before !== undefined) {
+        biOpt.text.before = txt.before.toString();
         biOpt.text.isSet = true;
         hasOpt = true;
       }
-    }
-    if (biOpt.text.whiteSpaceLine === whiteSpLn.noAction && txt.whiteSpaceLine !== undefined) {
-      biOpt.text.whiteSpaceLine = whiteSpLn.parse(txt.whiteSpaceLine.toString());
-      if (biOpt.text.whiteSpaceLine > whiteSpLn.noAction) {
-        biOpt.text.isSet = true;
-        hasOpt = true;
+      if (txt.code !== undefined) {
+        biOpt.text.code = eKind.parse(txt.code.toString());
+        if (biOpt.text.code > eKind.none) {
+          biOpt.text.isSet = true;
+          hasOpt = true;
+        }
       }
-    }
-    if (biOpt.text.noLineBreaks === false) {
+      if (txt.codekind !== undefined) {
+        biOpt.text.codeKind = eProcess.parse(txt.codekind.toString());
+        if (biOpt.text.codeKind > eProcess.none) {
+          biOpt.text.isSet = true;
+          hasOpt = true;
+        }
+      }
+      if (txt.whiteSpaceLine !== undefined) {
+        biOpt.text.whiteSpaceLine = whiteSpLn.parse(txt.whiteSpaceLine.toString());
+        if (biOpt.text.whiteSpaceLine > whiteSpLn.noAction) {
+          biOpt.text.isSet = true;
+          hasOpt = true;
+        }
+      }
       if (txt.nolinebreaks !== undefined) {
         if (typeof txt.nolinebreaks === 'string') {
           let s: string = txt.nolinebreaks;
@@ -408,8 +420,6 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
           }
         }
       }
-    }
-    if (biOpt.text.indent === false) {
       if (txt.indent !== undefined) {
         if (typeof txt.indent === 'string') {
           let s: string = txt.indent;
@@ -427,9 +437,7 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
           }
         }
       }
-    }
-    if (txt.padding !== undefined) {
-      if (biOpt.text.padding.padLeftAssigned === false) {
+      if (txt.padding !== undefined) {
         if (txt.padding.padleft !== undefined) {
           if (typeof txt.padding.padleft === 'number') {
             biOpt.text.padding.padLeft = txt.padding.padleft;
@@ -440,8 +448,6 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
           biOpt.text.isSet = true;
           hasOpt = true;
         }
-      }
-      if (biOpt.text.padding.padRigtAssigned === false) {
         if (txt.padding.padright !== undefined) {
           if (typeof txt.padding.padright === 'number') {
             biOpt.text.padding.padRight = txt.padding.padright;
@@ -464,8 +470,11 @@ const mergeBiFence = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt)
   let hasOpt: boolean = false;
   const reg: RegExp | undefined = getFenceOptions(currentGruntOptions.fence);
   if (reg) {
-    hasOpt = true;
-    biOpt.regexFence = reg;
+    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    if (biOpt.regexFence === undefined || ov === true) {
+      hasOpt = true;
+      biOpt.regexFence = reg;
+    }
   }
   return hasOpt;
 }
@@ -527,7 +536,7 @@ export const getFenceOptions = (fence: string | number | IGruntOptFence | undefi
     if (fence.hasOwnProperty('start')) {
       hasProp = true;
       standInFence.start = fence.start;
-    } 
+    }
     if (fence.hasOwnProperty('end')) {
       hasProp = true;
       standInFence.end = fence.end;
@@ -539,7 +548,7 @@ export const getFenceOptions = (fence: string | number | IGruntOptFence | undefi
   if (localFence === undefined) {
     return undefined;
   }
-  
+
   // we ahve a IFence instance to work with
   let regStart: RegExp | undefined;
   if (typeof localFence.start === 'string') {
