@@ -347,4 +347,18 @@ describe('Build include Plugin', function () {
         done();
       });
     });
+  it.only('should write a file using gruntfile breakstring option set to number.\
+  \n\tReplace the build_replace contents matching fixture gruntfile_breakstring_style.txt\
+  \n\tThis test uses gruntfile-breakstring100.js',
+    function (done) {
+      callGruntfile('gruntfile-breakstring100.js', function (error: any, stdout: any, stderr: any) {
+        expect(stdout).to.not.be.null;
+        // console.log(stdout);
+        expect(error).to.be.null;
+        let src = fs.readFileSync(`${fixDir}/gruntfile_breakstring100_replaced.txt`);
+        let dest = fs.readFileSync(`${outDir}/gruntfile_breakstring100_replaced.txt`);
+        expect(src.equals(dest)).equal(true);
+        done();
+      });
+    });
 });

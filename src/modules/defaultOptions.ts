@@ -265,10 +265,24 @@ export const getBiOptionsDefault = (): IBuildIncludeOpt => {
  */
 export const biMergeOptions = (currentBiOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt): boolean => {
   let hasOpt: boolean = false;
+  hasOpt = mergeAsJsString(currentBiOpt, currentGruntOptions) || hasOpt;
   hasOpt = mergeBiComments(currentBiOpt, currentGruntOptions) || hasOpt;
   hasOpt = mergeBiText(currentBiOpt, currentGruntOptions) || hasOpt;
   hasOpt = mergeBiBreakString(currentBiOpt, currentGruntOptions) || hasOpt;
   hasOpt = mergeBiFence(currentBiOpt, currentGruntOptions) || hasOpt;
+  return hasOpt;
+}
+const mergeAsJsString = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt): boolean => {
+  let hasOpt: boolean = false;
+  const asjs = currentGruntOptions.asJsString;
+  if (asjs && typeof asjs === 'boolean') {
+    if (asjs === true) {
+      if (biOpt.asJsString === false) {
+        biOpt.asJsString = true;
+        hasOpt = true;
+      }
+    }
+  }
   return hasOpt;
 }
 const mergeBiComments = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt): boolean => {

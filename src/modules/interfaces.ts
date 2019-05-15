@@ -184,6 +184,11 @@ export interface IBiGruntOpt {
    * [[fenceKind.parse]]
    */
   fence?: IGruntOptFence | string | number;
+  /**
+   * Determines if replacement should be treated as a javascript string.
+   * If `true` BUILD_INCLUDE replacements files are treated as javascript strings.
+   */
+  asJsString?: boolean;
 }
 /**
  * [[include:docs/matchOpt/IMatchOpt.md]]

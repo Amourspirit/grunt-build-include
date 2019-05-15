@@ -1,0 +1,33 @@
+breakstring options set by grunt
+.mem-fs-button::after{content:"";background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA
+ADIAAAAyCAYAAAAeP4ixAAACk0lEQVR42mNgGAWjYBSMUFAlx8RQI69IJJanyK5qOS4S7BIjzfAaeVmGFbr/icYLtH4zNClmkOyJ
+XpXjDEt1iLdnktp92noEhGdqfCTJjnoFV5LtoItHpqu/JcmOOnnzgfXIciBerP0PBc/QeA8MYTeSk1aH8mKGeVo/UcxaovOPfh5p
+VeqhSSEDyvhT1B7TL2nRwjMQTzyhbdICOXyZDu08g8sT6CUaxR4BpdtWpS6aeAaXJ+Zq/mBoV5pLfY+AALU9g88TtfJaDC2KDbTx
+CH7P9FHVEyBABY9IoxiwGMkj+DzTrFhOtB2T1O7h9QRVPAICoGYHzIAZGh8w5LF5ZqbGJ7JrdXRPYFPXrbKHdI80KiSBPTBd/Q3Y
+QGygVakbxTNT1V8SZXatvCE4BvF5AgbalRYyzNb8yjBR9SZDtbwI7VrKTYrF4HbWVPUXwGaHPdH62pQmMczS+AxMLneBntAY7XKM
+glEwCkbBKBgFgwY0KIQCa3UbElu/LOBmEK6mCZUdGAJsZznjbYpPVnsAb/22K80j0hNs4AELWC8Q1GbDrZYH6OEU8j3cp3oW3qjr
+VN5AVH9ituY3IhuksUR1zqrl+BhmaX6B94lAMUhyp2c52kgiMZ2iycAREOJavzoY/XFsnmlSLERRM0H1OvV6iPh7dsS3YonpNtOs
+q0tM95QUQMgzNPEItT1BjGdo4hFaeIKQZyaq3ab9IDa1PIHPMzQfMqW2J4j1DFU9ArKoQ3kleBwLgnuAlaYHmQN0fMAitgDJrD6w
+Ywd0fqRDeRmJnmADDx8NuokeYmt1RPMnfHDOWE1Uu0myHfgmdajiEdBAGKi5QRx+BBwB3EXW4BkoVvpVLxNtV6fy2tGuxigYBaNg
++AAAZ7k6IXnaMaQAAAAASUVORK5CYII=);background-size:cover;opacity:.4;top:0;left:0;bottom:0;right:0;pos
+ition:absolute;z-index:100;-webkit-filter:grayscale(1);filter:grayscale(1)}.mem-fs-button-parent{wid
+th:50px;height:50px;position:fixed;top:10px;right:10px;z-index:101}.mem-fs-button{position:absolute;
+top:0;left:0;right:0;bottom:0}.mem-fs-button:hover{cursor:pointer;opacity:1;filter:grayscale(0);-web
+kit-filter:grayscale(0);-webkit-filter:drop-shadow(4px 4px 4px #d107c0);filter:drop-shadow(4px 4px 4
+px #d107c0)}.mem-fs-button:hover::after{content:"";cursor:pointer;opacity:1;filter:grayscale(0);-web
+kit-filter:grayscale(0)}.mem-fs-button-parent .mem-fs-btntooltip{visibility:hidden;width:120px;backg
+round-color:#272822;color:#fff;text-align:center;border-radius:6px;padding:5px 0;position:absolute;z
+-index:1;top:2px;right:105%;opacity:0;transition:opacity 1s}.mem-fs-button-parent:hover .mem-fs-btnt
+ooltip{visibility:visible;opacity:1}.mem-fs-button-parent .mem-fs-btntooltip::after{content:"";posit
+ion:absolute;top:50%;left:100%;margin-top:-5px;border-width:5px;border-style:solid;border-color:tran
+sparent transparent transparent #272822}.mem-fs-game{background-color:#8d6b15}.mem-fs-no-sel{-webkit
+-user-select:none;user-select:none;-o-user-select:none;-webkit-touch-callout:none;-khtml-user-select
+:none;-moz-user-select:none;-ms-user-select:none}.mem-fs-wrap-ctl{background-color:brown}div.mem-fs-
+ctl{display:block;width:100%;text-align:center}div#mem-fs-game-wrap div#game{border:0!important}div#
+mem-ctl-wrap div.mem-fs-ctl{display:inline-block;margin:0 0 10px 0}div.mem-fs-toggle-ctl{display:inl
+ine-block;width:100%;text-align:center}div.mem-fs-div-tog{display:inline-block}div.mem-fs-div-tog:ho
+ver{cursor:pointer}i.mem-fs-tog{border:solid #000;border-width:0 3px 3px 0;display:inline-block;padd
+ing:3px}i.mem-fs-tog.right{transform:rotate(-45deg);-webkit-transform:rotate(-45deg)}i.mem-fs-tog.le
+ft{transform:rotate(135deg);-webkit-transform:rotate(135deg)}i.mem-fs-tog.up{transform:rotate(-135de
+g);-webkit-transform:rotate(-135deg)}i.mem-fs-tog.down{transform:rotate(45deg);-webkit-transform:rot
+ate(45deg)}
