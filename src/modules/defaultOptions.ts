@@ -295,42 +295,48 @@ const mergeBiBreakString = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGru
   const bs = currentGruntOptions.breakstring;
   let hasOpt: boolean = false;
   if (bs) {
-    biOpt.bs.isSet = true;
-    hasOpt = true;
-    if (bs.break) {
-      if (typeof bs.break === 'number') {
-        // parse just in case not a correct number
-        biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break);
-      } else {
-        biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break.toString());
-      }
-    }
-    if (bs.flags) {
-      let v: string = bs.flags.toString();
-      if (v.length > 0) {
-        v = v.toLowerCase();
-        if (v === 'word') {
-          biOpt.bs.flags = widthFlags.nearestWord;
+    if (typeof bs === 'number') {
+      biOpt.bs.width = Math.abs(Math.round(bs));
+      biOpt.bs.isSet = true;
+      hasOpt = true;
+    } else if (typeof bs === 'object') {
+      if (bs.break) {
+        if (typeof bs.break === 'number') {
+          // parse just in case not a correct number
+          biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break);
+        } else {
+          biOpt.bs.break = Util.ParseEnumSplitByOpt(bs.break.toString());
         }
       }
-    }
-    if (bs.lineEnd) {
-      if (typeof bs.lineEnd === 'number') {
-        // parse just in case not a correct number
-        biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd);
-      } else {
-        biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd.toString());
-      }
-    }
-    if (bs.width) {
-      if (typeof bs.width === 'number') {
-        biOpt.bs.width = Math.round(Math.abs(bs.width));
-      } else {
-        const num: number = parseInt(bs.width.toString(), 10);
-        if (isNaN(num) === false) {
-          biOpt.bs.width = Math.round(Math.abs(num));
+      if (bs.flags) {
+        let v: string = bs.flags.toString();
+        if (v.length > 0) {
+          v = v.toLowerCase();
+          if (v === 'word') {
+            biOpt.bs.flags = widthFlags.nearestWord;
+          }
         }
       }
+      if (bs.lineEnd) {
+        if (typeof bs.lineEnd === 'number') {
+          // parse just in case not a correct number
+          biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd);
+        } else {
+          biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd.toString());
+        }
+      }
+      if (bs.width) {
+        if (typeof bs.width === 'number') {
+          biOpt.bs.width = Math.round(Math.abs(bs.width));
+        } else {
+          const num: number = parseInt(bs.width.toString(), 10);
+          if (isNaN(num) === false) {
+            biOpt.bs.width = Math.round(Math.abs(num));
+          }
+        }
+      }
+      biOpt.bs.isSet = true;
+      hasOpt = true;
     }
   }
   return hasOpt;
