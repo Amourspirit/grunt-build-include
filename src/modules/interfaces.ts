@@ -176,7 +176,7 @@ export interface IBiGruntOpt {
    * breakstring options or number that is the default value for width
    * of breakstring. All other values will be default values.
    * 
-   * @see [string-breaker](@link https://amourspirit.github.io/node-string-breaker/)
+   * @see [string-breaker]{@link https://amourspirit.github.io/node-string-breaker/}
    */
   breakstring?: IGruntOptBreakString | number;
   /**
