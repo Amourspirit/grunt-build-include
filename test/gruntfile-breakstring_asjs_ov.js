@@ -15,7 +15,8 @@ module.exports = function (grunt) {
       default: {
         options: {
           asJsString: true,
-          breakstring: 100
+          breakstring: 100,
+          override: true
         },
         src: './fixtures/asJsString.txt',
         dest: '../scratch/test/gruntfile_asjsstring_replaced.txt'

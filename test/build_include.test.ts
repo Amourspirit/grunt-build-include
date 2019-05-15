@@ -347,7 +347,22 @@ describe('Build include Plugin', function () {
         done();
       });
     });
-  it.only('should write a file using gruntfile breakstring option set to number.\
+  it('should write a file using gruntfile breakstring, asJsString and override\
+  \n\tOverrides the value set for breakstring in fixtures/asJsString.txt\
+  \n\tReplace the build_replace contents matching fixture gruntfile_asjsstring_replaced.txt\
+  \n\tThis test uses gruntfile-breakstring_asjs_ov.js',
+    function (done) {
+      callGruntfile('gruntfile-breakstring_asjs_ov.js', function (error: any, stdout: any, stderr: any) {
+        expect(stdout).to.not.be.null;
+        // console.log(stdout);
+        expect(error).to.be.null;
+        let src = fs.readFileSync(`${fixDir}/gruntfile_asjsstring_replaced.txt`);
+        let dest = fs.readFileSync(`${outDir}/gruntfile_asjsstring_replaced.txt`);
+        expect(src.equals(dest)).equal(true);
+        done();
+      });
+    });
+  it('should write a file using gruntfile breakstring option set to number.\
   \n\tReplace the build_replace contents matching fixture gruntfile_breakstring_style.txt\
   \n\tThis test uses gruntfile-breakstring100.js',
     function (done) {
