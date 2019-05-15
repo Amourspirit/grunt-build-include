@@ -272,7 +272,7 @@ export const biMergeOptions = (currentBiOpt: IBuildIncludeOpt, currentGruntOptio
   hasOpt = mergeBiFence(currentBiOpt, currentGruntOptions) || hasOpt;
   return hasOpt;
 }
-const mergeHasOverride = (currentGruntOptions: IBiGruntOpt): boolean => {
+const gruntOptHasOverride = (currentGruntOptions: IBiGruntOpt): boolean => {
   let override: boolean = false;
   const ov = currentGruntOptions.override;
   if (ov && typeof ov === 'boolean') {
@@ -283,10 +283,10 @@ const mergeHasOverride = (currentGruntOptions: IBiGruntOpt): boolean => {
 const mergeAsJsString = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt): boolean => {
   let hasOpt: boolean = false;
   const asjs = currentGruntOptions.asJsString;
-  if (asjs && typeof asjs === 'boolean') {
-    const ov: boolean = mergeHasOverride(currentGruntOptions);
+  if (typeof asjs === 'boolean') {
+    const ov: boolean = gruntOptHasOverride(currentGruntOptions);
     if (biOpt.asJsString === false || ov === true) {
-      biOpt.asJsString = true;
+      biOpt.asJsString = asjs;
       hasOpt = true;
     }
   }
@@ -296,7 +296,7 @@ const mergeBiComments = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntO
   const c = currentGruntOptions.comment;
   let hasOpt: boolean = false;
   if (c) {
-    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    const ov: boolean = gruntOptHasOverride(currentGruntOptions);
     if ((biOpt.comment.padLeftAssigned === false || ov === true) && c.padleft !== undefined) {
       biOpt.comment.padLeft = c.padleft;
       biOpt.comment.padLeftAssigned = true;
@@ -317,7 +317,7 @@ const mergeBiBreakString = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGru
   const bs = currentGruntOptions.breakstring;
   let hasOpt: boolean = false;
   if (bs) {
-    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    const ov: boolean = gruntOptHasOverride(currentGruntOptions);
     if (biOpt.bs.isSet === false || ov === true) {
       if (typeof bs === 'number') {
         biOpt.bs.width = Math.abs(Math.round(bs));
@@ -370,7 +370,7 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
   const txt = currentGruntOptions.text;
   let hasOpt: boolean = false;
   if (txt) {
-    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    const ov: boolean = gruntOptHasOverride(currentGruntOptions);
     if (biOpt.text.isSet === false || ov === true) {
       if (txt.after !== undefined) {
         biOpt.text.after = txt.after.toString();
@@ -470,7 +470,7 @@ const mergeBiFence = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt)
   let hasOpt: boolean = false;
   const reg: RegExp | undefined = getFenceOptions(currentGruntOptions.fence);
   if (reg) {
-    const ov: boolean = mergeHasOverride(currentGruntOptions);
+    const ov: boolean = gruntOptHasOverride(currentGruntOptions);
     if (biOpt.regexFence === undefined || ov === true) {
       hasOpt = true;
       biOpt.regexFence = reg;

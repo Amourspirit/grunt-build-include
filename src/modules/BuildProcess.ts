@@ -218,29 +218,12 @@ export class BuildProcess {
         // process all options
         if (match[indexOpt]) {
           hasOptions = this.processOptions(indexIndent, indexOpt, match, biOpt);
-
-          if (hasOptions === true) {
-            // read setting from hightest to lowest prority
-            // if string break is not set then remove all the newline
-            if (biOpt.text.noLineBreaks === true) {
-              fileContent = this.removeLnB(fileContent);
-            }
-            if (biOpt.asJsString === true) {
-              fileContent = codeString(fileContent, eKind.jsString, eProcess.encode);
-            }
-            if (biOpt.text.isCode) {
-              // if the encoding is set as an option on the text
-              // then encode or decode the replacement file contents as requested
-              fileContent = this.stringDecodeEncode(fileContent, biOpt.text.code, biOpt.text.codeKind);
-              // before and after text will be applied later
-            }
-          } // if (match[indexOpt]) process all options
-
-
         } // if (match[indexOpt])
+
         // check to see if any options were set at the grunt file level.
         // and merge them if exist.
         hasOptions = biMergeOptions(biOpt, options) || hasOptions;
+
         if (allowIndent === false) {
           // if allow indent is false this will be an exception to 
           // what may be set with text options for indent.
@@ -255,13 +238,22 @@ export class BuildProcess {
           match = re.exec(contents);
           continue;
         }
-        // I want to allow for fenced ranges to be skipped as an options
-        // one way I can think of doing that is to break fileContents in to several
-        // parts fenced and non-fenced parts. Process the file in segments and then put
-        // the arrays back together.
-        // Process post fence as string[], then add fence to string[]. Process the
-        // next section add it to the string[] and and the next fence to string[] and so on...
-        // The fenced section would be not be subject to padding.
+        if (hasOptions === true) {
+          // read setting from hightest to lowest prority
+          // if string break is not set then remove all the newline
+          if (biOpt.text.noLineBreaks === true) {
+            fileContent = this.removeLnB(fileContent);
+          }
+          if (biOpt.asJsString === true) {
+            fileContent = codeString(fileContent, eKind.jsString, eProcess.encode);
+          }
+          if (biOpt.text.isCode) {
+            // if the encoding is set as an option on the text
+            // then encode or decode the replacement file contents as requested
+            fileContent = this.stringDecodeEncode(fileContent, biOpt.text.code, biOpt.text.codeKind);
+            // before and after text will be applied later
+          }
+        } // if (match[indexOpt]) process all options
 
         if (allowIndent === true
           && biOpt.text.isSet === true
