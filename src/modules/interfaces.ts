@@ -254,7 +254,7 @@ export interface IGruntOptBreakString {
    * encode, noLnBr, none
    * @see [string-breaker Enumeration lnEndOpt]{@link https://amourspirit.github.io/node-string-breaker/enums/_main_.lnendopt.html}
    */
-  lineEnd?: string | number;
+  eol?: string | number;
   /**
    * An integer representing the number of chars to break string.
    * @see [string-breaker]{@link https://amourspirit.github.io/node-string-breaker/index.html}

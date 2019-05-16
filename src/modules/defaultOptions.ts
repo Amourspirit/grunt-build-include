@@ -341,12 +341,12 @@ const mergeBiBreakString = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGru
             }
           }
         }
-        if (bs.lineEnd) {
-          if (typeof bs.lineEnd === 'number') {
+        if (bs.eol) {
+          if (typeof bs.eol === 'number') {
             // parse just in case not a correct number
-            biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd);
+            biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.eol);
           } else {
-            biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.lineEnd.toString());
+            biOpt.bs.lineEnd = Util.ParseEnumLnEndOpt(bs.eol.toString());
           }
         }
         if (bs.width) {
