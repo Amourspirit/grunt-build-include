@@ -4,10 +4,12 @@ The [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html) interface o
 Grunt config Options for `build_include`:
 
 * [asJsString](asjsstring/)
-* [Encoding](encoding/)
-* [Fence](fence/)
+* [breakstring](breakstring/)
+* [encoding](encoding/)
+* [fence](fence/)
 * [match](match/)
 * [mode](mode/)
+* [override](override/)
 * [noProcess](noProcess/)
 * [process](process/)
 * [timestamp](timestamp/)

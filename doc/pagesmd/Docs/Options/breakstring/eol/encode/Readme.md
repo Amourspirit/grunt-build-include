@@ -2,4 +2,6 @@
 
 [Breakstring eol](../)
 
+[Breakstring](../,,/)
+
 [[include:style/heading.html]]

@@ -1,7 +1,7 @@
 ### EXAMPLE
 
 With the configuration below all inline BUILD_INCLUDE statments would have [asJsString](/pages/Docs/GruntFile/Options/asjsstring/) applied
-and each BUILD_INCLUE file would be split into lines that are 100 characters wide set by [breakstring](/pages/Docs/GruntFile/Options/breakstring/).
+and each BUILD_INCLUE file would be split into lines that are 100 characters wide with extra line breaks removed using [breakstring](/pages/Docs/GruntFile/Options/breakstring/).
 
 #### Config
 
@@ -14,7 +14,11 @@ module.exports = function (grunt) {
       default: {
         options: {
           asJsString: true,
-          breakstring: 100,
+          breakstring: {
+            width: 100,
+            break: 'width',
+            eol: 'noLnBr'
+          }
           override: true
         },
         src: './src/maint.ts',

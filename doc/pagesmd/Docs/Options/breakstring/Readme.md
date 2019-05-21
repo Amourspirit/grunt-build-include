@@ -1,7 +1,8 @@
 [[include:options/breakstring/breakstring.md]]
 
-* [Width](width/)
+* [break](break/)
 * [eol](eol/)
 * [flags](flags/)
+* [Width](width/)
 
 [Options](../)
