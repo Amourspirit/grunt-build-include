@@ -3,8 +3,8 @@
 breakstring options for grunt file.
 
 * [break](break/)
+* [eol](eol/)
 * [flags](flags/)
-* [lineEnd](lineend/)
 * [width](width/)
 
 [[include:GruntOptions/override/notice.md]]

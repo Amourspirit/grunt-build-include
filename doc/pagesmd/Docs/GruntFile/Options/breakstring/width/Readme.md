@@ -1,6 +1,7 @@
 ## Width
 
-An integer representing the number of chars to break string.
+`width: 100` An integer representing the number of chars to break string.  
+If Width is omitted then width will default to a value of `80`.
 
 [[include:GruntOptions/override/example01.md]]
 
