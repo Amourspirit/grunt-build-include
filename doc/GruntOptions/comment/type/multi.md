@@ -1,6 +1,6 @@
 ## Comment Type Multi
 
-`type:'multi'` The first line is `/*`  
+`type: 'multi'` The first line is `/*`  
 Pads the left side of each line with * and a single space.  
 The last lie is ` */`  
 

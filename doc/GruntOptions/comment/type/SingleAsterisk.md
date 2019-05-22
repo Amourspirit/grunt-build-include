@@ -1,6 +1,6 @@
 ## Comment Type SingleAsterisk
 
-`type:'singleAsterisk'` Pads the left side of each line with * and a single space.  
+`type: 'singleAsterisk'` Pads the left side of each line with * and a single space.  
 Useful for comment replacement that is required inline.
 
 ### Example

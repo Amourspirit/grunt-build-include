@@ -430,11 +430,9 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
             hasOpt = true;
           }
         } else if (typeof txt.indent === 'boolean') {
-          if (txt.indent === true) {
-            biOpt.text.indent = true;
-            biOpt.text.isSet = true;
-            hasOpt = true;
-          }
+          biOpt.text.indent = txt.indent;
+          biOpt.text.isSet = true;
+          hasOpt = true;
         }
       }
       if (txt.padding !== undefined) {

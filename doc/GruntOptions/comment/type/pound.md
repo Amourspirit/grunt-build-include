@@ -1,6 +1,6 @@
 ## Comment Type Pound
 
-`type:'pound'` Pads the left side of each line with # and a single space.
+`type: 'pound'` Pads the left side of each line with # and a single space.
 
 ### Example
 

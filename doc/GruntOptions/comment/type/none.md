@@ -1,3 +1,3 @@
 ## Comment Type None
 
-`type:'none'` No comment formating is applied.  
+`type: 'none'` No comment formating is applied.  
