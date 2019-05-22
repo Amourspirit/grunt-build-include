@@ -1,4 +1,4 @@
-##### Breakstring break width
+## Breakstring break width
 
 Break input base on width.  
 Default: `80`.

@@ -6,6 +6,8 @@ Any omitted values are included from the values of default match [MatchBuildIncl
 It is also possible to merge current [matches](/enums/enums.regexkind.html) with new values.  
 See <a href="#example05">example below</a>
 
+[[include:GruntOptions/override/notice.md]]
+
 **See Also:** [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html)
 
 [[include:GruntOptions/match/example03.md]]

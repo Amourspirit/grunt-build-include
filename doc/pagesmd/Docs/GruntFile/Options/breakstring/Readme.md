@@ -7,6 +7,8 @@ breakstring options for grunt file.
 * [lineEnd](lineend/)
 * [width](width/)
 
+[[include:GruntOptions/override/notice.md]]
+
 [[include:GruntOptions/override/example01.md]]
 
 [Grunt File Options](../)  

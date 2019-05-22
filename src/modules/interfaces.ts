@@ -268,6 +268,8 @@ export interface IGruntOptBreakString {
 }
 /**
  * [[include:docs/IGruntOptComment/IGruntOptComment.md]]
+ * 
+ * [[include:docs/IGruntOptComment/example01.md]]
  */
 export interface IGruntOptComment {
   /**

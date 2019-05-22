@@ -1,4 +1,4 @@
-[[inclue:GruntOptions/breakstring/break/width.md]]
+[[include:GruntOptions/breakstring/break/width.md]]
 
 [break](../)  
 [breakstring](../../)

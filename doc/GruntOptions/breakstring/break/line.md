@@ -1,4 +1,4 @@
-##### Breakstring break line
+## Breakstring break line
 
 Break input by end of line.
 
