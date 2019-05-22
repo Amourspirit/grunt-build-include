@@ -428,6 +428,10 @@ const mergeBiText = (biOpt: IBuildIncludeOpt, currentGruntOptions: IBiGruntOpt):
             biOpt.text.indent = true;
             biOpt.text.isSet = true;
             hasOpt = true;
+          } else if (s === 'false' || s === '0') {
+            biOpt.text.indent = false;
+            biOpt.text.isSet = true;
+            hasOpt = true;
           }
         } else if (typeof txt.indent === 'boolean') {
           biOpt.text.indent = txt.indent;
