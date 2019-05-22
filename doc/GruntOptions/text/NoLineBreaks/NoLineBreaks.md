@@ -1,6 +1,8 @@
-#### Text NoLineBreaks
+## Text NoLineBreaks
 
-`text?noLineBreaks=true` `true` or `false`.  
+**Boolean**
+
+`noLineBreaks: true`  
 Determines if line breaks should be removed from contents of input file that is to be inserted into output.  
 Default is `false`.
 

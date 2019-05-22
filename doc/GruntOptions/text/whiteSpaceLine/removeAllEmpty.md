@@ -1,3 +1,3 @@
-##### Text WhiteSpaceLine removeAllEmpty
+## Text WhiteSpaceLine removeAllEmpty
 
-`text?WhiteSpaceLine=removeAllEmpty` All empty lines are removed.  
+`WhiteSpaceLine: 'removeAllEmpty'` All empty lines are removed.  

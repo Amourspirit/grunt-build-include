@@ -8,6 +8,8 @@
 
 [[include:options/text/whiteSpaceLine/removeAllWs.md]]
 
+**See Also:** [Enumeration whiteSpLn](/enums/enums.whitespln.html)
+
 [Text Options](../)  
 [All Options](../../)
 

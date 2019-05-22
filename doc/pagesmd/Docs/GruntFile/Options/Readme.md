@@ -5,6 +5,7 @@ Grunt config Options for `build_include`:
 
 * [asJsString](asjsstring/)
 * [breakstring](breakstring/)
+* [text](text/)
 * [comment](comment/)
 * [encoding](encoding/)
 * [fence](fence/)
