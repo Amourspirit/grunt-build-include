@@ -83,21 +83,21 @@
 					<pre><code class="language-text">// BUILD_INCLUDE(&quot;./scratch/replace01.txt&quot;)[text?before=%5B\n&amp;after=\n%5D&amp;PadRight=%5C,breakstring?width=60]</code></pre>
 				</div>
 				<h3 id="text-padding-and-break-lines-using-build_include">Text padding and break lines using BUILD_INCLUDE</h3>
-				<p>Includes <a href="replacements/replace01.txt.html">replace01.txt</a>.<br>Special characters are escaped.<br>See: <a href="/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
+				<p>Includes <a href="replacements/replace01.txt.html">replace01.txt</a>.<br>Special characters are escaped.<br>See: <a href="/grunt-build-include/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
 				<h3 id="options">Options</h3>
 				<p><code>[text?before=\[\n&amp;after=\n\]&amp;PadRight=\\,breakstring?width=60]</code><br>--or--<br><code>[text?before=%5B\n&amp;after=\n%5D&amp;PadRight=%5C,breakstring?width=60]</code></p>
 				<h3 id="text">Text</h3>
 				<p>The option <code>text</code> allow for input file content to be manipulated in several ways before being outputed.  </p>
 				<h4 id="text-before">Text Before</h4>
-				<p><code>text?before=some value</code>  where as <code>some value</code> can be any string. Some string values require escaping to include as literals.<br>See: <a href="/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
+				<p><code>text?before=some value</code>  where as <code>some value</code> can be any string. Some string values require escaping to include as literals.<br>See: <a href="/grunt-build-include/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
 				<h4 id="text-after">Text After</h4>
-				<p><code>text?after=some value</code>  where as <code>some value</code> can be any string. Some string values require escaping to include as literals.<br>See: <a href="/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
+				<p><code>text?after=some value</code>  where as <code>some value</code> can be any string. Some string values require escaping to include as literals.<br>See: <a href="/grunt-build-include/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
 				<h5 id="text-padright">Text Padright</h5>
 				<p><code>text?padright=num</code> where as <code>num</code> is any whole number number, pads the right side of each line with a number of spaces
 					equal to the value of <code>num</code>.<br>--or--<br><code>text?padright=text</code> where as <code>text</code> is a string value, pads the right side of each line with the value of <code>text</code>.
-				Spaces at the end of <code>text</code> are valid. \t (tab) is also acceptable such as <code>text?padright=\t\t</code>, would add two tabs as right padding.<br>If <code>padright</code> is a string value then be aware some strings require escaping.<br>See: <a href="/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
+				Spaces at the end of <code>text</code> are valid. \t (tab) is also acceptable such as <code>text?padright=\t\t</code>, would add two tabs as right padding.<br>If <code>padright</code> is a string value then be aware some strings require escaping.<br>See: <a href="/grunt-build-include/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
 				<h3 id="breakstring">Breakstring</h3>
-				<p>The various options of <code>breakstring</code> allow for the breaking of lines in different ways.<br>If the <a href="/pages/Docs/Options/breakstring/width/">width</a> option of <code>breakstring</code> is not set then <a href="/pages/Docs/Options/breakstring/width/">width</a> defaults to <code>80</code>.  </p>
+				<p>The various options of <code>breakstring</code> allow for the breaking of lines in different ways.<br>If the <a href="/grunt-build-include/pages/Docs/Options/breakstring/width/">width</a> option of <code>breakstring</code> is not set then <a href="/grunt-build-include/pages/Docs/Options/breakstring/width/">width</a> defaults to <code>80</code>.  </p>
 				<h5 id="breakstring-width">Breakstring Width</h5>
 				<p><code>Width=#</code> where as # is a number, determines that each line will be broken as close to # characers as possible depending other <code>breakstring</code> options.  </p>
 				<h3 id="option">Option</h3>

@@ -79,16 +79,16 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p><code>Number</code> representing a enum value of <a href="/enums/enums.regexkind.html">regexKind</a><br>--or--<br><code>String</code> representing a enum value of <a href="/enums/enums.regexkind.html">regexKind</a><br>--or--<br>Complete or partial object matching <a href="/interfaces/_modules_interfaces_.imatchopt.html">IMatchOpt</a> options that determine how build_include matches are found.
-				Any omitted values are included from the values of default match <a href="/classes/matchoptions.matchbuildinclude.html">MatchBuildInclude</a>  </p>
-				<p>When needed custom expressions can be written into a task using the <code>match</code> option.<br><code>match</code> follows the inteface <a href="/interfaces/_modules_interfaces_.imatchopt.html">IMatchOpt</a>.
-				Any omitted values are included from the values of default match <a href="/classes/matchoptions.matchbuildinclude.html">MatchBuildInclude</a><br>It is also possible to merge current <a href="/enums/enums.regexkind.html">matches</a> with new values.<br>See <a href="#example05">example below</a></p>
+				<p><code>Number</code> representing a enum value of <a href="/grunt-build-include/enums/enums.regexkind.html">regexKind</a><br>--or--<br><code>String</code> representing a enum value of <a href="/grunt-build-include/enums/enums.regexkind.html">regexKind</a><br>--or--<br>Complete or partial object matching <a href="/grunt-build-include/interfaces/_modules_interfaces_.imatchopt.html">IMatchOpt</a> options that determine how build_include matches are found.
+				Any omitted values are included from the values of default match <a href="/grunt-build-include/classes/matchoptions.matchbuildinclude.html">MatchBuildInclude</a>  </p>
+				<p>When needed custom expressions can be written into a task using the <code>match</code> option.<br><code>match</code> follows the inteface <a href="/grunt-build-include/interfaces/_modules_interfaces_.imatchopt.html">IMatchOpt</a>.
+				Any omitted values are included from the values of default match <a href="/grunt-build-include/classes/matchoptions.matchbuildinclude.html">MatchBuildInclude</a><br>It is also possible to merge current <a href="/grunt-build-include/enums/enums.regexkind.html">matches</a> with new values.<br>See <a href="#example05">example below</a></p>
 				<h4 id="note">Note</h4>
-				<p>File level <a href="/pages/Docs/Options/">options</a> will always take priority unless <a href="/pages/Docs/GruntFile/Options/override/">override</a> is set to <code>true</code>.  </p>
-				<p><strong>See Also:</strong> <a href="/interfaces/_modules_interfaces_.ibigruntopt.html">IBiGruntOpt</a></p>
+				<p>File level <a href="/grunt-build-include/pages/Docs/Options/">options</a> will always take priority unless <a href="/grunt-build-include/pages/Docs/GruntFile/Options/override/">override</a> is set to <code>true</code>.  </p>
+				<p><strong>See Also:</strong> <a href="/grunt-build-include/interfaces/_modules_interfaces_.ibigruntopt.html">IBiGruntOpt</a></p>
 				<h3 id="match-example">MATCH EXAMPLE</h3>
-				<p>Matches built in match rules of <a href="/classes/matchoptions.matchbuildincludeslash.html">MatchBuildIncludeSlash</a>
-				by seting match to string value of <a href="/enums/enums.regexkind.html#buildincludeslash">regexKind.buildIncludeSlash</a></p>
+				<p>Matches built in match rules of <a href="/grunt-build-include/classes/matchoptions.matchbuildincludeslash.html">MatchBuildIncludeSlash</a>
+				by seting match to string value of <a href="/grunt-build-include/enums/enums.regexkind.html#buildincludeslash">regexKind.buildIncludeSlash</a></p>
 				<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
   grunt.initConfig({
    <span class="hljs-attr">build_include</span>: {
@@ -105,8 +105,8 @@
   grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'build_include:default'</span>]);
 };</code></pre>
 				<h3 id="match-example">MATCH EXAMPLE</h3>
-				<p>Matches built in match rules of <a href="/classes/matchoptions.matchbuildincludeslash.html">MatchBuildIncludeSlash</a>
-				by seting match to numeric value of <a href="/enums/enums.regexkind.html#buildincludeslash">regexKind.buildIncludeSlash</a></p>
+				<p>Matches built in match rules of <a href="/grunt-build-include/classes/matchoptions.matchbuildincludeslash.html">MatchBuildIncludeSlash</a>
+				by seting match to numeric value of <a href="/grunt-build-include/enums/enums.regexkind.html#buildincludeslash">regexKind.buildIncludeSlash</a></p>
 				<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
   grunt.initConfig({
    <span class="hljs-attr">build_include</span>: {
@@ -148,7 +148,7 @@
 				<h3 id="match-example">MATCH EXAMPLE</h3>
 				<p>Matchs options such as:<br><code>---- minus_plus[scratch/main.ts] ++++</code><br><code>----minus_plus[scratch/modules/myfile.ts]{options}++++</code></p>
 				<p>The Regex will example can be see on <a href="https://regexr.com/4dr4m">regexr.com</a></p>
-				<p><strong>NOTE:</strong> This match would not be able to apply <a href="/pages/Docs/Options/text/indent/">indent</a> due to the Regular Expression
+				<p><strong>NOTE:</strong> This match would not be able to apply <a href="/grunt-build-include/pages/Docs/Options/text/indent/">indent</a> due to the Regular Expression
 				starting at the beginning of line as indicated by the <code>prefix</code> starting with <code>^</code>.</p>
 				<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
   grunt.initConfig({
@@ -174,9 +174,9 @@
 };</code></pre>
 				<p><a name="example05"></a>  </p>
 				<h3 id="match-example">MATCH EXAMPLE</h3>
-				<p>This example shows how <code>match</code> can merge with other built in <a href="/enums/enums.regexkind.html">matches</a>.<br>By setting <code>kind</code> value to <a href="/enums/enums.regexkind.html#buildincludehtml">buildIncludeHtml</a> this match
-					will match all the values of <a href="/classes/matchoptions.matchbuildincludehtml.html">MatchBuildIncludeHtml</a>
-				excpet will match on name <code>BUILD_HTML</code> instead of default value of <a href="/classes/matchoptions.matchbuildincludehtml.html#name">MatchBuildIncludeHtml.name</a> which is <code>BUILD_INCLUDE</code>.</p>
+				<p>This example shows how <code>match</code> can merge with other built in <a href="/grunt-build-include/enums/enums.regexkind.html">matches</a>.<br>By setting <code>kind</code> value to <a href="/grunt-build-include/enums/enums.regexkind.html#buildincludehtml">buildIncludeHtml</a> this match
+					will match all the values of <a href="/grunt-build-include/classes/matchoptions.matchbuildincludehtml.html">MatchBuildIncludeHtml</a>
+				excpet will match on name <code>BUILD_HTML</code> instead of default value of <a href="/grunt-build-include/classes/matchoptions.matchbuildincludehtml.html#name">MatchBuildIncludeHtml.name</a> which is <code>BUILD_INCLUDE</code>.</p>
 				<p>Matchs options such as:<br><code>&lt;!-- BUILD_HTML(scratch/main.ts) --&gt;</code><br><code>&lt;!-- BUILD_HTML(scratch/modules/myfile.ts) --&gt;</code></p>
 				<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
   grunt.initConfig({
