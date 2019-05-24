@@ -1,2 +1,2 @@
  Apply strict.  
-**See Also:** [Class StrictFence](/classes/fences.strictfence.html)  
+**See Also:** [Class StrictFence](/grunt-build-include/classes/fences.strictfence.html)  

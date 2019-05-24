@@ -10,6 +10,6 @@ Your using a document generator in your TypeScript project that allows for <code
 The down side to this approach is any `file.d.ts` types documents will contain <code>&#91;include:somePath/somefile.md&#93;&#93;</code> statments which may not be helpful for code completion help.  
 Using a [Grunt File](GruntFile/) configuraton can be helpful to transform your `file.d.ts` outputs to have <code>&#91;include:somePath/somefile.md&#93;&#93;</code> includes replaced with the actual markdown contents.
 
-* [Grunt File](GruntFile/)
 * [Options](Options/)
+* [Grunt File](GruntFile/)
 * [Misc](misc/)

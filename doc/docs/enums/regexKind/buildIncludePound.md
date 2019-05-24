@@ -5,4 +5,4 @@
 \# BUILD_INCLUDE(filePath)  
 &#91;options&#93;
 
-**See Also:** [Class MatchBuildIncludePound](/classes/matchoptions.matchbuildincludepound.html)  
+**See Also:** [Class MatchBuildIncludePound](/grunt-build-include/classes/matchoptions.matchbuildincludepound.html)  

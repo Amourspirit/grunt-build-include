@@ -21,4 +21,4 @@
 &lt;!--BUILD_INCLUDE(filePath)  
 &#91;options&#93;--&gt;
 
-**See Also:** [Class MatchBuildInclude](/classes/matchoptions.matchbuildinclude.html)  
+**See Also:** [Class MatchBuildInclude](/grunt-build-include/classes/matchoptions.matchbuildinclude.html)  
