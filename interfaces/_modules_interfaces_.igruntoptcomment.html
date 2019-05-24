@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>IGruntOptComment | grunt-build-include</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">grunt-build-include</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_modules_interfaces_.html">&quot;modules/interfaces&quot;</a>
+				</li>
+				<li>
+					<a href="_modules_interfaces_.igruntoptcomment.html">IGruntOptComment</a>
+				</li>
+			</ul>
+			<h1>Interface IGruntOptComment</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Comment option for grunt.<br>Comments options set in grunt configuration are merged with any comment options set in the file that contains the build_include ( or varation of ).
+						File level options will always take priority unless <a href="/interfaces/_modules_interfaces_.ibigruntopt.html#override">override</a> is set to <code>true</code>.  </p>
+					</div>
+					<h4 id="example">Example</h4>
+					<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
+  grunt.initConfig({
+    <span class="hljs-attr">build_include</span>: {
+      <span class="hljs-attr">default</span>: {
+        <span class="hljs-attr">options</span>: {
+          <span class="hljs-attr">match</span>: {
+            <span class="hljs-attr">kind</span>: <span class="hljs-string">'bracketInclude'</span>,
+            <span class="hljs-attr">path</span>: <span class="hljs-string">'./scratch/'</span>
+          },
+          <span class="hljs-attr">comment</span>: {
+            <span class="hljs-attr">padleft</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">type</span>: <span class="hljs-string">'singleAsterisk'</span>
+          }
+        },
+        <span class="hljs-attr">src</span>: <span class="hljs-string">'./lib/includeBracket.ts'</span>,
+        <span class="hljs-attr">dest</span>: <span class="hljs-string">'./scratch/ts/includeBracket.ts'</span>
+      }
+    }
+  });
+  <span class="hljs-built_in">require</span>(<span class="hljs-string">'load-grunt-tasks'</span>)(grunt);
+  grunt.loadNpmTasks(<span class="hljs-string">'grunt-build-include'</span>);
+  grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'build_include:default'</span>]);
+};</code></pre>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IGruntOptComment</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_modules_interfaces_.igruntoptcomment.html#padleft" class="tsd-kind-icon">padleft</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_modules_interfaces_.igruntoptcomment.html#type" class="tsd-kind-icon">type</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="padleft" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> padleft</h3>
+					<div class="tsd-signature tsd-kind-icon">padleft<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Amourspirit/grunt-build-include/blob/e2d3cb3/src/modules/interfaces.ts#L278">modules/interfaces.ts:278</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A value of string or number to apply before each line of a comment.<br>String value is literal padding.<br>Number will be converted into spaces,  </p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Amourspirit/grunt-build-include/blob/e2d3cb3/src/modules/interfaces.ts#L282">modules/interfaces.ts:282</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>can be any enum value of: <a href="../enums/enums.commentkind.html">commentKind</a> such as &#39;jsdoc&#39;</p>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="label ">
+						<span>Pages</span>
+					</li>
+					<li class=" ">
+						<a href="../pages/Docs/index.html"> <wbr>Docs</a>
+					</li>
+					<li class=" ">
+						<a href="../pages/examples/index.html">Examples</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_build_include_.html">"build_<wbr>include"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_modules_buildprocess_.html">"modules/<wbr>Build<wbr>Process"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_modules_matchitem_.html">"modules/<wbr>Match<wbr>Item"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_modules_buildinc_.html">"modules/build<wbr>Inc"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_modules_defaultoptions_.html">"modules/default<wbr>Options"</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_modules_interfaces_.html">"modules/interfaces"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_modules_util_.html">"modules/util"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/matchoptions.html">Match<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/enums.html">enums</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/fences.html">fences</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.ibigruntopt.html" class="tsd-kind-icon">IBi<wbr>Grunt<wbr>Opt</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.ibreakstring.html" class="tsd-kind-icon">IBreak<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.ibuildincludeopt.html" class="tsd-kind-icon">IBuild<wbr>Include<wbr>Opt</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_modules_interfaces_.iclone.html" class="tsd-kind-icon">IClone</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.icomment.html" class="tsd-kind-icon">IComment</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.ifence.html" class="tsd-kind-icon">IFence</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.igruntoptbreakstring.html" class="tsd-kind-icon">IGrunt<wbr>Opt<wbr>Break<wbr>String</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.igruntoptcomment.html" class="tsd-kind-icon">IGrunt<wbr>Opt<wbr>Comment</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_modules_interfaces_.igruntoptcomment.html#padleft" class="tsd-kind-icon">padleft</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_modules_interfaces_.igruntoptcomment.html#type" class="tsd-kind-icon">type</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.igruntoptfence.html" class="tsd-kind-icon">IGrunt<wbr>Opt<wbr>Fence</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.igruntopttext.html" class="tsd-kind-icon">IGrunt<wbr>Opt<wbr>Text</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.igruntopttextpadding.html" class="tsd-kind-icon">IGrunt<wbr>Opt<wbr>Text<wbr>Padding</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_modules_interfaces_.iindex.html" class="tsd-kind-icon">IIndex</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.iindexany.html" class="tsd-kind-icon">IIndex<wbr>Any</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_modules_interfaces_.ikeyvalue.html" class="tsd-kind-icon">IKey<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.ikeyvalueany.html" class="tsd-kind-icon">IKey<wbr>Value<wbr>Any</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.imatchitemwsitm.html" class="tsd-kind-icon">IMatch<wbr>Item<wbr>WsItm</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.imatchopt.html" class="tsd-kind-icon">IMatch<wbr>Opt</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.imatchtype.html" class="tsd-kind-icon">IMatch<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.ipadding.html" class="tsd-kind-icon">IPadding</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_modules_interfaces_.itext.html" class="tsd-kind-icon">IText</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_modules_interfaces_.html#anonymousfn" class="tsd-kind-icon">Anonymous<wbr>Fn</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_modules_interfaces_.html#processfn" class="tsd-kind-icon">Process<wbr>Fn</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

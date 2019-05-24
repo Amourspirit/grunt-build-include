@@ -1,0 +1,305 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Text Before After With Unicode | grunt-build-include</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../../assets/js/search.js" data-base="../..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../../index.html" class="title">grunt-build-include</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../index.html">Pages</a>
+				</li>
+				<li>
+					<a href="index.html">Examples</a>
+				</li>
+				<li>
+					<a href="TextBeforeAfterWithUnicode.html"> Text Before After With Unicode</a>
+				</li>
+			</ul>
+			<h1> Text Before After With Unicode</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="text-before-after-with-unicode">Text Before After With Unicode</h1>
+				<h2 id="build_include">BUILD_INCLUDE</h2>
+				<div class="nowrapcode">
+					<pre><code class="language-text">// BUILD_INCLUDE(&quot;./scratch/replace01.txt&quot;)[text?before=# \u{1F913}\n# \u{1F44C}\n&amp;padleft=#\u2014\u{1F600}\u2014,breakstring?width=50&amp;flags=word]</code></pre>
+				</div>
+				<h3 id="text-padding-and-break-lines-using-build_include">Text padding and break lines using BUILD_INCLUDE</h3>
+				<p>Includes <a href="replacements/replace01.txt.html">replace01.txt</a> and places text before and after output.</p>
+				<h3 id="options">Options</h3>
+				<p><code>[text?before=# \u{1F913}\n# \u{1F44C}\n&amp;padleft=#\u2014\u{1F600}\u2014,breakstring?width=50&amp;flags=word]</code>  </p>
+				<h3 id="text">Text</h3>
+				<p>The option <code>text</code> allow for input file content to be manipulated in several ways before being outputed.  </p>
+				<h4 id="text-before">Text Before</h4>
+				<p><code>text?before=some value</code>  where as <code>some value</code> can be any string. Some string values require escaping to include as literals.<br>See: <a href="/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
+				<h5 id="text-padleft">Text Padleft</h5>
+				<p><code>text?padleft=num</code> where as <code>num</code> is any whole number number, pads the left side of each line with a number of spaces
+					equal to the value of <code>num</code>.<br>--or--<br><code>text?padleft=text</code> where as <code>text</code> is a string value, pads the left side of each line with the value of <code>text</code>.
+				Spaces at the end of <code>text</code> are valid. \t (tab) is also acceptable such as <code>text?padleft=\t\t</code>, would add two tabs as left padding.<br>If <code>padleft</code> is a string value then be aware some strings require escaping.<br>See: <a href="/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
+				<h4 id="text-after">Text After</h4>
+				<p><code>text?after=some value</code>  where as <code>some value</code> can be any string. Some string values require escaping to include as literals.<br>See: <a href="/pages/Docs/misc/EscapingParameters.html">Escaping Parameters</a>  </p>
+				<h3 id="breakstring">Breakstring</h3>
+				<p>The various options of <code>breakstring</code> allow for the breaking of lines in different ways.<br>If the <a href="/pages/Docs/Options/breakstring/width/">width</a> option of <code>breakstring</code> is not set then <a href="/pages/Docs/Options/breakstring/width/">width</a> defaults to <code>80</code>.  </p>
+				<h5 id="breakstring-width">Breakstring Width</h5>
+				<p><code>Width=#</code> where as # is a number, determines that each line will be broken as close to # characers as possible depending other <code>breakstring</code> options.  </p>
+				<h5 id="breakstring-flags-word">Breakstring Flags Word</h5>
+				<p><code>flags=word</code> determines that lines are not to be broken on a word.  </p>
+				<h3 id="option">Option</h3>
+				<p><code>text?before=# \u{1F913}\n# \u{1F44C}\n&amp;padleft=#\u2014\u{1F600}\u2014</code></p>
+				<p><code>before=# \u{1F913}\n# \u{1F44C}\n</code><br>Inserts at the start of the output:</p>
+				<pre><code class="language-text"># 🤓
+# 👌</code></pre>
+				<p>Note: <code>\n</code> is used to insert a new line:<br>Note: unicode characters can be used in text parameters.</p>
+				<p><code>padleft=#\u2014\u{1F600}\u2014</code><br>Inserts before each line:</p>
+				<pre><code class="language-text">#—😀—</code></pre>
+				<h3 id="config">Config</h3>
+				<h4 id="gruntfile-js">GruntFile.js</h4>
+				<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
+  grunt.initConfig({
+    <span class="hljs-attr">build_include</span>: {
+      <span class="hljs-attr">default</span>: {
+        <span class="hljs-attr">src</span>: <span class="hljs-string">'./lib/test.txt'</span>,
+        <span class="hljs-attr">dest</span>: <span class="hljs-string">'./scratch/test.txt'</span>
+      }
+    }
+  });
+  grunt.loadNpmTasks(<span class="hljs-string">'grunt-build-include'</span>);
+  grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'build_include:default'</span>]);
+};</code></pre>
+				<h3 id="output">Output</h3>
+				<div class="nowrapcode">
+					<pre><code class="language-text"># 🤓
+# 👌
+#—😀—The quick, brown fox jumps over a lazy dog. DJs flock
+#—😀—by when MTV ax quiz prog. Junk MTV quiz graced by
+#—😀—fox whelps.Bawds jog, flick quartz, vex nymphs. Waltz,
+#—😀—bad nymph, for quick jigs vex! Fox nymphs grab quick-jived
+#—😀—waltz. Brick quiz whangs jumpy veldt fox.Bright vixens
+#—😀—jump; dozy fowl quack. Quick wafting zephyrs vex bold
+#—😀—Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged
+#—😀—fop blew my junk TV quiz.How quickly daft jumping
+#—😀—zebras vex. Two driven jocks help fax my big quiz.
+#—😀—Quick, Baz, get my woven flax jodhpurs! &quot;Now fax quiz
+#—😀—Jack!&quot; my brave ghost pled. Five quacking zephyrs
+#—😀—jolt my wax bed. Flummoxed by job, kvetching W. zaps
+#—😀—Iraq. Cozy sphinx waves quart jug of bad milk.A very
+#—😀—bad quack might jinx zippy fowls. Few quips galvanized
+#—😀—the mock jury box. Quick brown dogs jump over the
+#—😀—lazy fox. The jay, pig, fox, zebra, and my wolves
+#—😀—quack!Blowzy red vixens fight for a quick jump. Joaquin
+#—😀—Phoenix was gazed by MTV for luck. A wizard’s job
+#—😀—is to vex chumps quickly in fog. Watch &quot;Jeopardy!
+#—😀—&quot;, Alex Trebek&#39;s fun TV quiz game. Woven silk pyjamas
+#—😀—exchanged for blue quartz.</code></pre>
+				</div>
+				<style>
+  @media (min-width: 641px) {
+    div.nowrapcode {
+      overflow-x: auto;
+      background-color: rgba(0, 0, 0, 0.04);
+      -webkit-overflow-scrolling: touch;
+    }
+    div.nowrapcode pre {
+      background-color: transparent;
+      word-wrap:normal;
+      white-space: pre;
+    }
+    div.nowrapcode pre code {
+      white-space: pre;
+      word-wrap:normal;
+    }
+  }
+</style>  
+				<style>
+.tsd-typography h5, .tsd-typography h6 {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+</style>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="label ">
+						<span>Pages</span>
+					</li>
+					<li class=" ">
+						<a href="AsjsstringIncludeTextInJavascriptString.html"> <wbr>Asjsstring <wbr>Include <wbr>Text <wbr>In <wbr>Javascript <wbr>String</a>
+					</li>
+					<li class=" ">
+						<a href="CommentJsdocBreakstringByWord.html"> <wbr>Comment <wbr>Jsdoc <wbr>Breakstring <wbr>By <wbr>Word</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeJsdocRemovePadding.html"> <wbr>Comment <wbr>Type <wbr>Jsdoc <wbr>Remove <wbr>Padding</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeMultiBreakstringIndent.html"> <wbr>Comment <wbr>Type <wbr>Multi <wbr>Breakstring <wbr>Indent</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeMultiWithTwoTypesOfPadding.html"> <wbr>Comment <wbr>Type <wbr>Multi <wbr>With <wbr>Two <wbr>Types <wbr>Of <wbr>Padding</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeSingle.html"> <wbr>Comment <wbr>Type <wbr>Single</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeSingleBreakstringFlagsAndEol.html"> <wbr>Comment <wbr>Type <wbr>Single <wbr>Breakstring <wbr>Flags <wbr>And <wbr>Eol</a>
+					</li>
+					<li class=" ">
+						<a href="FenceCommentAndTextOptions.html"> <wbr>Fence <wbr>Comment <wbr>And <wbr>Text <wbr>Options</a>
+					</li>
+					<li class=" ">
+						<a href="FenceCommentTextSimple.html"> <wbr>Fence <wbr>Comment <wbr>Text <wbr>Simple</a>
+					</li>
+					<li class=" ">
+						<a href="FencedRemoveWithCommentAndWhiteSpaceLines.html"> <wbr>Fenced <wbr>Remove <wbr>With <wbr>Comment <wbr>And <wbr>White <wbr>Space <wbr>Lines</a>
+					</li>
+					<li class=" ">
+						<a href="TextBeforeAfterWithSpecialChars.html"> <wbr>Text <wbr>Before <wbr>After <wbr>With <wbr>Special <wbr>Chars</a>
+					</li>
+					<li class="current ">
+						<a href="TextBeforeAfterWithUnicode.html"> <wbr>Text <wbr>Before <wbr>After <wbr>With <wbr>Unicode</a>
+					</li>
+					<li class=" ">
+						<a href="TextPadleftBreakLinesByWord.html"> <wbr>Text <wbr>Padleft <wbr>Break <wbr>Lines <wbr>By <wbr>Word</a>
+					</li>
+					<li class=" ">
+						<a href="replacements/index.html">Replacements</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

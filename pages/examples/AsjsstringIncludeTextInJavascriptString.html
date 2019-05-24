@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Asjsstring Include Text In Javascript String | grunt-build-include</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../../assets/js/search.js" data-base="../..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../../index.html" class="title">grunt-build-include</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../index.html">Pages</a>
+				</li>
+				<li>
+					<a href="index.html">Examples</a>
+				</li>
+				<li>
+					<a href="AsjsstringIncludeTextInJavascriptString.html"> Asjsstring Include Text In Javascript String</a>
+				</li>
+			</ul>
+			<h1> Asjsstring Include Text In Javascript String</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="asjsstring-to-include-text-in-javascript">Asjsstring to Include Text In Javascript</h1>
+				<h2 id="build_include">BUILD_INCLUDE</h2>
+				<div class="nowrapcode">
+					<pre><code class="language-js"><span class="hljs-keyword">var</span> getStyleCss = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> css = <span class="hljs-string">'// BUILD_INCLUDE("./scratch/css/style.min.css")[asjsstring,breakString?width=80]'</span>;
+  <span class="hljs-keyword">return</span> css;
+};</code></pre>
+				</div>
+				<h3 id="include-minified-css-file">Include minified css file</h3>
+				<p>Include file as javascript string.<br>In this case we have a file that has been minified in the build process an outputed to <code>./scratch/css/style.min.css</code>.<br>The output file <code>style.min.css</code> is one long line. <strong>BUILD_INCLUDE</strong> can be used to inlcude the file and make it a little more readable.</p>
+				<h3 id="options">Options</h3>
+				<p><code>[asjsstring,breakString?width=80]</code></p>
+				<h4 id="asjsstring">AsJsString</h4>
+				<p><code>asjsstring</code> determines that input is to be escaped for useage as a JavaScript string.  </p>
+				<h3 id="breakstring">Breakstring</h3>
+				<p>The various options of <code>breakstring</code> allow for the breaking of lines in different ways.<br>If the <a href="/pages/Docs/Options/breakstring/width/">width</a> option of <code>breakstring</code> is not set then <a href="/pages/Docs/Options/breakstring/width/">width</a> defaults to <code>80</code>.  </p>
+				<h5 id="breakstring-width">Breakstring Width</h5>
+				<p><code>Width=#</code> where as # is a number, determines that each line will be broken as close to # characers as possible depending other <code>breakstring</code> options.  </p>
+				<h3 id="option">Option</h3>
+				<p><code>breakString?width=80</code></p>
+				<p><code>Width=80</code> determines that each line will be broken at 80 characers.</p>
+				<h3 id="config">Config</h3>
+				<h4 id="gruntfile-js">GruntFile.js</h4>
+				<pre><code class="language-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">grunt</span>) </span>{
+  grunt.initConfig({
+    <span class="hljs-attr">build_include</span>: {
+      <span class="hljs-attr">default</span>: {
+        <span class="hljs-attr">src</span>: <span class="hljs-string">'./lib/main.js'</span>,
+        <span class="hljs-attr">dest</span>: <span class="hljs-string">'./scratch/main.js'</span>
+      }
+    }
+  });
+  grunt.loadNpmTasks(<span class="hljs-string">'grunt-build-include'</span>);
+  grunt.registerTask(<span class="hljs-string">'default'</span>, [<span class="hljs-string">'build_include:default'</span>]);
+};</code></pre>
+				<h3 id="output">Output</h3>
+				<div class="nowrapcode">
+					<pre><code class="language-js"><span class="hljs-keyword">var</span> getStyleCss = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> css = <span class="hljs-string">'\
+.mem-fs-button::after{content:\"\";background-image:url(data:image/png;base64,i\
+VBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACk0lEQVR42mNgGAWjYBSMUFAlx8RQI69I\
+JJanyK5qOS4S7BIjzfAaeVmGFbr/icYLtH4zNClmkOyJXpXjDEt1iLdnktp92noEhGdqfCTJjnoFV5L\
+toItHpqu/JcmOOnnzgfXIciBerP0PBc/QeA8MYTeSk1aH8mKGeVo/UcxaovOPfh5pVeqhSSEDyvhT1B\
+7TL2nRwjMQTzyhbdICOXyZDu08g8sT6CUaxR4BpdtWpS6aeAaXJ+Zq/mBoV5pLfY+AALU9g88TtfJaD\
+C2KDbTxCH7P9FHVEyBABY9IoxiwGMkj+DzTrFhOtB2T1O7h9QRVPAICoGYHzIAZGh8w5LF5ZqbGJ7Jr\
+dXRPYFPXrbKHdI80KiSBPTBd/Q3YQGygVakbxTNT1V8SZXatvCE4BvF5AgbalRYyzNb8yjBR9SZDtbw\
+I7VrKTYrF4HbWVPUXwGaHPdH62pQmMczS+AxMLneBntAY7XKMglEwCkbBKBgFgwY0KIQCa3UbElu/LO\
+BmEK6mCZUdGAJsZznjbYpPVnsAb/22K80j0hNs4AELWC8Q1GbDrZYH6OEU8j3cp3oW3qjrVN5AVH9it\
+uY3IhuksUR1zqrl+BhmaX6B94lAMUhyp2c52kgiMZ2iycAREOJavzoY/XFsnmlSLERRM0H1OvV6iPh7\
+dsS3YonpNtOsq0tM95QUQMgzNPEItT1BjGdo4hFaeIKQZyaq3ab9IDa1PIHPMzQfMqW2J4j1DFU9ArK\
+oQ3kleBwLgnuAlaYHmQN0fMAitgDJrD6wYwd0fqRDeRmJnmADDx8NuokeYmt1RPMnfHDOWE1Uu0myHf\
+gmdajiEdBAGKi5QRx+BBwB3EXW4BkoVvpVLxNtV6fy2tGuxigYBaNg+AAAZ7k6IXnaMaQAAAAASUVOR\
+K5CYII=);background-size:cover;opacity:.4;top:0;left:0;bottom:0;right:0;positio\
+n:absolute;z-index:100;-webkit-filter:grayscale(1);filter:grayscale(1)}.mem-fs-\
+button-parent{width:50px;height:50px;position:fixed;top:10px;right:10px;z-index\
+:101}.mem-fs-button{position:absolute;top:0;left:0;right:0;bottom:0}.mem-fs-but\
+ton:hover{cursor:pointer;opacity:1;filter:grayscale(0);-webkit-filter:grayscale\
+(0);-webkit-filter:drop-shadow(4px 4px 4px #d107c0);filter:drop-shadow(4px 4px \
+4px #d107c0)}.mem-fs-button:hover::after{content:\"\";cursor:pointer;opacity:1;\
+filter:grayscale(0);-webkit-filter:grayscale(0)}.mem-fs-button-parent .mem-fs-b\
+tntooltip{visibility:hidden;width:120px;background-color:#272822;color:#fff;tex\
+t-align:center;border-radius:6px;padding:5px 0;position:absolute;z-index:1;top:\
+2px;right:105%;opacity:0;transition:opacity 1s}.mem-fs-button-parent:hover .mem\
+-fs-btntooltip{visibility:visible;opacity:1}.mem-fs-button-parent .mem-fs-btnto\
+oltip::after{content:\"\";position:absolute;top:50%;left:100%;margin-top:-5px;b\
+order-width:5px;border-style:solid;border-color:transparent transparent transpa\
+rent #272822}.mem-fs-game{background-color:#8d6b15}.mem-fs-no-sel{-webkit-user-\
+select:none;user-select:none;-o-user-select:none;-webkit-touch-callout:none;-kh\
+tml-user-select:none;-moz-user-select:none;-ms-user-select:none}.mem-fs-wrap-ct\
+l{background-color:brown}div.mem-fs-ctl{display:block;width:100%;text-align:cen\
+ter}div#mem-fs-game-wrap div#game{border:0!important}div#mem-ctl-wrap div.mem-f\
+s-ctl{display:inline-block;margin:0 0 10px 0}div.mem-fs-toggle-ctl{display:inli\
+ne-block;width:100%;text-align:center}div.mem-fs-div-tog{display:inline-block}d\
+iv.mem-fs-div-tog:hover{cursor:pointer}i.mem-fs-tog{border:solid #000;border-wi\
+dth:0 3px 3px 0;display:inline-block;padding:3px}i.mem-fs-tog.right{transform:r\
+otate(-45deg);-webkit-transform:rotate(-45deg)}i.mem-fs-tog.left{transform:rota\
+te(135deg);-webkit-transform:rotate(135deg)}i.mem-fs-tog.up{transform:rotate(-1\
+35deg);-webkit-transform:rotate(-135deg)}i.mem-fs-tog.down{transform:rotate(45d\
+eg);-webkit-transform:rotate(45deg)};'</span>;
+  <span class="hljs-keyword">return</span> css;
+};
+</code></pre>
+				</div>
+				<style>
+  @media (min-width: 641px) {
+    div.nowrapcode {
+      overflow-x: auto;
+      background-color: rgba(0, 0, 0, 0.04);
+      -webkit-overflow-scrolling: touch;
+    }
+    div.nowrapcode pre {
+      background-color: transparent;
+      word-wrap:normal;
+      white-space: pre;
+    }
+    div.nowrapcode pre code {
+      white-space: pre;
+      word-wrap:normal;
+    }
+  }
+</style>  
+				<style>
+.tsd-typography h5, .tsd-typography h6 {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+</style>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="label ">
+						<span>Pages</span>
+					</li>
+					<li class="current ">
+						<a href="AsjsstringIncludeTextInJavascriptString.html"> <wbr>Asjsstring <wbr>Include <wbr>Text <wbr>In <wbr>Javascript <wbr>String</a>
+					</li>
+					<li class=" ">
+						<a href="CommentJsdocBreakstringByWord.html"> <wbr>Comment <wbr>Jsdoc <wbr>Breakstring <wbr>By <wbr>Word</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeJsdocRemovePadding.html"> <wbr>Comment <wbr>Type <wbr>Jsdoc <wbr>Remove <wbr>Padding</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeMultiBreakstringIndent.html"> <wbr>Comment <wbr>Type <wbr>Multi <wbr>Breakstring <wbr>Indent</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeMultiWithTwoTypesOfPadding.html"> <wbr>Comment <wbr>Type <wbr>Multi <wbr>With <wbr>Two <wbr>Types <wbr>Of <wbr>Padding</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeSingle.html"> <wbr>Comment <wbr>Type <wbr>Single</a>
+					</li>
+					<li class=" ">
+						<a href="CommentTypeSingleBreakstringFlagsAndEol.html"> <wbr>Comment <wbr>Type <wbr>Single <wbr>Breakstring <wbr>Flags <wbr>And <wbr>Eol</a>
+					</li>
+					<li class=" ">
+						<a href="FenceCommentAndTextOptions.html"> <wbr>Fence <wbr>Comment <wbr>And <wbr>Text <wbr>Options</a>
+					</li>
+					<li class=" ">
+						<a href="FenceCommentTextSimple.html"> <wbr>Fence <wbr>Comment <wbr>Text <wbr>Simple</a>
+					</li>
+					<li class=" ">
+						<a href="FencedRemoveWithCommentAndWhiteSpaceLines.html"> <wbr>Fenced <wbr>Remove <wbr>With <wbr>Comment <wbr>And <wbr>White <wbr>Space <wbr>Lines</a>
+					</li>
+					<li class=" ">
+						<a href="TextBeforeAfterWithSpecialChars.html"> <wbr>Text <wbr>Before <wbr>After <wbr>With <wbr>Special <wbr>Chars</a>
+					</li>
+					<li class=" ">
+						<a href="TextBeforeAfterWithUnicode.html"> <wbr>Text <wbr>Before <wbr>After <wbr>With <wbr>Unicode</a>
+					</li>
+					<li class=" ">
+						<a href="TextPadleftBreakLinesByWord.html"> <wbr>Text <wbr>Padleft <wbr>Break <wbr>Lines <wbr>By <wbr>Word</a>
+					</li>
+					<li class=" ">
+						<a href="replacements/index.html">Replacements</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
