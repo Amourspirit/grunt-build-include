@@ -1,4 +1,4 @@
-# Comment Type Jsdoc Breakstring by Word
+# Jsdoc Comment Breakstring by Word
 
 ## BUILD_INCLUDE
 
