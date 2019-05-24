@@ -527,31 +527,16 @@ export class BuildProcess {
    * The only option to be set is <em>asjsstring</em>
    *
    * Sets option for [biOpt.asJsString]{@link IBuildIncludeOpt.asJsString}
-   * <div>&nbsp;</div>
-   * <strong>AsJsString</strong> is basicly an alias for:
+   * 
+   * **AsJsString** is basicly an alias for:
    *
-   * ><code>text?code=jsString&kind=encode</code>
+   * >`text?code=jsString&kind=encode`
    * @param opts The array of options to search for break string options in
    * @param biOpt The current options. This parameter is an object and
    * will be potentially modified by this method.
    * @example
-```js
-
- * function getStyle() {
- *  var css = '// BUILD_INCLUDE("../style.min.css")[asJsString]';
- *  return css;
- * }
-```
- * To break include into muliple lines <strong>asJsString</strong> can be combined with
- * <strong>breakString</strong>
-```js
- * function getStyle() {
- * // included file will be broken into lines 100 characters per line.
- * // this makes for much better readability
- *  var css = '// BUILD_INCLUDE("../style.min.css")[asJsString, breakstring?width=100]';
- *  return css;
- * }
-```
+   * 
+   * [[include:docs/BuildProcess/getOptionsAsJsStringEx.md]]
    */
   private getOptionsAsJsString(opts: string[], biOpt: IBuildIncludeOpt): boolean {
     const asjRx: RegExp = /\s*asjsstring\s*/i;
@@ -582,18 +567,8 @@ export class BuildProcess {
    * Potential options are as follows.
    *
    * Sets options for [biOpt.bs]{@link IBuildIncludeOpt.bs}
-   *
-   * ><div><strong>width</strong> - The width is the number of characters to for each line. Default is <strong>80</strong></div>  
-   * ><div><strong>break</strong> - The options of how to split the replacement file contents.</div>  
-   * ><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default value is <strong>width</strong></div>
-   * ><div>&nbsp;&nbsp;<code>break=width</code> or <code>break=0</code> - Split by Width</div>  
-   * ><div>&nbsp;&nbsp;<code>break=word</code> or <code>break=1</code> - Split by Word</div>  
-   * ><div>&nbsp;&nbsp;<code>break=line</code> or <code>break=2</code> - Split by Line</div>  
-   * ><div><strong>eol</strong> - The options of how handle line endings of the replacement file contents.</div>  
-   * ><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default value is <strong>noLnBr</strong></div>
-   * ><div>&nbsp;&nbsp;<code>eol=none</code> or <code>eol=0</code> - Take no action</div>
-   * ><div>&nbsp;&nbsp;<code>eol=noLnBr</code> or <code>eol=1</code> - Remove all line breaks</div>  
-   * ><div>&nbsp;&nbsp;<code>eol=encode</code> or <code>eol=2</code> - Encode line breaks as \n</div>
+   * 
+   * [[include:docs/BuildProcess/getOptionsBreakString.md]]
    *
    * @param opts The array of options to search for break string options in
    * @param biOpt The current options. This parameter is an object and
@@ -694,13 +669,8 @@ export class BuildProcess {
    *
    * Sets options for [biOpt.comment]{@link IBuildIncludeOpt.comment}
    *
-   * ><div><strong>type</strong> - Indicates the comment type</div>
-   * ><div>&nbsp;&nbsp;<code>type=single</code> or <code>type=1</code>  - single line comment // will be applied.</div>  
-   * ><div>&nbsp;&nbsp;<code>type=multi</code> or <code>type=2</code> - (default) multi line comment will be used.</div>
-   * ><div>&nbsp;&nbsp;<code>type=jsdoc</code> or <code>type=3</code> - jsdoc comment style block will be used.</div>
-   * ><div><strong>padleft</strong> - A string or a  number used to set
-   * >padding string that will apply to the left of each line
-   * >before each comment. This can be used as an indent.</div>  
+   * [[include:docs/BuildProcess/getOptionsComment.md]]
+   * 
    * @param opts The array of options to search for comment options in
    * @param biOpt The current options. This parameter is an object and
    * will be potentially modified by this method.
@@ -873,22 +843,8 @@ export class BuildProcess {
    *
    * Sets options for [biOpt.text]{@link IBuildIncludeOpt.text}
    *
-   * ><div><strong>before</strong> - sets the text to append before the replacement file contents</div>  
-   * ><div><strong>after</strong>  - sets the text to append after the replacement file contents</div>  
-   * ><div><strong>padleft</strong>  - set padding string that will apply to the left of each line</div>  
-   * ><div><strong>padright</strong> - set padding string that willl apply to the right of each line</div>  
-   * ><div><strong>kind</strong> - set the encoding or decoding options
-   * can be encode or decode</div>
-   * ><div>&nbsp;&nbsp;<code>kind=encode</code> or <code>kind=0</code> - Encodes the replacement file contents</div>  
-   * ><div>&nbsp;&nbsp;<code>kind=decode</code> or <code>kind=1</code> - Decodes the replacement file contents</div>  
-   *
-   * ><div><strong>code</strong> - the ekind of encoding or decodeing can be base64, base64uri, jsString, uri</div>  
-   * ><div>&nbsp;&nbsp;<code>code=uri</code> or <code>code=0</code> - Encodes / Decodes the replacement file contents as URI</div>  
-   * ><div>&nbsp;&nbsp;<code>code=uriComponent</code> or <code>code=1</code> - Encodes / Decodes the replacement file contents as uriComponent</div>  
-   * ><div>&nbsp;&nbsp;<code>code=base64</code> or <code>code=2</code> - Encodes / Decodes the replacement file contents as base64</div>
-   * ><div>&nbsp;&nbsp;<code>code=base64Uri</code> or <code>code=3</code> - Encodes / Decodes the replacement file contents as base64Uri</div>  
-   * ><div>&nbsp;&nbsp;<code>code=jsString</code> or <code>code=4</code> - Encodes / Decodes the replacement file contents as as JavaScript string</div>  
-   * ><div>&nbsp;&nbsp;<code>code=tsString</code> or <code>code=5</code> - Encodes / Decodes the replacement file contents as as TypeScript string</div>  
+   * [[include:docs/BuildProcess/getOptionsText.md]]
+   * 
    * @param opts The array of options to search for Text options in
    * @param biOpt The current options. This parameter is an object and
    * will be potentially modified by this method.

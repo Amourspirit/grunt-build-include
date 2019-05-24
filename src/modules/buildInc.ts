@@ -1,8 +1,8 @@
 import { BuildProcess } from './BuildProcess';
 /**
  * Process contents and returns a the processed contents.
- * <div>&nbsp;</div>
- * <strong>See:</strong> [[BuildProcess.buildInclude]]
+ * 
+ * **See:** [[BuildProcess.buildInclude]]
  * @param contents The contents of the file currently being read
  * @param srcpath The source path of the file that contents were read from
  * @param destpath The destination file that the contents are to be written into.
