@@ -1,5 +1,5 @@
-Most any option that is available as an inline [option](../Options) also has a grunt file option counterpart.  
-The [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html) interface outlines the structers expect for this options in the grunt file config for `build_include`.  
+Most any option that is available as an inline [option](../Options) also has a grunt file counterpart.  
+The [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html) interface outlines the structer expected for this options in the grunt file config for `build_include`.  
 
 Grunt config Options for `build_include`:
 
