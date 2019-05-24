@@ -1,7 +1,7 @@
 ### FENCE EXAMPLE
 
-Matches built in fence rules of [StrictFence](/classes/fences.strictfence.html)
-by seting fence to string value of [regexKind.strict](/enums/enums.fencekind.html#strict)
+Matches built in fence rules of [StrictFence](/grunt-build-include/classes/fences.strictfence.html)
+by seting fence to string value of [regexKind.strict](/grunt-build-include/enums/enums.fencekind.html#strict)
 
 #### Config
 

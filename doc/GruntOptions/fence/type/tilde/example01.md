@@ -1,7 +1,7 @@
 ### FENCE EXAMPLE
 
-Matches built in fence rules of [TildeFence](/classes/fences.tildefence.html)
-by seting fence to string value of [regexKind.tidle](/enums/enums.fencekind.html#tilde)
+Matches built in fence rules of [TildeFence](/grunt-build-include/classes/fences.tildefence.html)
+by seting fence to string value of [regexKind.tidle](/grunt-build-include/enums/enums.fencekind.html#tilde)
 
 #### Config
 

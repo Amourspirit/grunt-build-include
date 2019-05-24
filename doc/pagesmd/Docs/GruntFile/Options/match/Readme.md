@@ -1,14 +1,14 @@
 [[include:GruntOptions/match/match.md]]
 
 When needed custom expressions can be written into a task using the `match` option.  
-`match` follows the inteface [IMatchOpt](/interfaces/_modules_interfaces_.imatchopt.html).
-Any omitted values are included from the values of default match [MatchBuildInclude](/classes/matchoptions.matchbuildinclude.html)  
-It is also possible to merge current [matches](/enums/enums.regexkind.html) with new values.  
+`match` follows the inteface [IMatchOpt](/grunt-build-include/interfaces/_modules_interfaces_.imatchopt.html).
+Any omitted values are included from the values of default match [MatchBuildInclude](/grunt-build-include/classes/matchoptions.matchbuildinclude.html)  
+It is also possible to merge current [matches](/grunt-build-include/enums/enums.regexkind.html) with new values.  
 See <a href="#example05">example below</a>
 
 [[include:GruntOptions/override/notice.md]]
 
-**See Also:** [IBiGruntOpt](/interfaces/_modules_interfaces_.ibigruntopt.html)
+**See Also:** [IBiGruntOpt](/grunt-build-include/interfaces/_modules_interfaces_.ibigruntopt.html)
 
 [[include:GruntOptions/match/example03.md]]
 [[include:enums/regexKind/buildIncludeSlash.md]]

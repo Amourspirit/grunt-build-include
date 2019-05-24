@@ -44,6 +44,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['build_include:default']);
 };
 ```
-**See Example:** [Asjsstring Include Text In Javascript String](/pages/examples/AsjsstringIncludeTextInJavascriptString.html)
+**See Example:** [Asjsstring Include Text In Javascript String](/grunt-build-include/pages/examples/AsjsstringIncludeTextInJavascriptString.html)
 
 [[include:style/nowrapcode.html]]

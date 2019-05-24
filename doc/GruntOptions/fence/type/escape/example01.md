@@ -1,7 +1,7 @@
 ### FENCE EXAMPLE
 
-Matches built in fence rules of [EscapeFence](/classes/fences.escapefence.html)
-by seting fence to string value of [regexKind.escape](/enums/enums.fencekind.html#escape)
+Matches built in fence rules of [EscapeFence](/grunt-build-include/classes/fences.escapefence.html)
+by seting fence to string value of [regexKind.escape](/grunt-build-include/enums/enums.fencekind.html#escape)
 
 #### Config
 

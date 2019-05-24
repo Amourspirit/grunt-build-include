@@ -3,4 +3,4 @@
 `type=jsauto` automatically determine if multi line comments or single line comments should be applied.  
 If input is a single line `//` will be applied.  
 If input is multi-line then `/* */` will be applied.  
-See: Enum values for [commentkind](/enums/enums.commentkind.html) for possible types.  
+See: Enum values for [commentkind](/grunt-build-include/enums/enums.commentkind.html) for possible types.  

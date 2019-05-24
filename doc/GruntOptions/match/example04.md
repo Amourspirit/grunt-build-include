@@ -1,7 +1,7 @@
 ### MATCH EXAMPLE
 
-Matches built in match rules of [MatchBuildIncludeSlash](/classes/matchoptions.matchbuildincludeslash.html)
-by seting match to numeric value of [regexKind.buildIncludeSlash](/enums/enums.regexkind.html#buildincludeslash)
+Matches built in match rules of [MatchBuildIncludeSlash](/grunt-build-include/classes/matchoptions.matchbuildincludeslash.html)
+by seting match to numeric value of [regexKind.buildIncludeSlash](/grunt-build-include/enums/enums.regexkind.html#buildincludeslash)
 
 ```js
 module.exports = function (grunt) {

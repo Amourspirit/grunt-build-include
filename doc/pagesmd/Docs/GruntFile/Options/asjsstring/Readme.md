@@ -4,7 +4,7 @@
 
 [[include:GruntOptions/override/example01.md]]
 
-**See Also:** [Options AsJsString](/pages/Docs/Options/asjsstring/)
+**See Also:** [Options AsJsString](/grunt-build-include/pages/Docs/Options/asjsstring/)
 
 [Grunt File Options](../)  
 

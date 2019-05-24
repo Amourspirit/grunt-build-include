@@ -10,12 +10,12 @@
 
 **See Examples:**
 
-* [Text Padleft Break Lines By Word](/pages/examples/TextPadleftBreakLinesByWord.html)
-* [Text Before After With Special Chars](/pages/examples/TextBeforeAfterWithSpecialChars.html)
-* [Text Before After With Unicode](/pages/examples/TextBeforeAfterWithUnicode.html)
-* [Comment Type Jsdoc Remove Padding](/pages/examples/CommentTypeJsdocRemovePadding.html)
-* [Comment Type Multi Breakstring Indent](/pages/examples/CommentTypeMultiBreakstringIndent.html)
-* [Fence Comment And Text Options](/pages/examples/FenceCommentAndTextOptions.html)
-* [Fenced Remove With Comment And White Space Lines](/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html)
+* [Text Padleft Break Lines By Word](/grunt-build-include/pages/examples/TextPadleftBreakLinesByWord.html)
+* [Text Before After With Special Chars](/grunt-build-include/pages/examples/TextBeforeAfterWithSpecialChars.html)
+* [Text Before After With Unicode](/grunt-build-include/pages/examples/TextBeforeAfterWithUnicode.html)
+* [Comment Type Jsdoc Remove Padding](/grunt-build-include/pages/examples/CommentTypeJsdocRemovePadding.html)
+* [Comment Type Multi Breakstring Indent](/grunt-build-include/pages/examples/CommentTypeMultiBreakstringIndent.html)
+* [Fence Comment And Text Options](/grunt-build-include/pages/examples/FenceCommentAndTextOptions.html)
+* [Fenced Remove With Comment And White Space Lines](/grunt-build-include/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html)
 
 [Options](../)

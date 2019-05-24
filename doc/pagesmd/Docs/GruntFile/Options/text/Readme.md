@@ -7,6 +7,6 @@ The option `text` allow for input file content to be manipulated in several ways
 * [noLineBreaks](noLineBreaks/)
 * [whiteSpaceLine](whiteSpaceLine/)
 
-**See Also:** [Options Text](/pages/Docs/Options/text/)
+**See Also:** [Options Text](/grunt-build-include/pages/Docs/Options/text/)
 
 [Grunt File Options](../)

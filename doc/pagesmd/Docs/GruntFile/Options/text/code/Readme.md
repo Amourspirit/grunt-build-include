@@ -14,7 +14,7 @@
 
 [[include:GruntOptions/text/code/uriComponent.md]]
 
-**See Also:** [Options Text Code](/pages/Docs/Options/text/code/)
+**See Also:** [Options Text Code](/grunt-build-include/pages/Docs/Options/text/code/)
 
 [Text](../)  
 [Grunt File Options](../../)

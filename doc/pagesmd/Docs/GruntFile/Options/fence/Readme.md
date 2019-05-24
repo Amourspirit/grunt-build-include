@@ -12,7 +12,7 @@ Fence values in **gruntFile.js** will be ignored for BUILD_INCLUDE values that h
 
 [[include:GruntOptions/fence/type/strict/example01.md]]
 
-**See Also:** [Options Fence](/pages/Docs/Options/fence/)
+**See Also:** [Options Fence](/grunt-build-include/pages/Docs/Options/fence/)
 
 [Grunt File Options](../)
 

@@ -6,7 +6,7 @@ Matchs options such as:
 
 The Regex will example can be see on [regexr.com](https://regexr.com/4dr4m)
 
-**NOTE:** This match would not be able to apply [indent](/pages/Docs/Options/text/indent/) due to the Regular Expression
+**NOTE:** This match would not be able to apply [indent](/grunt-build-include/pages/Docs/Options/text/indent/) due to the Regular Expression
 starting at the beginning of line as indicated by the `prefix` starting with `^`.
 
 ```js

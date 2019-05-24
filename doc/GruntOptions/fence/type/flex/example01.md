@@ -1,7 +1,7 @@
 ### FENCE EXAMPLE
 
-Matches built in fence rules of [FlexFence](/classes/fences.flexfence.html)
-by seting fence to string value of [regexKind.flex](/enums/enums.fencekind.html#flex)
+Matches built in fence rules of [FlexFence](/grunt-build-include/classes/fences.flexfence.html)
+by seting fence to string value of [regexKind.flex](/grunt-build-include/enums/enums.fencekind.html#flex)
 
 #### Config
 

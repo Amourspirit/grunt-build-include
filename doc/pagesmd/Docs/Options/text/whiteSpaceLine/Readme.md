@@ -8,7 +8,7 @@
 
 [[include:options/text/whiteSpaceLine/removeAllWs.md]]
 
-**See Also:** [Enumeration whiteSpLn](/enums/enums.whitespln.html)
+**See Also:** [Enumeration whiteSpLn](/grunt-build-include/enums/enums.whitespln.html)
 
 [Text Options](../)  
 [All Options](../../)

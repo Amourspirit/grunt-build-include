@@ -6,7 +6,7 @@ into a single fence.
 [Tilde](../Tilde) is matched second.  
 [Strict](../Strict/) is the final match.
 
-See Example: [Fenced Remove With Comment And White Space Lines](/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html)
+See Example: [Fenced Remove With Comment And White Space Lines](/grunt-build-include/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html)
 
 [Fence Type](../)
 

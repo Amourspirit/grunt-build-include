@@ -1,6 +1,6 @@
 ### FENCE EXAMPLE
 
-Matches built in fence rules of [EscapeFence](/classes/fences.escapefence.html) [StrictFence](/classes/fences.strictfence.html), [TildeFence](/classes/fences.tildefence.html) and [regexKind.multiFlex](/enums/enums.fencekind.html#multiFlex)
+Matches built in fence rules of [EscapeFence](/grunt-build-include/classes/fences.escapefence.html) [StrictFence](/grunt-build-include/classes/fences.strictfence.html), [TildeFence](/grunt-build-include/classes/fences.tildefence.html) and [regexKind.multiFlex](/grunt-build-include/enums/enums.fencekind.html#multiFlex)
 
 #### Config
 

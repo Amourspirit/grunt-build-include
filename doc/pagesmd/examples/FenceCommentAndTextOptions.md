@@ -33,7 +33,7 @@ See example: [Comment Remove Fenced And White Space Lines](FencedRemoveWithComme
 [[include:options/fence/type/type.md]]
 
 [[include:options/fence/type/multiflex.md]]
-See: Fence Type [MultiFlex](/pages/Docs/Options/fence/type/MultiFlex/)
+See: Fence Type [MultiFlex](/grunt-build-include/pages/Docs/Options/fence/type/MultiFlex/)
 
 [[include:options/fence/remove/remove.md]]
 

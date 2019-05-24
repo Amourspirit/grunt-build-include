@@ -29,7 +29,7 @@ File [replace02.txt](replacements/replace02.txt.html) is to be included in outpu
 [[include:options/fence/type/type.md]]
 
 [[include:options/fence/type/multiflex.md]]
-See: Fence Type [MultiFlex](/pages/Docs/Options/fence/type/MultiFlex/)
+See: Fence Type [MultiFlex](/grunt-build-include/pages/Docs/Options/fence/type/MultiFlex/)
 
 [[include:options/fence/remove/remove.md]]
 

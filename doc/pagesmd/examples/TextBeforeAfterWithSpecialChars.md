@@ -24,7 +24,7 @@
 
 Includes [replace01.txt](replacements/replace01.txt.html).  
 Special characters are escaped.  
-See: [Escaping Parameters](/pages/Docs/misc/EscapingParameters.html)  
+See: [Escaping Parameters](/grunt-build-include/pages/Docs/misc/EscapingParameters.html)  
 
 ### Options
 
