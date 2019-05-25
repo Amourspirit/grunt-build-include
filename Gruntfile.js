@@ -260,4 +260,32 @@ module.exports = function (grunt) {
     'gen_docs'
   ]);
   // #endregion
+  // #region Test
+  grunt.registerTask('test', [
+    'clean:test',
+    'run_test',
+    'clean:test'
+  ]);
+  grunt.registerTask('run_test', 'run mocha', function () {
+    var done = this.async();
+    // exec works with $(which mocha) except on travis ci below nodejs version 8
+    // exec $(which node) $(which mocha) works on all tested versions
+    grunt.log.writeln("Node Major Version:", nodeMajor);
+    var cmd = '';
+    if (isWin === true) {
+      cmd = 'npx mocha -r ts-node/register test/**/*.test.ts'; // '.\\node_modules\\.bin\\mocha.cmd';
+    } else {
+      if (nodeMajor <= 6) {
+        cmd = '$(which node) $(which mocha) -r ts-node/register test/**/*.test.ts';
+      } else {
+        cmd = 'npx mocha -r ts-node/register test/**/*.test.ts';
+      }
+
+    }
+    require('child_process').exec(cmd, function (err, stdout) {
+      grunt.log.write(stdout);
+      done(err);
+    });
+  });
+  // #endregion
 };

@@ -5,7 +5,7 @@
   "main": "./task/build_include.js",
   "types": "./task/build_include.d.ts",
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "test": "grunt build && mocha -r ts-node/register test/**/*.test.ts",
     "build": "grunt build",
     "lint": "tslint -p tsconfig.json"
   },
