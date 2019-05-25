@@ -284,7 +284,7 @@ module.exports = function (grunt) {
     } else {
       cmd = 'node_modules/.bin/typedoc';
     }
-    cmd += ' --out docs ./src --includes ./doc --mdPagesSourcePath ./doc/pagesmd --theme markdown-pages';
+    cmd += ' --out docs/grunt-build-include ./src --includes ./doc --mdPagesSourcePath ./doc/pagesmd --theme markdown-pages';
     require('child_process').exec(cmd, function (err, stdout) {
       grunt.log.write(stdout);
       done(err);
