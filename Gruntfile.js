@@ -66,15 +66,9 @@ module.exports = function (grunt) {
       }
     },
     clean: {
-      dirs: ['scratch', 'dist', 'lib'],
+      dirs: ['scratch', 'tasks'],
       test: ['scratch/test'],
-      docs: ['docs'],
-      files: [
-        './index.js',
-        './strbrk.min.js',
-        './strbrk.min.js.map',
-        'index.d.ts'
-      ]
+      docs: ['docs']
     },
 
     tslint: {
@@ -87,6 +81,7 @@ module.exports = function (grunt) {
     shell: {
       tsc: 'tsc'
     },
+
     remove_comments: {
       js: {
         options: {
@@ -96,51 +91,27 @@ module.exports = function (grunt) {
           linein: true, // Whether to remove a line-in comment that exists in the line of code, it can be interpreted as a single-line comment in the line of code with /* or //.
           isCssLinein: false // Whether the file currently being processed is a CSS file
         },
-        cwd: 'lib/',
+        cwd: 'scratch/tasks/',
         src: '**/*.js',
         expand: true,
         dest: 'scratch/nc/'
       },
     },
-    uglify: {
-      js: {
-        options: {
-          sourceMap: true,
-          mangle: true,
-        },
-        files: {
-          "strbrk.min.js": 'lib/main.js'
-        }
-      }
-    },
+
     copy: {
-      d: {
-        files: [{
-          // cwd: 'lib/',
-          src: './lib/main.d.ts',
-          dest: './index.d.ts'
-          // expand: false
-        },
-        {
-          src: './scratch/nc/main.js',
-          dest: './index.js'
-        }],
-      }
+      js: {
+        expand: true,
+        cwd: 'scratch/nc/',
+        src: '**/*.js',
+        dest: 'tasks/',
+      },
+      d_ts: {
+        expand: true,
+        cwd: 'scratch/tasks/',
+        src: '**/*.d.ts',
+        dest: 'tasks/',
+      },
     },
-    // Unit tests.
-    nodeunit: {
-      test: ['test/*_test.js']
-    },
-    build_include: {
-      pass: {
-        options: {
-          expand: true,
-        },
-        files: {
-          "../scratch/test/simple.txt": "../scratch/test/simple.txt"
-        }
-      }
-    }
   });
   // #endregion
   // Actually load this plugin's task(s).
@@ -185,7 +156,6 @@ module.exports = function (grunt) {
   });
   grunt.registerTask('test', [
     'clean:test',
-    'build_include:pass',
     'nodeunit:test'
   ]);
   grunt.registerTask('build', [
@@ -195,7 +165,6 @@ module.exports = function (grunt) {
      * clean the folder out from any previous build
      */
     'clean:dirs',
-    'clean:files',
     /*
      * Task tslint
      * check the ts files for any lint issues
@@ -206,15 +175,9 @@ module.exports = function (grunt) {
      * run tsc, outputs to /lib
      */
     'shell:tsc',
-    'uglify:js',
     'remove_comments:js',
-    /**
-     * Task shell: prettier
-     * Runs prettier from package.json
-     */
-    // 'prettier:format_js',
-    // 'uglify:js',
-    'copy:d'
+    'copy:js',
+    'copy:d_ts'
   ]);
   // #region git
   grunt.registerTask('gitver', [

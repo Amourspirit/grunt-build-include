@@ -4,7 +4,7 @@
     "target": "es2015",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./tasks",
+    "outDir": "./scratch/tasks",
     "strict": true,
     "sourceMap": true
   },
