@@ -66,7 +66,7 @@ export namespace meKind {
  */
 export type eKindType = meKind | kind;
 /**
- * [[include:docs/enums/eKind.md]]
+ * [[include:docs/enums/ekind/eKind.md]]
  */
 export const eKind = {
   ...meKind,

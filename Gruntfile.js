@@ -1,4 +1,3 @@
-require('./tasks/build_include');
 (function () {
   "use strict";
   // Define your library strictly...
@@ -145,14 +144,17 @@ module.exports = function (grunt) {
   });
   // #endregion
   // Actually load this plugin's task(s).
-  grunt.loadTasks('tasks');
+  // In future versions of this plugin can most likley load past version of the this plugin.
+  // That is it should be possible to use older version of this plugin as a dev dependacy and
+  // then use the older version of the plugin to do replcements in the outputted *.d.ts files
+
   // #region grunt require and load npm task
+  // Load all task at once
+  // https://github.com/sindresorhus/load-grunt-tasks
   require('load-grunt-tasks')(grunt);
-  grunt.loadNpmTasks('grunt-env');
-  grunt.loadNpmTasks('grunt-remove-comments');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
-  // grunt.loadNpmTasks('grunt-contrib-uglify');
-  // grunt.loadNpmTasks('grunt-contrib-copy');
+  // grunt.loadNpmTasks('grunt-env');
+  // grunt.loadNpmTasks('grunt-remove-comments');
+  // grunt.loadNpmTasks('grunt-contrib-nodeunit');
   // #endregion
   grunt.registerTask('default', [
     // 'build'
