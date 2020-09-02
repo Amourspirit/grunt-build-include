@@ -126,20 +126,25 @@ export class Util {
       .replace(/\-/g, '\\-');
     return s;
   };
+
+  private static createInstance<T>(t: new () => T): T {
+    return new t();
+  }
+ 
   /**
    * Clones a class with a default constructor
    * @param instance Instance of class with default constructor
    * @returns cloned copy of class.
    * @see [[Util.DeepCopy]]
    */
-  public static clone<T>(instance: T): T {
-    if (!instance.constructor) {
-      throw new Error(`cloning requires a constructor for the instance`);
-    }
-    const copy = new (instance.constructor as new () => T)();
+  public static clone<T extends new (...args: any[]) => any >(instance: T): T {
+    // if (!instance.constructor) {
+    //   throw new Error(`cloning requires a constructor for the instance`);
+    // }
+    const copy = this.createInstance(instance);
+
+    // const copy = new (instance.constructor as new () => T)();
     return Util.DeepCopy(copy);
-    // Object.assign(copy, instance);
-    // return copy;
   }
 
   /**

@@ -9,6 +9,9 @@ import { BuildProcess } from './BuildProcess';
  * @return The contents of the file after they have been processed.
  */
 export const buildInc = (contents: string, srcpath: string, destpath: string): string => {
+    if(destpath) {
+        // do nothing. ts lint fix
+    }
     const bi = new BuildProcess();
     const results = bi.buildInclude(contents,srcpath);
     return results;

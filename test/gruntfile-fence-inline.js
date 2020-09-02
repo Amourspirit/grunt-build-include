@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
   var loader = require("./grunt-hacks.js");
+  var gLoad = require('./grunt.load.this');
   grunt.initConfig({
     copy: {
       fix: {
@@ -20,7 +21,7 @@ module.exports = function (grunt) {
       }
     }
   });
-  grunt.loadTasks('./../tasks');
+  gLoad(grunt);
   loader.loadParentNpmTasks(grunt, 'grunt-contrib-copy');
   grunt.registerTask('default', ['copy:fix', 'build_include:default']);
 };

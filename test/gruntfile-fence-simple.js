@@ -1,4 +1,5 @@
 module.exports = function (grunt) {
+  var gLoad = require('./grunt.load.this');
   grunt.initConfig({
     build_include: {
       default: {
@@ -11,6 +12,6 @@ module.exports = function (grunt) {
       }
     }
   });
-  grunt.loadTasks('./../tasks');
+  gLoad(grunt);
   grunt.registerTask('default', ['build_include:default']);
 };

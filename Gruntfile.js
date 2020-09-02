@@ -66,7 +66,9 @@ module.exports = function (grunt) {
       }
     },
     clean: {
-      dirs: ['scratch', 'tasks'],
+      dirs: ['scratch','dist', 'lib'],
+      dist: ['dist'],
+      scratch: ['scratch'],
       test: ['scratch/test'],
       docs: ['docs']
     },
@@ -79,11 +81,13 @@ module.exports = function (grunt) {
     },
 
     shell: {
-      tsc: 'tsc'
+      tsc: 'tsc',
+      tsc_es: "tsc -p './tsconfig.es.json'",
+      tsc_commonjs: "tsc -p './tsconfig.commonjs.json'"
     },
 
     remove_comments: {
-      js: {
+      js_es: {
         options: {
           multiline: true, // Whether to remove multi-line block comments
           singleline: true, // Whether to remove the comment of a single line.
@@ -91,26 +95,44 @@ module.exports = function (grunt) {
           linein: true, // Whether to remove a line-in comment that exists in the line of code, it can be interpreted as a single-line comment in the line of code with /* or //.
           isCssLinein: false // Whether the file currently being processed is a CSS file
         },
-        cwd: 'scratch/tasks/',
+        cwd: 'scratch/es/',
         src: '**/*.js',
         expand: true,
-        dest: 'scratch/nc/'
-      },
+        dest: 'scratch/nc/es'
+      }
     },
 
     copy: {
-      js: {
+      js_commonjs_index: {
+        src: 'scratch/commonjs/build_include.js',
+        dest: 'dist/commonjs/index.js',
+      },
+      js_commonjs_modules: {
         expand: true,
-        cwd: 'scratch/nc/',
+        cwd: 'scratch/commonjs/modules/',
         src: '**/*.js',
-        dest: 'tasks/',
+        dest: 'dist/commonjs/modules/',
       },
-      d_ts: {
+      js_es_index: {
+        src: 'scratch/nc/es/build_include.js',
+        dest: 'dist/es/index.js',
+      },
+      js_es_index_d: {
+        src: 'scratch/es/build_include.d.ts',
+        dest: 'dist/index.d.ts',
+      },
+      js_es_modules: {
         expand: true,
-        cwd: 'scratch/tasks/',
-        src: '**/*.d.ts',
-        dest: 'tasks/',
+        cwd: 'scratch/nc/es/modules/',
+        src: '**/*.js',
+        dest: 'dist/es/modules/',
       },
+      js_es_modules_d: {
+        expand: true,
+        cwd: 'scratch/es/modules/',
+        src: '**/*.d.ts',
+        dest: 'dist/modules/',
+      }
     },
   });
   // #endregion
@@ -154,10 +176,10 @@ module.exports = function (grunt) {
     grunt.log.writeln("BUILD_VERSION:" + BUILD_VERSION);
     grunt.log.writeln("packageData.version:" + packageData.version);
   });
-  grunt.registerTask('test', [
-    'clean:test',
-    'nodeunit:test'
-  ]);
+  // grunt.registerTask('test', [
+  //   'clean:test',
+  //   'nodeunit:test'
+  // ]);
   grunt.registerTask('build', [
     'env:build',
     /*
@@ -174,10 +196,16 @@ module.exports = function (grunt) {
      * Task shell: tsc
      * run tsc, outputs to /lib
      */
-    'shell:tsc',
-    'remove_comments:js',
-    'copy:js',
-    'copy:d_ts'
+    'shell:tsc_es',
+    'shell:tsc_commonjs',
+    'remove_comments:js_es',
+    'copy:js_commonjs_index',
+    'copy:js_commonjs_modules',
+    'copy:js_es_index',
+    'copy:js_es_index_d',
+    'copy:js_es_modules',
+    'copy:js_es_modules_d',
+    'clean:scratch'
   ]);
   // #region git
   grunt.registerTask('gitver', [

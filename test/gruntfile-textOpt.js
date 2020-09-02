@@ -1,7 +1,6 @@
 // https://www.javacodegeeks.com/2015/02/testing-grunt-plugin-from-grunt.html
 module.exports = function (grunt) {
-  var loader = require("./grunt-hacks.js");
-
+  var gLoad = require('./grunt.load.this');
   grunt.initConfig({
     build_include: {
       default: {
@@ -13,10 +12,7 @@ module.exports = function (grunt) {
       }
     }
   });
-
-  grunt.loadTasks('./../tasks');
-  // loader.loadParentNpmTasks(grunt, 'grunt-contrib-copy');
-
+  gLoad(grunt);
   grunt.registerTask('default', ['build_include:default']);
 
 };

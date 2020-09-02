@@ -42,6 +42,9 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
+        // if(error) {
+        //   console.log(error);
+        // }
         let src = fs.readFileSync(`${fixDir}/simple_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/simple_replaced.txt`);
         expect(src.equals(dest)).equal(true);

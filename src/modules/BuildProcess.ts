@@ -9,10 +9,6 @@ import {
   IMatchType,
   IFence,
   IGruntOptFence,
-  IIndex,
-  IKeyValue,
-  IIndexAny,
-  IKeyValueAny,
   IMatchItemWsItm
 } from "./interfaces";
 import {
@@ -791,6 +787,7 @@ export class BuildProcess {
                     }
 
                   }
+                  break;
                 default:
                   break;
               }
@@ -1625,6 +1622,7 @@ export class BuildProcess {
     // the simple solution is to replace the unicode values before JSON.parse
     //
     // replace all \u{xxxx} values with actual uincode values
+    // @ts-ignore comment suppresses all errors that originate on the following line.
     str = str.replace(/(\\u{([0-9A-Fa-f]{1,6})})/gm, (match: string, p1: string, p2: string): string => {
       // p1 is entire unicode string
       // p2 is hex value
@@ -1633,6 +1631,7 @@ export class BuildProcess {
       return p;
     });
     // replace all \uxxxx values with actual uincode values
+    // @ts-ignore comment suppresses all errors that originate on the following line.
     str = str.replace(/(\\u([0-9A-Fa-f]{1,5}))/gm, (match: string, p1: string, p2: string): string => {
       // p1 is entire unicode string
       // p2 is hex value

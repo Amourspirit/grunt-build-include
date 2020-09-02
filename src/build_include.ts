@@ -1,6 +1,7 @@
 import { buildInc } from './modules/buildInc';
 import { defaultOptions } from './modules/defaultOptions';
 import { IBiGruntOpt } from './modules/interfaces';
+// @ts-ignore comment suppresses all errors that originate on the following line.
 import * as IGrunt from 'grunt';
 
 

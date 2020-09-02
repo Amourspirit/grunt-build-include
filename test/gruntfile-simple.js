@@ -1,7 +1,7 @@
 // https://www.javacodegeeks.com/2015/02/testing-grunt-plugin-from-grunt.html
 module.exports = function (grunt) {
   var loader = require("./grunt-hacks.js");
-
+  var gLoad = require('./grunt.load.this');
   grunt.initConfig({
     clean: {
       dirs: ['../scratch/test']
@@ -17,7 +17,8 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadTasks('./../tasks');
+  // grunt.loadTasks('./../dist/commonjs');
+  gLoad(grunt);
   // loader.loadParentNpmTasks(grunt, 'grunt-contrib-copy');
   // Cannot delete files outside the current working directory
   // loader.loadParentNpmTasks(grunt, 'grunt-contrib-clean');

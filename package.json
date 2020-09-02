@@ -1,13 +1,21 @@
 {
   "name": "grunt-build-include",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Grunt task to replace BUILD_INCLIDE with options statments usng grunt",
-  "main": "./task/build_include.js",
-  "types": "./task/build_include.d.ts",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "grunt build && mocha -r ts-node/register test/**/*.test.ts",
+    "prepublishOnly": "npm run typecheck && npm run test",
     "build": "grunt build",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run typecheck && npm run test"
+    }
   },
   "keywords": [
     "gruntplugin",
@@ -18,51 +26,52 @@
     "include",
     "task"
   ],
-  "author": "Paul Moss",
+  "author": "Paul Moss <Amourspirit@users.noreply.github.com> (https://github.com/Amourspirit)",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Amourspirit/grunt-build-include.git"
   },
   "files": [
-    "tasks"
+    "dist"
   ],
   "devDependencies": {
-    "@ephox/tslint-rules": "^1.0.6",
-    "@types/chai": "^4.1.7",
+    "@ephox/tslint-rules": "^1.1.1",
+    "@types/chai": "^4.2.12",
     "@types/grunt": "^0.4.25",
-    "@types/mkdirp": "^0.5.2",
-    "@types/mocha": "^5.2.6",
-    "@types/sinon": "^7.0.11",
+    "@types/mkdirp": "^1.0.1",
+    "@types/mocha": "^8.0.3",
+    "@types/sinon": "^9.0.5",
     "chai": "^4.2.0",
-    "grunt": "^1.0.4",
+    "grunt": "^1.3.0",
     "grunt-cli": "^1.3.2",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-nodeunit": "^2.0.0",
-    "grunt-env": "^0.4.4",
+    "grunt-contrib-nodeunit": "^2.1.0",
+    "grunt-env": "^1.0.1",
     "grunt-remove-comments": "^0.1.6",
     "grunt-shell": "^3.0.1",
     "grunt-tslint": "^5.0.2",
-    "load-grunt-tasks": "^4.0.0",
-    "mkdirp": "^0.5.1",
-    "mocha": "^6.0.2",
-    "mocha-sinon": "^2.1.0",
-    "prettier": "^1.16.4",
-    "sinon": "^7.3.1",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.15.0",
+    "husky": "^4.2.5",
+    "load-grunt-tasks": "^5.1.0",
+    "mkdirp": "^1.0.4",
+    "mocha": "^8.1.3",
+    "mocha-sinon": "^2.1.2",
+    "prettier": "^2.1.1",
+    "sinon": "^9.0.3",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.14.2",
-    "typedoc-plugin-external-module-name": "^2.0.0",
-    "typedoc-plugin-markdown": "^1.2.0",
+    "typedoc": "^0.19.0",
+    "typedoc-plugin-external-module-name": "^4.0.3",
+    "typedoc-plugin-markdown": "^2.4.2",
     "typedoc-plugin-markdown-pages": "^0.3.0",
-    "typescript": "^3.4.3"
+    "typescript": "^4.0.2"
   },
   "dependencies": {
     "file-sync-cmp": "^0.1.1",
     "multi-encoder": "^0.4.3",
-    "string-breaker": "^0.4.1"
+    "string-breaker": "^1.0.0"
   },
   "engines": {
     "node": ">=6"
