@@ -1,3 +1,3 @@
 module.exports = function(grunt) {
-  grunt.loadTasks('./../dist/commonjs');
+  grunt.loadTasks('./../tasks');
 };

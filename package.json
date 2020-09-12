@@ -1,21 +1,15 @@
 {
   "name": "grunt-build-include",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Grunt task to replace BUILD_INCLIDE with options statments usng grunt",
-  "main": "dist/commonjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./task/build_include.js",
+  "types": "./task/build_include.d.ts",
   "scripts": {
-    "test": "grunt build && mocha -r ts-node/register test/**/*.test.ts",
     "prepublishOnly": "npm run typecheck && npm run test",
+    "test": "grunt build && mocha -r ts-node/register test/**/*.test.ts",
     "build": "grunt build",
     "lint": "tslint -p tsconfig.json",
     "typecheck": "tsc --noEmit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run typecheck && npm run test"
-    }
   },
   "keywords": [
     "gruntplugin",
@@ -33,7 +27,7 @@
     "url": "git+https://github.com/Amourspirit/grunt-build-include.git"
   },
   "files": [
-    "dist"
+    "tasks"
   ],
   "devDependencies": {
     "@ephox/tslint-rules": "^1.1.1",
@@ -52,7 +46,6 @@
     "grunt-remove-comments": "^0.1.6",
     "grunt-shell": "^3.0.1",
     "grunt-tslint": "^5.0.2",
-    "husky": "^4.2.5",
     "load-grunt-tasks": "^5.1.0",
     "mkdirp": "^1.0.4",
     "mocha": "^8.1.3",
@@ -62,7 +55,7 @@
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.19.0",
+    "typedoc": "^0.19.1",
     "typedoc-plugin-external-module-name": "^4.0.3",
     "typedoc-plugin-markdown": "^2.4.2",
     "typedoc-plugin-markdown-pages": "^0.3.0",
