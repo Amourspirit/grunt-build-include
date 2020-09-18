@@ -192,23 +192,26 @@ export class BuildProcess {
           grunt.log.verbose.writeln(`File to embed: '${filePath}'`);
         }
         fileContent = grunt.file.read(filePath);
-        // once the file contents are read the first thing to do is process any build_inclue
-        // statements in the fileContent.
-        // This will not match other types of matches different than the original match
-        // If this match based upon regexKind.buildIncludeSlash then recursivly only the same
-        // pattern would match.
-        // recursion may be the best way to do this.
-        let innerMatch: RegExpExecArray | null;
-        innerMatch = re.exec(fileContent);
-        if (innerMatch !== null) {
-          if (this.verbose) {
-            grunt.log.verbose.write('GRUNT-BUILD-INCLUDE: ');
-            grunt.log.verbose.writeln(`Recursivly processing file '${filePath}'`);
+        if (options.recursion === true) {
+          // once the file contents are read the first thing to do is process any build_inclue
+          // statements in the fileContent.
+          // This will not match other types of matches different than the original match
+          // If this match based upon regexKind.buildIncludeSlash then recursivly only the same
+          // pattern would match.
+          // recursion may be the best way to do this.
+          let innerMatch: RegExpExecArray | null;
+          innerMatch = re.exec(fileContent);
+          if (innerMatch !== null) {
+            if (this.verbose) {
+              grunt.log.verbose.write('GRUNT-BUILD-INCLUDE: ');
+              grunt.log.verbose.writeln(`Recursivly processing file '${filePath}'`);
+            }
+            const inProcess: BuildProcess = new BuildProcess();
+            // replace the fileContent with the new content from the recursion.
+            fileContent = inProcess.buildInclude(fileContent, filePath);
           }
-          const inProcess: BuildProcess = new BuildProcess();
-          // replace the fileContent with the new content from the recursion.
-          fileContent = inProcess.buildInclude(fileContent, filePath);
         }
+       
         // If options were set, then parse them
         let hasOptions: boolean = false;
         // process all options

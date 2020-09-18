@@ -154,6 +154,12 @@ export interface IBiGruntOpt {
    * [[include:docs/GruntOptions/noProcess.md]]
   */
   noProcess: any;
+  /**
+   * Determins if recursion should be used.  
+   * If recursion is true then build include files will be searched
+   * for matches as alos replaced in a recursive manor
+   */
+  recursion: boolean;
   /** 
    * [[include:docs/GruntOptions/timestamp.md]]
   */

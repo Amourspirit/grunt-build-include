@@ -42,6 +42,13 @@ export const defaultOptions: IBiGruntOpt = {
    */
   noProcess: {},
   /**
+  * Determins if recursion should be used.  
+  * If recursion is true then build include files will be searched
+  * for matches as alos replaced in a recursive manor.  
+  * Default value is true.
+  */
+  recursion: true,
+  /**
    * [[include:docs/GruntOptions/timestamp.md]]
    */
   timestamp: false,
