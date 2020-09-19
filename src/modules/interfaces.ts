@@ -160,6 +160,12 @@ export interface IBiGruntOpt {
    * for matches as alos replaced in a recursive manor
    */
   recursion: boolean;
+  /**
+ * Determins if missing files should be ignnore when processing.  
+ * If true then missing files will be ignored. Oherwise missing files
+ * will generate an error.
+ */
+  ignoreMissing: boolean,
   /** 
    * [[include:docs/GruntOptions/timestamp.md]]
   */

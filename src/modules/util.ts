@@ -1,6 +1,8 @@
+import { util } from "grunt";
 import { splitByOpt, lnEndOpt } from "string-breaker";
-
+type BufferEncoding = "ascii" | "utf8" | "utf-8" | "utf16le" | "ucs2" | "ucs-2" | "base64" | "latin1" | "binary" | "hex";
 export class Util {
+  static ALPHA_NUM_STR = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   /**
    * Test if an object is a function
    * @param obj Object to test
@@ -130,14 +132,14 @@ export class Util {
   private static createInstance<T>(t: new () => T): T {
     return new t();
   }
- 
+
   /**
    * Clones a class with a default constructor
    * @param instance Instance of class with default constructor
    * @returns cloned copy of class.
    * @see [[Util.DeepCopy]]
    */
-  public static clone<T extends new (...args: any[]) => any >(instance: T): T {
+  public static clone<T extends new (...args: any[]) => any>(instance: T): T {
     // if (!instance.constructor) {
     //   throw new Error(`cloning requires a constructor for the instance`);
     // }
@@ -175,13 +177,13 @@ export class Util {
     }
     return target;
   };
-/**
- * Test if a string is only white space.
- * Multi-line string are okay to use with this method.
- * @param str string to test.
- * @returns `true` if str is empty or whitespace:
- * Otherwise, `false`
- */
+  /**
+   * Test if a string is only white space.
+   * Multi-line string are okay to use with this method.
+   * @param str string to test.
+   * @returns `true` if str is empty or whitespace:
+   * Otherwise, `false`
+   */
   public static IsEmptyOrWhiteSpace(str: string): boolean {
     if (str === undefined) {
       return true;
@@ -195,5 +197,62 @@ export class Util {
       return true;
     }
     return false;
+  }
+  /**
+   * Generates a random string
+   * @param len the length of the string to generate
+   * @param arr string of characters use to generate the the random string.
+   * @returns A random string the length of len.
+   */
+  public static RandomStr(len: number, arr: string): string {
+    let ans = '';
+    for (let i = len; i > 0; i--) {
+      ans +=
+        arr[Math.floor(Math.random() * arr.length)];
+    }
+    return ans;
+  }
+  /**
+  * Generates a random alpha string
+  * @param len the length of the string to generate
+ */
+  public static GenAlphStr(len: number): string {
+    return Util.RandomStr(len, Util.ALPHA_NUM_STR.substr(0, 52));
+  }
+  /**
+   * Generates a random alpha Numeric string
+   * @param len the length of the string to generate
+   */
+  public static GenAlphNumStr(len: number): string {
+    return Util.RandomStr(len, Util.ALPHA_NUM_STR);
+  }
+  /**
+ * Gets an encoding from an input string
+ * @param encoding the encoding such as ascii, utf8 to return as BufferEncoding
+ * 
+ * If no valid match is made the utf8 will be returned.
+ * node fs file system requires a fixed string for encoding option.
+ * This menthod ensure that a valid option is returned.
+ */
+  public static Encoding(encoding: string): BufferEncoding {
+    const enc = encoding.toLowerCase();
+    switch (enc) {
+
+      case 'ascii':
+        return "ascii";
+      case 'ucs2':
+      case 'ucs-2':
+        return 'ucs2'
+      case 'base64':
+        return 'base64'
+      case 'latin1':
+        return 'latin1';
+      case 'binary':
+        return 'binary';
+      case 'hex':
+        return 'hex';
+      default:
+        return "utf8"
+    }
   }
 };

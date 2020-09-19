@@ -23,7 +23,7 @@ import {
   fenceKind,
   whiteSpLn
 } from "./enums";
-import { 
+import {
   setMatchOptions,
   getBiOptionsDefault,
   defaultOptions,
@@ -40,6 +40,7 @@ import { TildeFence } from './fences/TildeFence';
 import { EscapeFence } from './fences/EscapeFence';
 import { MatchItem } from './MatchItem';
 import { EOL } from 'os';
+import * as fs from 'fs';
 // #endregion
 
 /**
@@ -113,7 +114,7 @@ export class BuildProcess {
       // https://regexr.com/4cjvh
       // https://regexr.com/4d14r revised April 27, 2019
       // const re = /(?:(?:\/\/)|(?:<\!\-\-)|(?:\/\*))[ \t]*BUILD_INCLUDE\((?:[ ]+)?(?:['"])?(.*?)(?:['"](?:[ ]+)?)?\)(?:(?:[\n\r]+)?\[(.*)\])?(?:(?:[ \t]*\-\->)|(?:[ \t]*\*\/))?/i;
-      
+
       let indexFile: number;
       let indexOpt: number;
       let indexOrigMatch: number;
@@ -131,7 +132,7 @@ export class BuildProcess {
         indexOpt = optMatch.indexParam;
         indexOrigMatch = 0;
       }
-      
+
       // regex capture group to capture indent
       const reGroup1 = `(^[ \\t]+)?`;
       let reGroup2: string = '';
@@ -170,6 +171,39 @@ export class BuildProcess {
       let match: RegExpExecArray | null;
 
       match = re.exec(contents);
+      let innerReplacemnets: Record<string, string> = {};
+
+
+      /**
+       * insert a placeholder for match and stores the original match
+       * @param {string} inputStr contents of file
+       * @param {RegExpExecArray} m match array
+       */
+      const insertPlaceholder = (inputStr: string, m: RegExpExecArray): string => {
+        const rnStr = Util.GenAlphStr(32);
+        // store the replacement to restore later
+        innerReplacemnets[rnStr] = m[indexOrigMatch];
+        const rx = new RegExp(Util.EscapeRegex(m[indexOrigMatch]), 'g');
+
+        return inputStr.replace(rx, rnStr);
+      }
+      /**
+       * Restores any placeholders that were put in place with original values
+       * @param {string} str the contents of file
+       */
+      const resotrePlacholers = (str: string): string => {
+        let result = str;
+        for (const key in innerReplacemnets) {
+          if (Object.prototype.hasOwnProperty.call(innerReplacemnets, key)) {
+            const rep = innerReplacemnets[key];
+            const rx = new RegExp(Util.EscapeRegex(key), 'g');
+            result = result.replace(rx, rep);
+          }
+        }
+        innerReplacemnets = {};
+        return result;
+      }
+
 
       while (match !== null) {
         const biOpt: IBuildIncludeOpt = getBiOptionsDefault();
@@ -191,17 +225,37 @@ export class BuildProcess {
           grunt.log.verbose.write('GRUNT-BUILD-INCLUDE: ');
           grunt.log.verbose.writeln(`File to embed: '${filePath}'`);
         }
-        fileContent = grunt.file.read(filePath);
-        if (options.recursion === true) {
-          // once the file contents are read the first thing to do is process any build_inclue
-          // statements in the fileContent.
-          // This will not match other types of matches different than the original match
-          // If this match based upon regexKind.buildIncludeSlash then recursivly only the same
-          // pattern would match.
-          // recursion may be the best way to do this.
-          let innerMatch: RegExpExecArray | null;
-          innerMatch = re.exec(fileContent);
-          if (innerMatch !== null) {
+        if (!fs.existsSync(filePath)) {
+          if (options.ignoreMissing === false) {
+            grunt.log.error("GRUNT-BUILD-INCLUDE: Path '" + filePath + "' does not exist.");
+            throw new Error("Path '" + filePath + "' does not exist.");
+          } else {
+            // take care of the missing import file by replaceing he import with a placeholder.
+
+            const newContent = insertPlaceholder(contents, match);
+            if (newContent === contents) {
+              grunt.log.error('GRUNT-BUILD-INCLUDE: Failed to insert placeholder');
+              throw new Error(`Failed to insert placeholder in '${srcpath}'`);
+            }
+            contents = newContent;
+            match = re.exec(contents);
+            continue;
+          }
+
+        }
+        fileContent = fs.readFileSync(filePath, { encoding: Util.Encoding(options.encoding) });
+        // fileContent = grunt.file.read(filePath);
+        // once the file contents are read the first thing to do is process any build_inclue
+        // statements in the fileContent.
+        // This will not match other types of matches different than the original match
+        // If this match based upon regexKind.buildIncludeSlash then recursivly only the same
+        // pattern would match.
+        // recursion may be the best way to do this.
+        let innerMatch: RegExpExecArray | null;
+        innerMatch = re.exec(fileContent);
+        if (innerMatch !== null) {
+
+          if (options.recursion === true) {
             if (this.verbose) {
               grunt.log.verbose.write('GRUNT-BUILD-INCLUDE: ');
               grunt.log.verbose.writeln(`Recursivly processing file '${filePath}'`);
@@ -209,9 +263,25 @@ export class BuildProcess {
             const inProcess: BuildProcess = new BuildProcess();
             // replace the fileContent with the new content from the recursion.
             fileContent = inProcess.buildInclude(fileContent, filePath);
+          } else {
+            if (this.verbose) {
+              grunt.log.verbose.write('GRUNT-BUILD-INCLUDE: ');
+              grunt.log.verbose.writeln(`Found inner match: '${filePath}'. Inserting Placeholder`);
+            }
+            fileContent = insertPlaceholder(fileContent, innerMatch);
+
+            const newFileContent = contents.replace(match[indexOrigMatch], fileContent);
+            if (newFileContent === contents) {
+              grunt.log.error('GRUNT-BUILD-INCLUDE: Failed to insert placeholder');
+              throw new Error(`Failed to insert placeholder in '${srcpath}'`);
+            }
+            contents = newFileContent;
+            match = re.exec(contents);
+            continue;
           }
+
         }
-       
+
         // If options were set, then parse them
         let hasOptions: boolean = false;
         // process all options
@@ -281,7 +351,7 @@ export class BuildProcess {
         match = re.exec(contents);
       } // while (match !== null)
       grunt.log.writeln('');
-      return contents;
+      return resotrePlacholers(contents);
     } // if (contents.indexOf('BUILD_INCLUDE') > -1)
     return contents;
   }; // end: buildInclude()
@@ -1768,8 +1838,8 @@ export class BuildProcess {
     // need to match \, but not \\,
     str = str.replace(/\\\\/g, '\uFEFF');
     str = str.replace(/\\,/g, '\uFFFE');
-   
-   
+
+
     // replace \[ with [ and \] with ]
     str = str.replace(/\\\[/g, '[')
       .replace(/\\\]/g, ']');
@@ -1988,7 +2058,7 @@ export class BuildProcess {
           value: segment
         });
       }
-     
+
       // remove everything that has been process thus far.
       contents = contents.substring(endIndex + 1);
       match = re.exec(contents);
@@ -2033,10 +2103,10 @@ export class BuildProcess {
             if (prevItem.countEnd > 0) {
               if (item.countStart > 0) {
                 // remove empty lines as needed
-                  while (item.countStart > 0) {
-                    item.lines.shift();
-                    item.countStart--;
-                  }
+                while (item.countStart > 0) {
+                  item.lines.shift();
+                  item.countStart--;
+                }
               }
             } else if (item.countStart > 1) {
               while (item.countStart > 1) {
@@ -2095,7 +2165,7 @@ export class BuildProcess {
     let startDone: boolean = false;
     let isEmpty: boolean = false;
     const lines: string[] = stringBreaker(mt.value, { splitOpt: splitByOpt.line });
-    
+
     lines.forEach(ln => {
       switch (lineOpt) {
         case whiteSpLn.noTwoEmptyLn:

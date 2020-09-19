@@ -49,6 +49,12 @@ export const defaultOptions: IBiGruntOpt = {
   */
   recursion: true,
   /**
+   * Determins if missing files should be ignnore when processing.  
+   * If true then missing files will be ignored. Oherwise missing files
+   * will generate an error. Default is false.
+   */
+  ignoreMissing: false,
+  /**
    * [[include:docs/GruntOptions/timestamp.md]]
    */
   timestamp: false,
