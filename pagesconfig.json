@@ -1,0 +1,600 @@
+{
+  "groups": [{
+      "title": "Documentation",
+      "source": "Docs",
+      "output": "Docs",
+      "pages": [{
+          "title": "Intro",
+          "source": "Readme.md",
+          "output": "index.html"
+        },
+        {
+          "title": "Grunt File",
+          "output": "GruntFile",
+          "source": "GruntFile/Options",
+          "groups": [{
+            "title": "Options",
+            "pages": [{
+                "title": "AsJsString",
+                "source": "asjsstring/Readme.md",
+                "output": "asjsstring/index.html"
+              },
+              {
+                "title": "BreakString",
+                "source": "breakstring/Readme.md",
+                "output": "breakstring/index.html",
+                "children": [{
+                    "title": "Break",
+                    "source": "breakstring/break/Readme.md",
+                    "output": "../breakstring/break/index.html"
+                  },
+                  {
+                    "title": "— Line",
+                    "source": "breakstring/break/line/Readme.md",
+                    "output": "../breakstring/break/line/index.html"
+                  },
+                  {
+                    "title": "— Width",
+                    "source": "breakstring/break/width/Readme.md",
+                    "output": "../breakstring/break/width/index.html"
+                  },
+                  {
+                    "title": "— Word",
+                    "source": "breakstring/break/word/Readme.md",
+                    "output": "../breakstring/break/word/index.html"
+                  },
+                  {
+                    "title": "EOL",
+                    "source": "breakstring/eol/Readme.md",
+                    "output": "../breakstring/eol/index.html"
+                  },
+                  {
+                    "title": "Flags",
+                    "source": "breakstring/flags/Readme.md",
+                    "output": "../breakstring/flags/index.html"
+                  },
+                  {
+                    "title": "Width",
+                    "source": "breakstring/width/Readme.md",
+                    "output": "../breakstring/width/index.html"
+                  }
+                ]
+              },
+              {
+                "title": "Comment",
+                "source": "comment/Readme.md",
+                "output": "comment/index.html",
+                "children": [{
+                    "title": "Padding",
+                    "source": "comment/padding/Readme.md",
+                    "output": "../comment/padding/index.html"
+                  },
+                  {
+                    "title": "Type",
+                    "source": "comment/type/Readme.md",
+                    "output": "/../comment/type/index.html"
+                  },
+                  {
+                    "title": "— Html",
+                    "source": "comment/type/html/Readme.md",
+                    "output": "../comment/type/html/index.html"
+                  },
+                  {
+                    "title": "— jsAuto",
+                    "source": "comment/type/jsauto/Readme.md",
+                    "output": "../comment/type/jsauto/index.html"
+                  },
+                  {
+                    "title": "— jsDoc",
+                    "source": "comment/type/jsdoc/Readme.md",
+                    "output": "../comment/type/jsdoc/index.html"
+                  },
+                  {
+                    "title": "— Multi",
+                    "source": "comment/type/multi/Readme.md",
+                    "output": "../comment/type/multi/index.html"
+                  },
+                  {
+                    "title": "— None",
+                    "source": "comment/type/none/Readme.md",
+                    "output": "../comment/type/none/index.html"
+                  },
+                  {
+                    "title": "— Pound",
+                    "source": "comment/type/pound/Readme.md",
+                    "output": "../comment/type/pound/index.html"
+                  },
+                  {
+                    "title": "— Single",
+                    "source": "comment/type/single/Readme.md",
+                    "output": "../comment/type/single/index.html"
+                  },
+                  {
+                    "title": "— SingleAsterisk",
+                    "source": "comment/type/singleAsterisk/Readme.md",
+                    "output": "../comment/type/singleAsterisk/index.html"
+                  }
+                ]
+              },
+              {
+                "title": "Encoding",
+                "source": "encoding/Readme.md",
+                "output": "encoding/index.html"
+              },
+              {
+                "title": "Fence",
+                "source": "fence/Readme.md",
+                "output": "fence/index.html",
+                "children": [{
+                    "title": "End",
+                    "source": "fence/end/Readme.md",
+                    "output": "../fence/end/index.html"
+                  },
+                  {
+                    "title": "Start",
+                    "source": "fence/start/Readme.md",
+                    "output": "../fence/start/index.html"
+                  },
+                  {
+                    "title": "Remove",
+                    "source": "fence/remove/Readme.md",
+                    "output": "../fence/remove/index.html"
+                  },
+                  {
+                    "title": "Type",
+                    "source": "fence/type/Readme.md",
+                    "output": "../fence/type/index.html"
+                  },
+                  {
+                    "title": "— Escape",
+                    "source": "fence/type/Escape/Readme.md",
+                    "output": "../fence/type/Escape/index.html"
+                  },
+                  {
+                    "title": "— Flex",
+                    "source": "fence/type/Flex/Readme.md",
+                    "output": "../fence/type/Flex/index.html"
+                  },
+                  {
+                    "title": "— MultiFlex",
+                    "source": "fence/type/MultiFlex/Readme.md",
+                    "output": "../fence/type/MultiFlex/index.html"
+                  },
+                  {
+                    "title": "— Strict",
+                    "source": "fence/type/Strict/Readme.md",
+                    "output": "../fence/type/Strict/index.html"
+                  },
+                  {
+                    "title": "— Tilde",
+                    "source": "fence/type/Tilde/Readme.md",
+                    "output": "../fence/type/Tilde/index.html"
+                  }
+                ]
+              },
+              {
+                "title": "Match",
+                "source": "match/Readme.md",
+                "output": "match/index.html"
+              },
+              {
+                "title": "Mode",
+                "source": "mode/Readme.md",
+                "output": "mode/index.html"
+              },
+              {
+                "title": "NoProcess",
+                "source": "noProcess/Readme.md",
+                "output": "noProcess/index.html"
+              },
+              {
+                "title": "Override",
+                "source": "override/Readme.md",
+                "output": "override/index.html"
+              },
+              {
+                "title": "Process",
+                "source": "process/Readme.md",
+                "output": "process/index.html"
+              },
+              {
+                "title": "Text",
+                "source": "text/Readme.md",
+                "output": "text/index.html",
+                "children": [{
+                    "title": "BeforeAfter",
+                    "source": "text/BeforeAfter/Readme.md",
+                    "output": "../text/BeforeAfter/index.html"
+                  },
+                  {
+                    "title": "Code",
+                    "source": "text/code/Readme.md",
+                    "output": "../text/code/index.html"
+                  },
+                  {
+                    "title": "CodeKind",
+                    "source": "text/codeKind/Readme.md",
+                    "output": "../text/codeKind/index.html"
+                  },
+                  {
+                    "title": "Indent",
+                    "source": "text/indent/Readme.md",
+                    "output": "../text/indent/index.html"
+                  },
+                  {
+                    "title": "NoLineBreaks",
+                    "source": "text/noLineBreaks/Readme.md",
+                    "output": "../text/noLineBreaks/index.html"
+                  },
+                  {
+                    "title": "WhiteSpaceLine",
+                    "source": "text/whiteSpaceLine/Readme.md",
+                    "output": "../text/whiteSpaceLine/index.html"
+                  }
+                ]
+              },
+              {
+                "title": "TimeStamp",
+                "source": "timestamp/Readme.md",
+                "output": "timestamp/index.html"
+              }
+            ]
+          }]
+        },
+        {
+          "title": "Options",
+          "source": "Options/Readme.md",
+          "output": "Options/index.html",
+          "groups": [{
+            "output": "../",
+            "title": "Build Include Options",
+            "source": "../",
+            "pages": [{
+                "title": "Options",
+                "source": "Readme.md",
+                "output": "index.html"
+              },
+              {
+                "title": "AsJsString",
+                "source": "asjsstring/Readme.md",
+                "output": "asjsstring/index.html"
+              },
+              {
+                "title": "BreakString",
+                "source": "breakstring/Readme.md",
+                "output": "breakstring/index.html",
+                "children": [{
+                    "title": "Break",
+                    "source": "breakstring/break/Readme.md",
+                    "output": "../breakstring/break/index.html"
+                  },
+                  {
+                    "title": "— Line",
+                    "source": "breakstring/break/line/Readme.md",
+                    "output": "../breakstring/break/line/index.html"
+                  },
+                  {
+                    "title": "— Width",
+                    "source": "breakstring/break/width/Readme.md",
+                    "output": "../breakstring/break/width/index.html"
+                  },
+                  {
+                    "title": "— Word",
+                    "source": "breakstring/break/word/Readme.md",
+                    "output": "../breakstring/break/word/index.html"
+                  },
+                  {
+                    "title": "EOL",
+                    "source": "breakstring/eol/Readme.md",
+                    "output": "../breakstring/eol/index.html"
+                  },
+                  {
+                    "title": "— Encode",
+                    "source": "breakstring/eol/encode/Readme.md",
+                    "output": "../breakstring/eol/encode/index.html"
+                  },
+                  {
+                    "title": "— noLnBr",
+                    "source": "breakstring/eol/nolnbr/Readme.md",
+                    "output": "../breakstring/eol/nolnbr/index.html"
+                  },
+                  {
+                    "title": "— none",
+                    "source": "breakstring/eol/none/Readme.md",
+                    "output": "../breakstring/eol/none/index.html"
+                  },
+                  {
+                    "title": "Flags",
+                    "source": "breakstring/flags/Readme.md",
+                    "output": "../breakstring/flags/index.html"
+                  },
+                  {
+                    "title": "Width",
+                    "source": "breakstring/width/Readme.md",
+                    "output": "../breakstring/width/index.html"
+                  }
+                ]
+              },
+              {
+                "title": "Comment",
+                "source": "comment/Readme.md",
+                "output": "comment/index.html",
+                "children": [{
+                    "title": "Padding",
+                    "source": "comment/Padding/Readme.md",
+                    "output": "../comment/Padding/index.html"
+                  },
+                  {
+                    "title": "Type",
+                    "source": "comment/type/Readme.md",
+                    "output": "../comment/type/index.html"
+                  },
+                  {
+                    "title": "— Html",
+                    "source": "comment/type/html/Readme.md",
+                    "output": "../comment/type/html/index.html"
+                  },
+                  {
+                    "title": "— JsAuto",
+                    "source": "comment/type/jsauto/Readme.md",
+                    "output": "../comment/type/jsauto/index.html"
+                  },
+                  {
+                    "title": "— JsDoc",
+                    "source": "comment/type/jsdoc/Readme.md",
+                    "output": "../comment/type/jsdoc/index.html"
+                  },
+                  {
+                    "title": "— Multi",
+                    "source": "comment/type/multi/Readme.md",
+                    "output": "../comment/type/multi/index.html"
+                  },
+                  {
+                    "title": "— Pound",
+                    "source": "comment/type/pound/Readme.md",
+                    "output": "../comment/type/pound/index.html"
+                  },
+                  {
+                    "title": "— Single",
+                    "source": "comment/type/single/Readme.md",
+                    "output": "../comment/type/single/index.html"
+                  },
+                  {
+                    "title": "— SingleAsterisk",
+                    "source": "comment/type/SingleAsterisk/Readme.md",
+                    "output": "../comment/type/SingleAsterisk/index.html"
+                  }
+                ]
+              },
+              {
+                "title": "Fence",
+                "source": "fence/Readme.md",
+                "output": "fence/index.html",
+                "children": [{
+                    "title": "Start",
+                    "source": "fence/start/Readme.md",
+                    "output": "../fence/start/index.html"
+                  },
+                  {
+                    "title": "End",
+                    "source": "fence/end/Readme.md",
+                    "output": "../fence/end/index.html"
+                  },
+                  {
+                    "title": "Remove",
+                    "source": "fence/remove/Readme.md",
+                    "output": "../fence/remove/index.html"
+                  },
+                  {
+                    "title": "Type",
+                    "source": "fence/type/Readme.md",
+                    "output": "../fence/type/index.html"
+                  },
+                  {
+                    "title": "— Escape",
+                    "source": "fence/type/Escape/Readme.md",
+                    "output": "../fence/type/Escape/index.html"
+                  },
+                  {
+                    "title": "— Flex",
+                    "source": "fence/type/Flex/Readme.md",
+                    "output": "../fence/type/Flex/index.html"
+                  },
+                  {
+                    "title": "— MultiFlex",
+                    "source": "fence/type/MultiFlex/Readme.md",
+                    "output": "../fence/type/MultiFlex/index.html"
+                  },
+                  {
+                    "title": "— Strict",
+                    "source": "fence/type/Strict/Readme.md",
+                    "output": "../fence/type/Strict/index.html"
+                  },
+                  {
+                    "title": "— Tilde",
+                    "source": "fence/type/Tilde/Readme.md",
+                    "output": "../fence/type/Tilde/index.html"
+                  }
+                ]
+              },
+              {
+                "title": "Text",
+                "source": "text/Readme.md",
+                "output": "text/index.html",
+                "children": [{
+                    "title": "BeforeAfter",
+                    "source": "text/BeforeAfter/Readme.md",
+                    "output": "../text/BeforeAfter/index.html"
+                  },
+                  {
+                    "title": "Code",
+                    "source": "text/code/Readme.md",
+                    "output": "../text/code/index.html"
+                  },
+                  {
+                    "title": "CodeKind",
+                    "source": "text/CodeKind/Readme.md",
+                    "output": "../text/CodeKind/index.html"
+                  },
+                  {
+                    "title": "Indent",
+                    "source": "text/indent/Readme.md",
+                    "output": "../text/indent/index.html"
+                  },
+                  {
+                    "title": "NoLineBreaks",
+                    "source": "text/NoLineBreaks/Readme.md",
+                    "output": "../text/NoLineBreaks/index.html"
+                  },
+                  {
+                    "title": "Padding",
+                    "source": "text/padding/Readme.md",
+                    "output": "../text/padding/index.html"
+                  },
+                  {
+                    "title": "WhiteSpaceLine",
+                    "source": "text/whiteSpaceLine/Readme.md",
+                    "output": "../text/whiteSpaceLine/index.html"
+                  }
+                ]
+              }
+            ]
+          }]
+        }
+      ]
+    },
+    {
+      "title": "Misc",
+      "source": "examples",
+      "output": "examples",
+      "pages": [{
+          "title": "Examples",
+          "source": "Readme.md",
+          "output": "index.html",
+          "children": [{
+              "title": "Asjsstring Include Text In Javascript String",
+              "source": "AsjsstringIncludeTextInJavascriptString.md",
+              "output": "../AsjsstringIncludeTextInJavascriptString.html"
+            },
+            {
+              "title": "Comment Jsdoc Breakstring By Word",
+              "source": "CommentJsdocBreakstringByWord.md",
+              "output": "../CommentJsdocBreakstringByWord.html"
+            },
+            {
+              "title": "Comment Type Jsdoc Remove Padding",
+              "source": "CommentTypeJsdocRemovePadding.md",
+              "output": "../CommentTypeJsdocRemovePadding.html"
+            },
+            {
+              "title": "Comment Type Multi Breakstring Indent",
+              "source": "CommentTypeMultiBreakstringIndent.md",
+              "output": "../CommentTypeMultiBreakstringIndent.html"
+            },
+            {
+              "title": "Comment Type Multi With Two Types Of Padding",
+              "source": "CommentTypeMultiWithTwoTypesOfPadding.md",
+              "output": "../CommentTypeMultiWithTwoTypesOfPadding.html"
+            },
+            {
+              "title": "Comment Type Single",
+              "source": "CommentTypeSingle.md",
+              "output": "../CommentTypeSingle.html"
+            },
+            {
+              "title": "Comment Type Single Breakstring Flags And Eol",
+              "source": "CommentTypeSingleBreakstringFlagsAndEol.md",
+              "output": "../CommentTypeSingleBreakstringFlagsAndEol.html"
+            },
+            {
+              "title": "Fence Comment And Text Options",
+              "source": "FenceCommentAndTextOptions.md",
+              "output": "../FenceCommentAndTextOptions.html"
+            },
+            {
+              "title": "Fence Comment Text Simple",
+              "source": "FenceCommentTextSimple.md",
+              "output": "../FenceCommentTextSimple.html"
+            },
+            {
+              "title": "Fenced Remove With Comment And White Space Lines",
+              "source": "FencedRemoveWithCommentAndWhiteSpaceLines.md",
+              "output": "../FencedRemoveWithCommentAndWhiteSpaceLines.html"
+            },
+            {
+              "title": "Text Before After With Special Chars",
+              "source": "TextBeforeAfterWithSpecialChars.md",
+              "output": "../TextBeforeAfterWithSpecialChars.html"
+            },
+            {
+              "title": "Text Before After With Unicode",
+              "source": "TextBeforeAfterWithUnicode.md",
+              "output": "../TextBeforeAfterWithUnicode.html"
+            },
+            {
+              "title": "Text Padleft Break Lines By Word",
+              "source": "TextPadleftBreakLinesByWord.md",
+              "output": "../TextPadleftBreakLinesByWord.html"
+            }
+          ]
+        },
+        {
+          "title": "Usage Examples",
+          "source": "../Docs/GruntFile/UsageExamples/Readme.md",
+          "output": "../Docs/GruntFile/UsageExamples//index.html",
+          "children": [{
+              "title": "Build_include Single File Tree",
+              "source": "../Docs/GruntFile/UsageExamples/build_includeSingleFileTree/Readme.md",
+              "output": "../../Docs/GruntFile/UsageExamples/build_includeSingleFileTree/index.html"
+            },
+            {
+              "title": "Build_include Without Full Path",
+              "source": "../Docs/GruntFile/UsageExamples/build_includeWithoutFullPath/Readme.md",
+              "output": "../../Docs/GruntFile/UsageExamples/build_includeWithoutFullPath/index.html"
+            },
+            {
+              "title": "Flattening Filepath Output",
+              "source": "../Docs/GruntFile/UsageExamples/FlatteningFilepathOutput/Readme.md",
+              "output": "../../Docs/GruntFile/UsageExamples/FlatteningFilepathOutput/index.html"
+            },
+            {
+              "title": "Troubleshooting",
+              "source": "../Docs/GruntFile/UsageExamples/Troubleshooting/Readme.md",
+              "output": "../../Docs/GruntFile/UsageExamples/Troubleshooting/index.html"
+            }
+          ]
+        },
+        {
+          "title": "Escaping Parameters",
+          "source": "../Docs/misc/EscapingParameters.md",
+          "output": "../Docs/misc/EscapingParameters.html"
+        },
+        {
+          "title": "Replacements",
+          "source": "replacements/Readme.md",
+          "output": "replacements/index.html",
+          "children": [{
+              "title": "Replace 01",
+              "source": "replacements/replace01.txt.md",
+              "output": "../replacements/replace01.txt.html"
+            },
+            {
+              "title": "Replace 02",
+              "source": "replacements/replace02.txt.md",
+              "output": "../replacements/replace02.txt.html"
+            },
+            {
+              "title": "Repace 03",
+              "source": "replacements/replace03.txt.md",
+              "output": "../replacements/replace03.txt.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "pages-plugin",
+  "listInvalidPageLinks": true,
+  "output": "./pages",
+  "source": "./doc/pagesmd"
+}

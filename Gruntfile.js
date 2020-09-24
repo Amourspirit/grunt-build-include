@@ -81,7 +81,13 @@ module.exports = function (grunt) {
         src: '**/*.d.ts',
         dest: 'tasks/',
       },
-    },
+      docs_html: {
+        expand: true,
+        cwd: 'test/html',
+        src: '**/*.html',
+        dest: 'docs/',
+      },
+    }
   });
   // #endregion
   // Actually load this plugin's task(s).
@@ -127,7 +133,8 @@ module.exports = function (grunt) {
     } else {
       cmd = 'node_modules/.bin/typedoc';
     }
-    cmd += ' --out docs/grunt-build-include ./src --includes ./doc --mdPagesSourcePath ./doc/pagesmd --theme markdown-pages';
+    // cmd += ' --out docs/grunt-build-include ./src --includes ./doc --options typedoc.json -theme pages-plugin';
+    cmd += ' --out docs/grunt-build-include ./src --includes ./doc --options typedoc.json';
     require('child_process').exec(cmd, function (err, stdout) {
       grunt.log.write(stdout);
       done(err);
@@ -135,7 +142,8 @@ module.exports = function (grunt) {
   });
   grunt.registerTask('docs', [
     'clean:docs',
-    'gen_docs'
+    'gen_docs',
+    'copy:docs_html'
   ]);
   // #endregion
 

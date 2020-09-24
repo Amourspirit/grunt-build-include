@@ -2,4 +2,4 @@
 
 **See Also:** [IBiGruntOpt.encoding](/grunt-build-include/interfaces/_modules_interfaces_.ibigruntopt.html#encoding)
 
-[Grunt File Options](../)  
+[Grunt File Options](../index.html)  

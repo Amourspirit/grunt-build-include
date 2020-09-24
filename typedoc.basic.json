@@ -1,0 +1,8 @@
+{
+  "mode": "modules",
+  "inputFiles": "./src/**/*",
+  "name": "TypeDoc Pages Plugin",
+  "out": "./docs/grunt-build-include",
+  "readme": "./Readme.md",
+  "includes": "./doc"
+}

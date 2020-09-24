@@ -30,15 +30,15 @@ export const DEFAULT_FENCE_END = `^{0}(?:(?:$)|(?:[\\r\\n]+))`;
  */
 export const defaultOptions: IBiGruntOpt = {
   /**
-   * [[include:docs/GruntOptions/encoding.md]]
+   * [[include:GruntOptions/encoding.md]]
    */
   encoding: grunt.file.defaultEncoding,
   /**
-   * [[include:docs/GruntOptions/process.md]]
+   * [[include:GruntOptions/process.md]]
    */
   process: false,
   /**
-   * [[include:docs/GruntOptions/noProcess.md]]
+   * [[include:GruntOptions/noProcess.md]]
    */
   noProcess: {},
   /**
@@ -55,15 +55,15 @@ export const defaultOptions: IBiGruntOpt = {
    */
   ignoreMissing: false,
   /**
-   * [[include:docs/GruntOptions/timestamp.md]]
+   * [[include:GruntOptions/timestamp.md]]
    */
   timestamp: false,
   /**
-   * [[include:docs/GruntOptions/mode.md]]
+   * [[include:GruntOptions/mode.md]]
    */
   mode: false,
   /**
-   * [[include:docs/GruntOptions/match.md]]
+   * [[include:GruntOptions/match/match.md]]
    */
   match: new MatchBuildInclude()
 }

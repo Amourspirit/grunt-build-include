@@ -2,5 +2,5 @@
 
 [[include:GruntOptions/breakstring/flags/word.md]]
 
-[breakstring](../)  
-[Grunt File Options](../../)
+[breakstring](../index.html)  
+[Grunt File Options](../../index.html)

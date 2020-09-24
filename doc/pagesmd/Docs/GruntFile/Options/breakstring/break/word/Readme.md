@@ -1,6 +1,6 @@
 [[include:GruntOptions/breakstring/break/word.md]]
 
-[break](../)  
-[breakstring](../../)
+[break](../index.html)  
+[breakstring](../../index.html)
 
 [[include:style/heading.html]]

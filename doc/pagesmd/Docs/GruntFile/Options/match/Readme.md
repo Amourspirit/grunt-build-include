@@ -11,10 +11,10 @@ See <a href="#example05">example below</a>
 **See Also:** [IBiGruntOpt](/grunt-build-include/interfaces/_modules_interfaces_.ibigruntopt.html)
 
 [[include:GruntOptions/match/example03.md]]
-[[include:enums/regexKind/buildIncludeSlash.md]]
+[[include:docs/enums/regexKind/buildIncludeSlash.md]]
 
 [[include:GruntOptions/match/example04.md]]
-[[include:enums/regexKind/buildIncludeSlash.md]]
+[[include:docs/enums/regexKind/buildIncludeSlash.md]]
 
 [[include:GruntOptions/match/example01.md]]
 
@@ -23,4 +23,4 @@ See <a href="#example05">example below</a>
 <a name="example05"></a>  
 [[include:GruntOptions/match/example05.md]]
 
-[Grunt File Options](../)  
+[Grunt File Options](../index.html)  

@@ -2,7 +2,7 @@
 
 [[include:options/comment/padding/padleft.md]]
 
-[Comment Options](../)  
-[All Options](../../)
+[Comment Options](../index.html)  
+[All Options](../../index.html)
 
 [[include:style/heading.html]]

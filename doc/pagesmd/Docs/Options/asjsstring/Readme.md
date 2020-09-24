@@ -2,6 +2,6 @@
 
 See Example: [Asjsstring to Include Text In Javascript](/grunt-build-include/pages/examples/AsjsstringIncludeTextInJavascriptString.html)
 
-[Options](../)  
+[Options](../index.html)  
 
 [[include:style/heading.html]]

@@ -1,7 +1,7 @@
 ## Comment option for grunt
 
-* [padding](padding/)
-* [type](type/)
+* [padding](padding/index.html)
+* [type](type/index.html)
 
 [[include:GruntOptions/override/notice.md]]
 
@@ -9,4 +9,4 @@
 
 [[include:GruntOptions/comment/see.md]]
 
-[Grunt File Options](../)
+[Grunt File Options](../index.html)

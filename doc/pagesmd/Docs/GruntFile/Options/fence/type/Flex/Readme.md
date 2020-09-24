@@ -2,6 +2,6 @@
 
 [[include:GruntOptions/fence/type/flex/example01.md]]
 
-[Fence Type](../)
+[Fence Type](../index.html)
 
 [[include:style/heading.html]]

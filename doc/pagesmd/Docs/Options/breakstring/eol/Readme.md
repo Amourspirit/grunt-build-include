@@ -1,8 +1,8 @@
 [[include:options/breakstring/eol/eol.md]]
 
-* [nolnbr](nolnbr/)
-* [encode](encode/)
-* [none](none/)
+* [nolnbr](nolnbr/index.html)
+* [encode](encode/index.html)
+* [none](none/index.html)
 
-[Breakstring Options](../)  
-[All Options](../../)
+[Breakstring Options](../index.html)  
+[All Options](../../index.html)

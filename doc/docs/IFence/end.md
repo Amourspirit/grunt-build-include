@@ -10,4 +10,4 @@ Can be string value such as:
 When constructing a regular expressiong it must start with `/` and end with `/`; Otherwise, it will be treated as a string.  
 **Do not** include options after regular expression.  
 
-Start and end are ignored if [type](/grunt-build-include/interfaces/_modules_interfaces_.ifence.html#type) is set.  
+Start and end are ignored if [type](/grunt-build-include/interfaces/src_modules.ifence.html#type) is set.  

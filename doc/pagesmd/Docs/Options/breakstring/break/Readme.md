@@ -1,9 +1,9 @@
 [[include:options/breakstring/break/break.md]]
 
-* [line](line/)
-* [width](width/)
-* [word](word/)
+* [line](line/index.html)
+* [width](width/index.html)
+* [word](word/index.html)
 
-[Breakstring](../)
+[Breakstring](../index.html)
 
 [[include:style/heading.html]]

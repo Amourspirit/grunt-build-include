@@ -2,5 +2,5 @@
 
 [[include:GruntOptions/text/after/after.md]]
 
-[Text](../)  
-[Grunt File Options](../../)
+[Text](../index.html)  
+[Grunt File Options](../../index.html)

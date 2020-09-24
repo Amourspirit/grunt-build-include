@@ -8,5 +8,5 @@
 
 [[include:GruntOptions/override/example01.md]]
 
-[breakstring](../)  
-[Grunt File Options](../../)
+[breakstring](../index.html)  
+[Grunt File Options](../../index.html)

@@ -1,7 +1,7 @@
 [[include:options/breakstring/eol/nolnbr.md]]
 
-[Breakstring eol](../)
+[Breakstring eol](../index.html)
 
-[Breakstring](../,,/)
+[Breakstring](../../index.html)
 
 [[include:style/heading.html]]

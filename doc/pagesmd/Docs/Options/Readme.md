@@ -7,11 +7,11 @@ destination file.
 
 Options that may be applied to BUILD_INCLUDE statments.
 
-* [AsJsString](asjsstring/)
-* [Breakstring](breakstring/)
-* [Comment](comment/)
-* [Fence](fence/)
-* [Text](text/)
+* [AsJsString](asjsstring/index.html)
+* [Breakstring](breakstring/index.html)
+* [Comment](comment/index.html)
+* [Fence](fence/index.html)
+* [Text](text/index.html)
 
 ## Example
 

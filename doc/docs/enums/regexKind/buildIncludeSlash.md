@@ -1,8 +1,8 @@
 #### Matches the following
 
-// BUILD_INCLUDE(filePath)  
-// BUILD_INCLUDE(filePath)&#91;options&#93;  
-// BUILD_INCLUDE(filePath)  
-&#91;options&#93;
+// BUILD_INCLUDE\(filePath\)  
+// BUILD_INCLUDE\(filePath\)\[options\]  
+// BUILD_INCLUDE\(filePath\)  
+\[options\]
 
-**See Also:** [Class MatchBuildIncludeSlash](/grunt-build-include/classes/matchoptions.matchbuildincludeslash.html)  
+**See Also:** [Class MatchBuildIncludeSlash](/grunt-build-include/classes/src_modules_matches.matchbuildincludeslash.html)  

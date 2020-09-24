@@ -10,8 +10,8 @@
 
 [[include:GruntOptions/text/whiteSpaceLine/removeAllWs.md]]
 
-**See Also:** [Options Text WhiteSpaceLine](/grunt-build-include/pages/Docs/Options/text/whiteSpaceLine/)  
+**See Also:** [Options Text WhiteSpaceLine](/grunt-build-include/pages/Docs/Options/text/whiteSpaceLine/index.html)  
 **See Also:** [Enumeration whiteSpLn](/grunt-build-include/enums/enums.whitespln.html)
 
-[Text](../)  
-[Grunt File Options](../../)
+[Text](../index.html)  
+[Grunt File Options](../../index.html)

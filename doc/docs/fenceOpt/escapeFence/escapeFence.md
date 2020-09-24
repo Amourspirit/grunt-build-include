@@ -1,14 +1,17 @@
 Matches the pattern of:  
-(reguired &#96;&#96;&#96;&#96;)(optional type)  
+\(reguired \`\`\`\`\)\(optional type\)  
 fenced text  
-(reguired &#96;&#96;&#96;&#96;)
+\(reguired \`\`\`\`\)
 
 Some match examples:
 
-&#96;&#96;&#96;&#96;  
+`````markdown
+````  
 fenced text  
-&#96;&#96;&#96;&#96;
+````
 
-&#96;&#96;&#96;&#96;text  
+````text  
 fenced text  
-&#96;&#96;&#96;&#96;  
+````
+`````
+  

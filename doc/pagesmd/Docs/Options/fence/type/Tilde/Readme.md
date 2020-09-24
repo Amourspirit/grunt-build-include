@@ -1,5 +1,5 @@
 [[include:options/fence/type/tilde.md]]
 
-[Fence Type](../)
+[Fence Type](../index.html)
 
 [[include:style/heading.html]]

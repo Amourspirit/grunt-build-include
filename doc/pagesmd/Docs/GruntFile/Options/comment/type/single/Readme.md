@@ -2,5 +2,5 @@
 
 [[include:GruntOptions/comment/type/see.md]]
 
-[Type](../)  
-[Comment](../../)
+[Type](../index.html)  
+[Comment](../../index.html)

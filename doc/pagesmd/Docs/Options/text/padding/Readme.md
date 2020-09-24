@@ -4,7 +4,7 @@
 
 [[include:options/text/padding/padright.md]]
 
-[Text Options](../)  
-[All Options](../../)
+[Text Options](../index.html)  
+[All Options](../../index.html)
 
 [[include:style/heading.html]]

@@ -1,7 +1,7 @@
 ### EXAMPLE
 
-With the configuration below all inline BUILD_INCLUDE statments would have [asJsString](/grunt-build-include/pages/Docs/GruntFile/Options/asjsstring/) applied
-and each BUILD_INCLUE file would be split into lines that are 100 characters wide with extra line breaks removed using [breakstring](/grunt-build-include/pages/Docs/GruntFile/Options/breakstring/).
+With the configuration below all inline BUILD_INCLUDE statments would have [asJsString](/grunt-build-include/pages/Docs/GruntFile/Options/asjsstring/index.html) applied
+and each BUILD_INCLUE file would be split into lines that are 100 characters wide with extra line breaks removed using [breakstring](/grunt-build-include/pages/Docs/GruntFile/Options/breakstring/index.html).
 
 #### Config
 

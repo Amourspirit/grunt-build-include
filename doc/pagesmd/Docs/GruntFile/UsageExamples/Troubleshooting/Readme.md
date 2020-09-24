@@ -22,4 +22,4 @@ Warning: Unable to read "not-there" file (Error code: ENOENT). Use --force to co
 Aborted due to warnings.
 ```
 
-[Usage Examples](../)
+[Usage Examples](../index.html)

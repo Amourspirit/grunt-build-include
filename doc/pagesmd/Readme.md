@@ -1,4 +1,4 @@
 ## Contents
 
-* [Docs](Docs/)
-* [Examples](examples/)
+* [Docs](Docs/index.html)
+* [Examples](examples/index.html)

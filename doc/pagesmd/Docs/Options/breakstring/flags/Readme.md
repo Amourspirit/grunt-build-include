@@ -2,7 +2,7 @@
 
 [[include:options/breakstring/flags/word.md]]
 
-[Breakstring Options](../)  
-[All Options](../../)
+[Breakstring Options](../index.html)  
+[All Options](../../index.html)
 
 [[include:style/heading.html]]

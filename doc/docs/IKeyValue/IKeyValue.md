@@ -2,7 +2,7 @@ Represents a generic item with a string key value
 
 **Example:**
 
- ```ts
+```ts
 const lst: IKeyValuec<string> = {
     src: 'https://someUrl.come/js/myjs.js',
     scrolling: 'yes',
@@ -16,4 +16,4 @@ for (const key in lst) {
 }
 console.log('src: ', lst['src']);
 console.log('type: ', lst.type);
- ```
+```

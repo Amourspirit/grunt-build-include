@@ -5,7 +5,7 @@ If Width is omitted then width will default to a value of `80`.
 
 [[include:GruntOptions/override/example01.md]]
 
-[breakstring](../)  
-[Grunt File Options](../../)
+[breakstring](../index.html)  
+[Grunt File Options](../../index.html)
 
 [[include:style/heading.html]]

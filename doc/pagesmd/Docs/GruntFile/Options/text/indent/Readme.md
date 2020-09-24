@@ -1,6 +1,6 @@
 [[include:GruntOptions/text/indent/indent.md]]
 
-**See Also:** [Options Text Indent](/grunt-build-include/pages/Docs/Options/text/indent/)
+**See Also:** [Options Text Indent](/grunt-build-include/pages/Docs/Options/text/indent/index.html)
 
-[Text](../)  
-[Grunt File Options](../../)
+[Text](../index.html)  
+[Grunt File Options](../../index.html)

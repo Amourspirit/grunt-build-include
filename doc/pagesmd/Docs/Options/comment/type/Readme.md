@@ -1,11 +1,12 @@
 [[include:options/comment/type/type.md]]
 
-* [Single](single/)
-* [Multi](multi/)
-* [JsAuto](jsauto/)
-* [JsDoc](jsdoc/)
-* [Pound](pound/)
-* [SingleAsterisk](SingleAsterisk/)
+* [Html](html/index.html)
+* [JsAuto](jsauto/index.html)
+* [JsDoc](jsdoc/index.html)
+* [Multi](multi/index.html)
+* [Pound](pound/index.html)
+* [Single](single/index.html)
+* [SingleAsterisk](SingleAsterisk/index.html)
 
-[Comment Options](../)  
-[All Options](../../)
+[Comment Options](../index.html)  
+[All Options](../../index.html)

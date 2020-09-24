@@ -9,7 +9,7 @@ As in the following example:
 
 **See Also:** [Match](/grunt-build-include/pages/Docs/GruntFileOptions/match/index.html)
 
-[Text Options](../)  
-[All Options](../../)
+[Text Options](../index.html)  
+[All Options](../../index.html)
 
 [[include:style/heading.html]]

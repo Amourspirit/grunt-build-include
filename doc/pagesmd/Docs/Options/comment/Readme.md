@@ -1,7 +1,7 @@
 [[include:options/comment/comment.md]]
 
-* [Type](type/)
-* [Padding](Padding/)
+* [Type](type/index.html)
+* [Padding](Padding/index.html)
 
 [[include:options/comment/example01.md]]
 
@@ -18,6 +18,6 @@
 * [Fence Comment Text Simple](/grunt-build-include/pages/examples/FenceCommentTextSimple.html)
 * [Fenced Remove With Comment And White Space Lines](/grunt-build-include/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html)
 
-[Options](../)
+[Options](../index.html)
 
 [[include:style/nowrapcode.html]]  

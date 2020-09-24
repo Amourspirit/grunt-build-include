@@ -34,4 +34,4 @@ $ tree -I node_modules
 5 directories, 4 files
 ```
 
-[Usage Examples](../)
+[Usage Examples](../index.html)

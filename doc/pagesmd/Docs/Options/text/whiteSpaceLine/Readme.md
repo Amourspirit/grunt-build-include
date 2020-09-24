@@ -10,7 +10,7 @@
 
 **See Also:** [Enumeration whiteSpLn](/grunt-build-include/enums/enums.whitespln.html)
 
-[Text Options](../)  
-[All Options](../../)
+[Text Options](../index.html)  
+[All Options](../../index.html)
 
 [[include:style/heading.html]]

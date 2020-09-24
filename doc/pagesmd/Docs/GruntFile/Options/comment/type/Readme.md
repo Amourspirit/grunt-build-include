@@ -2,14 +2,14 @@
 
 Determines the type of comment to created. 
 
-* [html](html/)
-* [jsauto](jsauto/)
-* [jsdoc](jsdoc/)
-* [multi](multi/)
-* [none](none/)
-* [pound](pound/)
-* [single](single/)
-* [singleAsterisk](singleAsterisk/)
+* [html](html/index.html)
+* [jsauto](jsauto/index.html)
+* [jsdoc](jsdoc/index.html)
+* [multi](multi/index.html)
+* [none](none/index.html)
+* [pound](pound/index.html)
+* [single](single/index.html)
+* [singleAsterisk](singleAsterisk/index.html)
 
-[Comment](../)  
-[Grunt File Options](../../)
+[Comment](../index.html)  
+[Grunt File Options](../../index.html)

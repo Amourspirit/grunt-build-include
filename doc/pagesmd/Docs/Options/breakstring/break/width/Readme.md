@@ -1,7 +1,7 @@
 [[include:options/breakstring/break/width.md]]
 
-[Breakstring break](../)
+[Breakstring break](../index.html)
 
-[Breakstring](../,,/)
+[Breakstring](../../index.html)
 
 [[include:style/heading.html]]

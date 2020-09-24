@@ -1,12 +1,12 @@
 [[include:options/breakstring/break/break.md]]
 
-* [line](line/)
-* [width](width/)
-* [word](word/)
+* [line](line/index.html)
+* [width](width/index.html)
+* [word](word/index.html)
 
 [[include:GruntOptions/override/example01.md]]
 
 [[include:style/heading.html]]
 
-[breakstring](../)  
-[Grunt File Options](../../)
+[breakstring](../index.html)  
+[Grunt File Options](../../index.html)

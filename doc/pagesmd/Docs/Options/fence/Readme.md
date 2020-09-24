@@ -1,9 +1,9 @@
 [[include:options/fence/fence.md]]
 
-* [Type](type/)
-* [Start](start/)
-* [End](end/)
-* [Remove](remove/)
+* [Type](type/index.html)
+* [Start](start/index.html)
+* [End](end/index.html)
+* [Remove](remove/index.html)
 
 **See Examples:**
 
@@ -11,4 +11,4 @@
 * [Fence Comment Text Simple](/grunt-build-include/pages/examples/FenceCommentTextSimple.html)
 * [Fenced Remove With Comment And White Space Lines](/grunt-build-include/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html)
 
-[Options](../)
+[Options](../index.html)

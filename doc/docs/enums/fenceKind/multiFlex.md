@@ -1,2 +1,2 @@
 Pseudo Fence.  
-Combines [EscapeFence](/grunt-build-include/classes/fences.escapefence.html), [TildeFence](/grunt-build-include/classes/fences.tildefence.html) and [StrictFence](/grunt-build-include/classes/fences.strictfence.html) in this order.  
+Combines [EscapeFence](/grunt-build-include/classes/src_modules_fences.escapefence.html), [TildeFence](/grunt-build-include/classes/src_modules_fences.tildefence.html) and [StrictFence](/grunt-build-include/classes/src_modules_fences.strictfence.html) in this order.  

@@ -10,6 +10,14 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Grunt Docs and Node Internals",
+      "console": "integratedTerminal",
+      "args": ["docs"],
+      "program": "node_modules/grunt-cli/bin/grunt"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "grunt test",
       "program": "${workspaceFolder}/node_modules/grunt/bin/grunt",
       "args": [

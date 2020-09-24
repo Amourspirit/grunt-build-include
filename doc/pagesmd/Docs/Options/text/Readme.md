@@ -1,12 +1,12 @@
 [[include:options/text/text.md]]
 
-* [Before After](BeforeAfter/)
-* [Codekind](CodeKind/)
-* [Code](code/)
-* [Indent](indent/)
-* [NoLineBreaks](NoLineBreaks/)
-* [padding](padding/)
-* [whiteSpaceLine](whiteSpaceLine/)
+* [Before After](BeforeAfter/index.html)
+* [Codekind](CodeKind/index.html)
+* [Code](code/index.html)
+* [Indent](indent/index.html)
+* [NoLineBreaks](NoLineBreaks/index.html)
+* [padding](padding/index.html)
+* [whiteSpaceLine](whiteSpaceLine/index.html)
 
 **See Examples:**
 
@@ -18,4 +18,4 @@
 * [Fence Comment And Text Options](/grunt-build-include/pages/examples/FenceCommentAndTextOptions.html)
 * [Fenced Remove With Comment And White Space Lines](/grunt-build-include/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html)
 
-[Options](../)
+[Options](../index.html)

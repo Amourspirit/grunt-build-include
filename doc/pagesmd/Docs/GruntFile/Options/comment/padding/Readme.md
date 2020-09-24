@@ -4,5 +4,5 @@
 
 [[include:GruntOptions/comment/see.md]]
 
-[Comment](../)  
-[Grunt File Options](../../)
+[Comment](../index.html)  
+[Grunt File Options](../../index.html)

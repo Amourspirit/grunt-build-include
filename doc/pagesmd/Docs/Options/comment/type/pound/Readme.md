@@ -1,5 +1,5 @@
 [[include:options/comment/type/pound.md]]
 
-[Comment Type](../)
+[Comment Type](../index.html)
 
 [[include:style/heading.html]]

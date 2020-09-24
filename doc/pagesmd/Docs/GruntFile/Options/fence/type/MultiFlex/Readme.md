@@ -1,13 +1,13 @@
 [[include:GruntOptions/fence/type/multiFlex/multiflex.md]]
-Combines [Escape](../Escape/), [Tilde](../Tilde) and [Strict](../Strict/)
+Combines [Escape](../Escape/index.html), [Tilde](../Tilde) and [Strict](../Strict/index.html)
 into a single fence.
 
-[Escape](../Escape/) is matched first.  
+[Escape](../Escape/index.html) is matched first.  
 [Tilde](../Tilde) is matched second.  
-[Strict](../Strict/) is the final match.
+[Strict](../Strict/index.html) is the final match.
 
 [[include:GruntOptions/fence/type/multiFlex/example01.md]]
 
-[Fence Type](../)
+[Fence Type](../index.html)
 
 [[include:style/heading.html]]

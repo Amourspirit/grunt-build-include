@@ -4,4 +4,4 @@
 
 [[include:style/heading.html]]
 
-[Grunt File Options](../)
+[Grunt File Options](../index.html)

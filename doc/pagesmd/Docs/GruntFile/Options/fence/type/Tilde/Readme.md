@@ -2,6 +2,6 @@
 
 [[include:GruntOptions/fence/type/tilde/example01.md]]
 
-[Fence Type](../)
+[Fence Type](../index.html)
 
 [[include:style/heading.html]]

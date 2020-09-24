@@ -6,5 +6,5 @@
 
 [[include:style/heading.html]]
 
-[Fence Options](../)  
-[All Options](../../)
+[Fence Options](../index.html)  
+[All Options](../../index.html)

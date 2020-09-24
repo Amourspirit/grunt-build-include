@@ -1,5 +1,5 @@
 [[include:options/comment/type/single.md]]
 
-[Comment Type](../)
+[Comment Type](../index.html)
 
 [[include:style/heading.html]]

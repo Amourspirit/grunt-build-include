@@ -9,6 +9,7 @@
     "test": "grunt build && mocha -r ts-node/register test/**/*.test.ts",
     "build": "grunt build",
     "lint": "tslint -p tsconfig.json",
+    "lite": "lite-server -c 'doc/docs/configs/doc.config.json'",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [
@@ -46,20 +47,20 @@
     "grunt-remove-comments": "^0.1.6",
     "grunt-shell": "^3.0.1",
     "grunt-tslint": "^5.0.2",
+    "lite-server": "^2.5.4",
     "load-grunt-tasks": "^5.1.0",
     "mkdirp": "^1.0.4",
     "mocha": "^8.1.3",
     "mocha-sinon": "^2.1.2",
-    "prettier": "^2.1.1",
+    "prettier": "^2.1.2",
     "sinon": "^9.0.3",
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.19.1",
+    "typedoc": "^0.19.2",
     "typedoc-plugin-external-module-name": "^4.0.3",
-    "typedoc-plugin-markdown": "^2.4.2",
-    "typedoc-plugin-markdown-pages": "^0.3.0",
-    "typescript": "^4.0.2"
+    "typedoc-plugin-pages": "^1.0.1",
+    "typescript": "^4.0.3"
   },
   "dependencies": {
     "file-sync-cmp": "^0.1.1",

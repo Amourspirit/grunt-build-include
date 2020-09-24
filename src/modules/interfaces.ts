@@ -143,15 +143,15 @@ export type AnonymousFn = () => any;
 /** Options for Grunt files */
 export interface IBiGruntOpt {
   /**
-   * [[include:docs/GruntOptions/encoding.md]]
+   * [[include:GruntOptions/encoding.md]]
   */
   encoding: string;
   /**
-   * [[include:docs/GruntOptions/process.md]]
+   * [[include:GruntOptions/process.md]]
    */
   process: boolean | ProcessFn;
   /**
-   * [[include:docs/GruntOptions/noProcess.md]]
+   * [[include:GruntOptions/noProcess.md]]
   */
   noProcess: any;
   /**
@@ -167,15 +167,15 @@ export interface IBiGruntOpt {
  */
   ignoreMissing: boolean,
   /** 
-   * [[include:docs/GruntOptions/timestamp.md]]
+   * [[include:GruntOptions/timestamp.md]]
   */
   timestamp: boolean;
   /**
-   * [[include:docs/GruntOptions/mode.md]]
+   * [[include:GruntOptions/mode.md]]
    */
   mode: boolean | number;
   /**
-   * [[include:docs/GruntOptions/match/match.md]]
+   * [[include:GruntOptions/match/match.md]]
    * 
    * @See [build_include option match](/pages/Docs/GruntFile/Options/match/)
    */

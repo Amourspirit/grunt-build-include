@@ -6,7 +6,7 @@
 
 [[include:GruntOptions/text/CodeKind/none.md]]
 
-**See Also:** [Options Text CodeKind](/grunt-build-include/pages/Docs/Options/text/CodeKind/)
+**See Also:** [Options Text CodeKind](/grunt-build-include/pages/Docs/Options/text/CodeKind/index.html)
 
-[Text](../)  
-[Grunt File Options](../../)
+[Text](../index.html)  
+[Grunt File Options](../../index.html)

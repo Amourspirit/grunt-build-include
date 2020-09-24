@@ -1,3 +1,3 @@
 [[include:GruntOptions/timestamp.md]]
 
-[Grunt File Options](../)
+[Grunt File Options](../index.html)
