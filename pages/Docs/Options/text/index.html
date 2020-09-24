@@ -3,17 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Text | grunt-build-include</title>
-	<meta name="description" content="">
+	<title>Text | TypeDoc Pages Plugin</title>
+	<meta name="description" content="Documentation for TypeDoc Pages Plugin">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../../../../assets/css/main.css">
+	<link rel="stylesheet" href="../../../../assets/css/pages.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../../../../assets/js/search.js" data-base="../../../..">
+				<div class="table-cell" id="tsd-search" data-index="../../../../assets/js/search.json" data-base="../../../..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../../../../index.html" class="title">grunt-build-include</a>
+					<a href="../../../../index.html" class="title">TypeDoc Pages Plugin</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,19 +57,19 @@
 					<a href="../../../../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../../../index.html">Pages</a>
+					<a href="../../index.html">Documentation</a>
 				</li>
 				<li>
-					<a href="../../index.html"> Docs</a>
+					<a href="../index.html">Options</a>
 				</li>
 				<li>
-					<a href="../index.html"> Options</a>
+					<a href="../index.html">Build Include Options</a>
 				</li>
 				<li>
 					<a href="index.html">Text</a>
 				</li>
 			</ul>
-			<h1> Text</h1>
+			<h1>Text</h1>
 		</div>
 	</div>
 </header>
@@ -76,16 +77,18 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h3 id="text">Text</h3>
+				<a href="#text" id="text" style="color: inherit; text-decoration: none;">
+					<h3>Text</h3>
+				</a>
 				<p>The option <code>text</code> allow for input file content to be manipulated in several ways before being outputed.  </p>
 				<ul>
-					<li><a href="BeforeAfter/">Before After</a></li>
-					<li><a href="CodeKind/">Codekind</a></li>
-					<li><a href="code/">Code</a></li>
-					<li><a href="indent/">Indent</a></li>
-					<li><a href="NoLineBreaks/">NoLineBreaks</a></li>
-					<li><a href="padding/">padding</a></li>
-					<li><a href="whiteSpaceLine/">whiteSpaceLine</a></li>
+					<li><a href="BeforeAfter/index.html">Before After</a></li>
+					<li><a href="CodeKind/index.html">Codekind</a></li>
+					<li><a href="code/index.html">Code</a></li>
+					<li><a href="indent/index.html">Indent</a></li>
+					<li><a href="NoLineBreaks/index.html">NoLineBreaks</a></li>
+					<li><a href="padding/index.html">padding</a></li>
+					<li><a href="whiteSpaceLine/index.html">whiteSpaceLine</a></li>
 				</ul>
 				<p><strong>See Examples:</strong></p>
 				<ul>
@@ -97,42 +100,74 @@
 					<li><a href="/grunt-build-include/pages/examples/FenceCommentAndTextOptions.html">Fence Comment And Text Options</a></li>
 					<li><a href="/grunt-build-include/pages/examples/FencedRemoveWithCommentAndWhiteSpaceLines.html">Fenced Remove With Comment And White Space Lines</a></li>
 				</ul>
-				<p><a href="../">Options</a></p>
+				<p><a href="../index.html">Options</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="label ">
-						<span>Pages</span>
+					<li class=" pp-nav pp-back-btn">
+						<a href="../../index.html">🡠 <wbr>Back to <wbr>Documentation</a>
 					</li>
-					<li class=" ">
-						<a href="BeforeAfter/index.html"> <wbr>Before <wbr>After</a>
+					<li class="label pp-nav pp-group">
+						<span>Build <wbr>Include <wbr>Options</span>
 					</li>
-					<li class=" ">
-						<a href="CodeKind/index.html"> <wbr>Code <wbr>Kind</a>
+					<li class=" pp-nav pp-page">
+						<a href="../index.html">Options</a>
 					</li>
-					<li class=" ">
-						<a href="NoLineBreaks/index.html"> <wbr>No <wbr>Line <wbr>Breaks</a>
+					<li class=" pp-nav pp-page">
+						<a href="../asjsstring/index.html">As<wbr>JsString</a>
 					</li>
-					<li class=" ">
+					<li class=" pp-nav pp-page pp-parent">
+						<a href="../breakstring/index.html">Break<wbr>String</a>
+					</li>
+					<li class=" pp-nav pp-page pp-parent">
+						<a href="../comment/index.html">Comment</a>
+					</li>
+					<li class=" pp-nav pp-page pp-parent">
+						<a href="../fence/index.html">Fence</a>
+					</li>
+					<li class="current pp-nav pp-page pp-parent">
+						<a href="index.html">Text</a>
+					</li>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="BeforeAfter/index.html">Before<wbr>After</a>
+					</li>
+					<li class=" pp-nav pp-page pp-child">
 						<a href="code/index.html">Code</a>
 					</li>
-					<li class=" ">
+					<li class=" pp-nav pp-page pp-child">
+						<a href="CodeKind/index.html">Code<wbr>Kind</a>
+					</li>
+					<li class=" pp-nav pp-page pp-child">
 						<a href="indent/index.html">Indent</a>
 					</li>
-					<li class=" ">
+					<li class=" pp-nav pp-page pp-child">
+						<a href="NoLineBreaks/index.html">No<wbr>Line<wbr>Breaks</a>
+					</li>
+					<li class=" pp-nav pp-page pp-child">
 						<a href="padding/index.html">Padding</a>
 					</li>
-					<li class=" ">
-						<a href="whiteSpaceLine/index.html">White <wbr>Space <wbr>Line</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="whiteSpaceLine/index.html">White<wbr>Space<wbr>Line</a>
 					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation primary">
-				<ul>
+					<li class="label pp-nav pp-group">
+						<span>API</span>
+					</li>
 					<li class="globals  ">
 						<a href="../../../../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../../../modules/enums.html">enums</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../../../modules/src_modules.html">src/modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../../../modules/src_modules_fences.html">src/modules/fences</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../../../modules/src_modules_matches.html">src/modules/matches</a>
 					</li>
 				</ul>
 			</nav>
@@ -148,65 +183,29 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../../../../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../../../../assets/js/search.js"><' + '/script>');</script>
+<script>if (location.protocol == 'file:') document.write('<script src="../../../../assets/js/search.json"><' + '/script>');</script>
 </body>
 </html>

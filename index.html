@@ -3,17 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>grunt-build-include</title>
-	<meta name="description" content="">
+	<title>TypeDoc Pages Plugin</title>
+	<meta name="description" content="Documentation for TypeDoc Pages Plugin">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/pages.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">grunt-build-include</a>
+					<a href="index.html" class="title">TypeDoc Pages Plugin</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +57,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> grunt-build-include</h1>
+			<h1>TypeDoc Pages Plugin</h1>
 		</div>
 	</div>
 </header>
@@ -77,77 +78,84 @@
 					<img src="https://img.shields.io/github/license/Amourspirit/grunt-build-include.svg" />
 					<a href="https://github.com/badges/stability-badges"> <img src="https://badges.github.io/stability-badges/dist/stable.svg" /></a>
 				</p>
-				<h1 id="grunt-build-include">grunt-build-include</h1>
-				<h2 id="documentation">Documentation</h2>
+				<a href="#grunt-build-include" id="grunt-build-include" style="color: inherit; text-decoration: none;">
+					<h1>grunt-build-include</h1>
+				</a>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
 				<p>Extensive documentation can be found <a href="https://amourspirit.github.io/grunt-build-include/pages/Docs/">here</a>.</p>
-				<h2 id="the-what">The What</h2>
+				<a href="#the-what" id="the-what" style="color: inherit; text-decoration: none;">
+					<h2>The What</h2>
+				</a>
 				<p>This is a plugin for <a href="https://gruntjs.com/">Grunt</a> that allows you to rescursivly include other files into your output by using <strong>build_include</strong> statements.</p>
 				<p>Can be a simple include that replaces <strong>build_include</strong> statement with with the contents of a file.</p>
 				<p><strong>Example:</strong></p>
-				<pre><code class="language-js"><span class="hljs-comment">// BUILD_INCLUDE("./scratch/mysnippet.js")</span></code></pre>
+				<pre><code class="language-js"><span class="hljs-comment">// BUILD_INCLUDE(&quot;./scratch/mysnippet.js&quot;)</span></code></pre>
 				<p>Can be a more complex replacement that applies formating using <a href="https://amourspirit.github.io/grunt-build-include/pages/Docs/Options/index.html">Options</a></p>
 				<p><strong>Example:</strong></p>
 				<pre><code class="language-js"><span class="hljs-keyword">var</span> getStyleCss = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">var</span> css = <span class="hljs-string">'// BUILD_INCLUDE("./scratch/style.min.css")[asjsstring,breakString?width=80]'</span>;
+  <span class="hljs-keyword">var</span> css = <span class="hljs-string">&#x27;// BUILD_INCLUDE(&quot;./scratch/style.min.css&quot;)[asjsstring,breakString?width=80]&#x27;</span>;
   <span class="hljs-keyword">return</span> css;
 };</code></pre>
 				<p><strong>See Example:</strong> <a href="https://amourspirit.github.io/grunt-build-include/pages/examples/AsjsstringIncludeTextInJavascriptString.html">Asjsstring Include Text In Javascript String</a></p>
-				<h2 id="getting-started">Getting started</h2>
+				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+					<h2>Getting started</h2>
+				</a>
 				<p>If you haven&#39;t used <a href="https://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="https://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="https://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you&#39;re familiar with that process, you may install this plugin with this command:</p>
 				<pre><code class="language-text">npm install grunt-build-include --save-dev</code></pre>
 				<p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
-				<pre><code class="language-js">grunt.loadNpmTasks(<span class="hljs-string">'grunt-build-include'</span>);</code></pre>
+				<pre><code class="language-js">grunt.loadNpmTasks(<span class="hljs-string">&#x27;grunt-build-include&#x27;</span>);</code></pre>
 				<p>This plugin was designed to work with Grunt 0.4.x. If you&#39;re still using grunt v0.3.x it&#39;s strongly recommended to <a href="https://gruntjs.com/upgrading-from-0.3-to-0.4">upgrade</a>.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="label ">
-						<span>Pages</span>
+					<li class="label pp-nav pp-group">
+						<span>Documentation</span>
 					</li>
-					<li class=" ">
-						<a href="pages/Docs/index.html"> <wbr>Docs</a>
+					<li class=" pp-nav pp-page">
+						<a href="pages/Docs/index.html">Intro</a>
 					</li>
-					<li class=" ">
+					<li class=" pp-nav pp-page">
+						<a href="pages/Docs/GruntFile/Options/asjsstring/index.html">Grunt <wbr>File</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="pages/Docs/Options/index.html">Options</a>
+					</li>
+					<li class="label pp-nav pp-group">
+						<span>Misc</span>
+					</li>
+					<li class=" pp-nav pp-page pp-parent">
 						<a href="pages/examples/index.html">Examples</a>
 					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation primary">
-				<ul>
+					<li class=" pp-nav pp-page pp-parent">
+						<a href="pages/Docs/GruntFile/UsageExamples/index.html">Usage <wbr>Examples</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="pages/Docs/misc/EscapingParameters.html">Escaping <wbr>Parameters</a>
+					</li>
+					<li class=" pp-nav pp-page pp-parent">
+						<a href="pages/examples/replacements/index.html">Replacements</a>
+					</li>
+					<li class="label pp-nav pp-group">
+						<span>API</span>
+					</li>
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_build_include_.html">"build_<wbr>include"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_modules_buildprocess_.html">"modules/<wbr>Build<wbr>Process"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_modules_matchitem_.html">"modules/<wbr>Match<wbr>Item"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_modules_buildinc_.html">"modules/build<wbr>Inc"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_modules_defaultoptions_.html">"modules/default<wbr>Options"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_modules_interfaces_.html">"modules/interfaces"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_modules_util_.html">"modules/util"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/matchoptions.html">Match<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-external-module">
+					<li class=" tsd-kind-module">
 						<a href="modules/enums.html">enums</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/fences.html">fences</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_modules.html">src/modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_modules_fences.html">src/modules/fences</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_modules_matches.html">src/modules/matches</a>
 					</li>
 				</ul>
 			</nav>
@@ -163,65 +171,29 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.json"><' + '/script>');</script>
 </body>
 </html>

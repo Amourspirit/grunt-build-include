@@ -3,17 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title> Fenced Remove With Comment And White Space Lines | grunt-build-include</title>
-	<meta name="description" content="">
+	<title>Fenced Remove With Comment And White Space Lines | TypeDoc Pages Plugin</title>
+	<meta name="description" content="Documentation for TypeDoc Pages Plugin">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../../assets/css/main.css">
+	<link rel="stylesheet" href="../../assets/css/pages.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../../assets/js/search.js" data-base="../..">
+				<div class="table-cell" id="tsd-search" data-index="../../assets/js/search.json" data-base="../..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../../index.html" class="title">grunt-build-include</a>
+					<a href="../../index.html" class="title">TypeDoc Pages Plugin</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,16 +57,16 @@
 					<a href="../../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../index.html">Pages</a>
+					<a href="index.html">Misc</a>
 				</li>
 				<li>
 					<a href="index.html">Examples</a>
 				</li>
 				<li>
-					<a href="FencedRemoveWithCommentAndWhiteSpaceLines.html"> Fenced Remove With Comment And White Space Lines</a>
+					<a href="FencedRemoveWithCommentAndWhiteSpaceLines.html">Fenced Remove With Comment And White Space Lines</a>
 				</li>
 			</ul>
-			<h1> Fenced Remove With Comment And White Space Lines</h1>
+			<h1>Fenced Remove With Comment And White Space Lines</h1>
 		</div>
 	</div>
 </header>
@@ -73,29 +74,47 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="fenced-comment-text-example">Fenced, Comment, Text Example</h1>
-				<h2 id="build_include">BUILD_INCLUDE</h2>
+				<a href="#fenced-comment-text-example" id="fenced-comment-text-example" style="color: inherit; text-decoration: none;">
+					<h1>Fenced, Comment, Text Example</h1>
+				</a>
+				<a href="#build_include" id="build_include" style="color: inherit; text-decoration: none;">
+					<h2>BUILD_INCLUDE</h2>
+				</a>
 				<div class="nowrapcode">
 					<pre><code class="language-js"><span class="hljs-comment">/**
- // build_include('./fixtures/md/replace02.txt')[fence?type=multiflex&amp;remove=true,comment?type=singleAsterisk,text?indent=true&amp;whiteSpaceLine=removeAllWs]
+ // build_include(&#x27;./fixtures/md/replace02.txt&#x27;)[fence?type=multiflex&amp;remove=true,comment?type=singleAsterisk,text?indent=true&amp;whiteSpaceLine=removeAllWs]
  */</span></code></pre>
 				</div>
 				<p>File <a href="replacements/replace02.txt.html">replace02.txt</a> is to be included in output file.</p>
-				<h3 id="options">Options</h3>
+				<a href="#options" id="options" style="color: inherit; text-decoration: none;">
+					<h3>Options</h3>
+				</a>
 				<div class="nowrapcode">
 					<pre><code class="language-text">[fence?type=multiflex&amp;remove=true,comment?type=singleAsterisk,text?indent=true&amp;whiteSpaceLine=removeAllWs]</code></pre>
 				</div>
-				<h3 id="fence">Fence</h3>
+				<a href="#fence" id="fence" style="color: inherit; text-decoration: none;">
+					<h3>Fence</h3>
+				</a>
 				<p>The various options of <code>fence</code> allow for the processing of fenced sections in input file.<br>Fences are used to omit section of a build_include replacement from being processed.<br>Thus the fenced section is included verbatium unless options are set to explicity exclude fences from output.  </p>
-				<h4 id="fence-type">Fence Type</h4>
+				<a href="#fence-type" id="fence-type" style="color: inherit; text-decoration: none;">
+					<h4>Fence Type</h4>
+				</a>
 				<p>Determines the type of Fence to Apply.<br>Can be any <a href="/grunt-build-include/enums/enums.fencekind.html">fenceKind</a> such as <code>strict</code>  </p>
-				<h5 id="fence-type-multiflex">Fence Type MultiFlex</h5>
-				<p><code>type=multiFlex</code> Applys combined fencing options.<br>See: Fence Type <a href="/grunt-build-include/pages/Docs/Options/fence/type/MultiFlex/">MultiFlex</a></p>
-				<h4 id="fence-remove">Fence Remove</h4>
+				<a href="#fence-type-multiflex" id="fence-type-multiflex" style="color: inherit; text-decoration: none;">
+					<h5>Fence Type MultiFlex</h5>
+				</a>
+				<p><code>type=multiFlex</code> Applys combined fencing options.<br>See: Fence Type <a href="/grunt-build-include/pages/Docs/Options/fence/type/MultiFlex/index.html">MultiFlex</a></p>
+				<a href="#fence-remove" id="fence-remove" style="color: inherit; text-decoration: none;">
+					<h4>Fence Remove</h4>
+				</a>
 				<p><code>fence?remove=true</code>  <code>true</code> or <code>false</code> - Default: <code>false</code><br>Boolean value to determine if fences should be removed from output.<br>If set to true then fenced sections will be excluded from output.  </p>
-				<h3 id="comment">Comment</h3>
+				<a href="#comment" id="comment" style="color: inherit; text-decoration: none;">
+					<h3>Comment</h3>
+				</a>
 				<p>The option <code>comments</code> allow for input file content to be treated as comments in the output.  </p>
-				<h5 id="comment-type-singleasterisk">Comment Type SingleAsterisk</h5>
+				<a href="#comment-type-singleasterisk" id="comment-type-singleasterisk" style="color: inherit; text-decoration: none;">
+					<h5>Comment Type SingleAsterisk</h5>
+				</a>
 				<p><code>type=singleAsterisk</code> Pads the left side of each line with * and a single space.<br>Useful for comment replacement that is required inline.</p>
 				<p><strong>Example:</strong><br>If you have the following.</p>
 				<pre><code class="language-js"><span class="hljs-comment">/**
@@ -107,15 +126,23 @@
  * comments continue on this line
  */</span></code></pre>
 				<p>See: Enum values for <a href="/grunt-build-include/enums/enums.commentkind.html">commentkind</a> for possible types.  </p>
-				<h3 id="text">Text</h3>
+				<a href="#text" id="text" style="color: inherit; text-decoration: none;">
+					<h3>Text</h3>
+				</a>
 				<p>The option <code>text</code> allow for input file content to be manipulated in several ways before being outputed.  </p>
-				<h4 id="text-indent">Text Indent</h4>
+				<a href="#text-indent" id="text-indent" style="color: inherit; text-decoration: none;">
+					<h4>Text Indent</h4>
+				</a>
 				<p>The option <code>text?indent</code> or <code>text?indent=true</code> will result in the output including the indent on each line
 				that came before the BUILD_INCLUDE.  </p>
-				<h5 id="text-whitespaceline-removeallws">Text WhiteSpaceLine removeAllWs</h5>
+				<a href="#text-whitespaceline-removeallws" id="text-whitespaceline-removeallws" style="color: inherit; text-decoration: none;">
+					<h5>Text WhiteSpaceLine removeAllWs</h5>
+				</a>
 				<p><code>text?WhiteSpaceLine=removeAllWs</code> All white space line are removed.
 				This include white space lines and empty lines.  </p>
-				<h3 id="output">Output</h3>
+				<a href="#output" id="output" style="color: inherit; text-decoration: none;">
+					<h3>Output</h3>
+				</a>
 				<div class="nowrapcode">
 					<pre><code class="language-js"><span class="hljs-comment">/**
  * # Fence Test
@@ -158,57 +185,89 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="label ">
-						<span>Pages</span>
+					<li class="label pp-nav pp-group">
+						<span>Documentation</span>
 					</li>
-					<li class=" ">
-						<a href="AsjsstringIncludeTextInJavascriptString.html"> <wbr>Asjsstring <wbr>Include <wbr>Text <wbr>In <wbr>Javascript <wbr>String</a>
+					<li class=" pp-nav pp-page">
+						<a href="../Docs/index.html">Intro</a>
 					</li>
-					<li class=" ">
-						<a href="CommentJsdocBreakstringByWord.html"> <wbr>Comment <wbr>Jsdoc <wbr>Breakstring <wbr>By <wbr>Word</a>
+					<li class=" pp-nav pp-page">
+						<a href="../Docs/GruntFile/Options/asjsstring/index.html">Grunt <wbr>File</a>
 					</li>
-					<li class=" ">
-						<a href="CommentTypeJsdocRemovePadding.html"> <wbr>Comment <wbr>Type <wbr>Jsdoc <wbr>Remove <wbr>Padding</a>
+					<li class=" pp-nav pp-page">
+						<a href="../Docs/Options/index.html">Options</a>
 					</li>
-					<li class=" ">
-						<a href="CommentTypeMultiBreakstringIndent.html"> <wbr>Comment <wbr>Type <wbr>Multi <wbr>Breakstring <wbr>Indent</a>
+					<li class="label pp-nav pp-group">
+						<span>Misc</span>
 					</li>
-					<li class=" ">
-						<a href="CommentTypeMultiWithTwoTypesOfPadding.html"> <wbr>Comment <wbr>Type <wbr>Multi <wbr>With <wbr>Two <wbr>Types <wbr>Of <wbr>Padding</a>
+					<li class=" pp-nav pp-page pp-parent pp-active">
+						<a href="index.html">Examples</a>
 					</li>
-					<li class=" ">
-						<a href="CommentTypeSingle.html"> <wbr>Comment <wbr>Type <wbr>Single</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="AsjsstringIncludeTextInJavascriptString.html">Asjsstring <wbr>Include <wbr>Text <wbr>In <wbr>Javascript <wbr>String</a>
 					</li>
-					<li class=" ">
-						<a href="CommentTypeSingleBreakstringFlagsAndEol.html"> <wbr>Comment <wbr>Type <wbr>Single <wbr>Breakstring <wbr>Flags <wbr>And <wbr>Eol</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="CommentJsdocBreakstringByWord.html">Comment <wbr>Jsdoc <wbr>Breakstring <wbr>By <wbr>Word</a>
 					</li>
-					<li class=" ">
-						<a href="FenceCommentAndTextOptions.html"> <wbr>Fence <wbr>Comment <wbr>And <wbr>Text <wbr>Options</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="CommentTypeJsdocRemovePadding.html">Comment <wbr>Type <wbr>Jsdoc <wbr>Remove <wbr>Padding</a>
 					</li>
-					<li class=" ">
-						<a href="FenceCommentTextSimple.html"> <wbr>Fence <wbr>Comment <wbr>Text <wbr>Simple</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="CommentTypeMultiBreakstringIndent.html">Comment <wbr>Type <wbr>Multi <wbr>Breakstring <wbr>Indent</a>
 					</li>
-					<li class="current ">
-						<a href="FencedRemoveWithCommentAndWhiteSpaceLines.html"> <wbr>Fenced <wbr>Remove <wbr>With <wbr>Comment <wbr>And <wbr>White <wbr>Space <wbr>Lines</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="CommentTypeMultiWithTwoTypesOfPadding.html">Comment <wbr>Type <wbr>Multi <wbr>With <wbr>Two <wbr>Types <wbr>Of <wbr>Padding</a>
 					</li>
-					<li class=" ">
-						<a href="TextBeforeAfterWithSpecialChars.html"> <wbr>Text <wbr>Before <wbr>After <wbr>With <wbr>Special <wbr>Chars</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="CommentTypeSingle.html">Comment <wbr>Type <wbr>Single</a>
 					</li>
-					<li class=" ">
-						<a href="TextBeforeAfterWithUnicode.html"> <wbr>Text <wbr>Before <wbr>After <wbr>With <wbr>Unicode</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="CommentTypeSingleBreakstringFlagsAndEol.html">Comment <wbr>Type <wbr>Single <wbr>Breakstring <wbr>Flags <wbr>And <wbr>Eol</a>
 					</li>
-					<li class=" ">
-						<a href="TextPadleftBreakLinesByWord.html"> <wbr>Text <wbr>Padleft <wbr>Break <wbr>Lines <wbr>By <wbr>Word</a>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="FenceCommentAndTextOptions.html">Fence <wbr>Comment <wbr>And <wbr>Text <wbr>Options</a>
 					</li>
-					<li class=" ">
+					<li class=" pp-nav pp-page pp-child">
+						<a href="FenceCommentTextSimple.html">Fence <wbr>Comment <wbr>Text <wbr>Simple</a>
+					</li>
+					<li class="current pp-nav pp-page pp-child">
+						<a href="FencedRemoveWithCommentAndWhiteSpaceLines.html">Fenced <wbr>Remove <wbr>With <wbr>Comment <wbr>And <wbr>White <wbr>Space <wbr>Lines</a>
+					</li>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="TextBeforeAfterWithSpecialChars.html">Text <wbr>Before <wbr>After <wbr>With <wbr>Special <wbr>Chars</a>
+					</li>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="TextBeforeAfterWithUnicode.html">Text <wbr>Before <wbr>After <wbr>With <wbr>Unicode</a>
+					</li>
+					<li class=" pp-nav pp-page pp-child">
+						<a href="TextPadleftBreakLinesByWord.html">Text <wbr>Padleft <wbr>Break <wbr>Lines <wbr>By <wbr>Word</a>
+					</li>
+					<li class=" pp-nav pp-page pp-parent">
+						<a href="../Docs/GruntFile/UsageExamples/index.html">Usage <wbr>Examples</a>
+					</li>
+					<li class=" pp-nav pp-page">
+						<a href="../Docs/misc/EscapingParameters.html">Escaping <wbr>Parameters</a>
+					</li>
+					<li class=" pp-nav pp-page pp-parent">
 						<a href="replacements/index.html">Replacements</a>
 					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation primary">
-				<ul>
+					<li class="label pp-nav pp-group">
+						<span>API</span>
+					</li>
 					<li class="globals  ">
 						<a href="../../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/enums.html">enums</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/src_modules.html">src/modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/src_modules_fences.html">src/modules/fences</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/src_modules_matches.html">src/modules/matches</a>
 					</li>
 				</ul>
 			</nav>
@@ -224,65 +283,29 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../../assets/js/search.js"><' + '/script>');</script>
+<script>if (location.protocol == 'file:') document.write('<script src="../../assets/js/search.json"><' + '/script>');</script>
 </body>
 </html>
