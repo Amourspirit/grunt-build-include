@@ -1,69 +1,69 @@
 see gruntfile-html.js
 -------without quotes
--------file: (./fixtures/replace1.txt)
-<!--BUILD_HTML(./fixtures/replace1.txt)-->
+-------file: (./replace1.txt)
+<!--BUILD_HTML(./replace1.txt)-->
 
 -------with single quotes
--------file: ('./fixtures/replace1.txt')
-<!--BUILD_HTML('./fixtures/replace1.txt')-->
+-------file: ('./replace1.txt')
+<!--BUILD_HTML('./replace1.txt')-->
 
 -------with double quotes
--------file: ("./fixtures/replace1.txt")
-<!--BUILD_HTML("./fixtures/replace1.txt")-->
+-------file: ("./replace1.txt")
+<!--BUILD_HTML("./replace1.txt")-->
 
 -------with extra space
--------file: ("./fixtures/replace1.txt")-->
-<!--     BUILD_HTML("./fixtures/replace1.txt")-->
+-------file: ("./replace1.txt")-->
+<!--     BUILD_HTML("./replace1.txt")-->
 
 -------with no space
--------file: ("./fixtures/replace1.txt")
-<!-- BUILD_HTML("./fixtures/replace1.txt") -->
+-------file: ("./replace1.txt")
+<!-- BUILD_HTML("./replace1.txt") -->
 
-with html comments, no quotes, no space file: (./fixtures/replace1.txt)
-<!--BUILD_HTML(./fixtures/replace1.txt)-->
+with html comments, no quotes, no space file: (./replace1.txt)
+<!--BUILD_HTML(./replace1.txt)-->
 
 -------with html comments, quotes, space
--------file: ( './fixtures/replace1.txt' )
-<!--   BUILD_HTML( './fixtures/replace1.txt' ) -->
+-------file: ( './replace1.txt' )
+<!--   BUILD_HTML( './replace1.txt' ) -->
 
 -------In a sentence
--------file: ("./fixtures/replace1.txt")
-This part is permanent. THIS IS NOT: <!-- BUILD_HTML("./fixtures/replace1.txt")-->
+-------file: ("./replace1.txt")
+This part is permanent. THIS IS NOT: <!-- BUILD_HTML("./replace1.txt")-->
 
 -------Lower case BUILD_HTML
--------file: ("./fixtures/replace1.txt")
-<!-- BUILD_HTML("./fixtures/replace1.txt") -->
+-------file: ("./replace1.txt")
+<!-- BUILD_HTML("./replace1.txt") -->
 
 -------Mixed case BUILD_html
--------file: (  ./fixtures/replace1.txt  )
-<!--BUILD_html(  ./fixtures/replace1.txt  )-->
+-------file: (  ./replace1.txt  )
+<!--BUILD_html(  ./replace1.txt  )-->
 
 -------with space on both sides of quote
--------file: (  "  ./fixtures/replace1.txt  "   )
-<!--BUILD_HTML(  "  ./fixtures/replace1.txt  "   )-->
+-------file: (  "  ./replace1.txt  "   )
+<!--BUILD_HTML(  "  ./replace1.txt  "   )-->
 
 -------with file that spaces in the name
--------file: ( "./fixtures/replacement file 01.txt" )
-<!-- BUILD_HTML( "./fixtures/replacement file 01.txt" ) -->
+-------file: ( "./replacement file 01.txt" )
+<!-- BUILD_HTML( "./replacement file 01.txt" ) -->
 
 -------with file that spaces in the name not using quotes
--------file: ( ./fixtures/replacement file 01.txt )
-<!-- BUILD_HTML( ./fixtures/replacement file 01.txt ) -->
+-------file: ( ./replacement file 01.txt )
+<!-- BUILD_HTML( ./replacement file 01.txt ) -->
 
 -------with file that spaces in the name not using quotes,
--------file: ( ./fixtures/replacement file 01.txt )
-<!-- BUILD_HTML( ./fixtures/replacement file 01.txt ) -->
+-------file: ( ./replacement file 01.txt )
+<!-- BUILD_HTML( ./replacement file 01.txt ) -->
 
 -------with file that spaces in the name not using quotes,
--------file:    ("./fixtures/replace3.txt")
+-------file:    ("./replace3.txt")
 -------optons:  [breakstring?flags=word]
-<!-- BUILD_HTML("./fixtures/replace3.txt")
+<!-- BUILD_HTML("./replace3.txt")
 [breakstring?flags=word] -->
 
 -------missing end --> should not be replaced
--------file: ("./fixtures/replace3.txt")
-<!-- BUILD_HTML("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
+<!-- BUILD_HTML("./replace3.txt")
 
 -------improper <-- should not be replaced
--------file: ("./fixtures/replace3.txt")
-<-- BUILD_HTML("./fixtures/replace3.txt") -->
+-------file: ("./replace3.txt")
+<-- BUILD_HTML("./replace3.txt") -->

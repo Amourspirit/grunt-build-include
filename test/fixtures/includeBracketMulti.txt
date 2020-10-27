@@ -1,17 +1,17 @@
-In a sentence: [[include:md/replace5.md]]
+In a sentence: [[include:replace5.md]]
 
 /**
-  * [[include:md/replace4.md]]
+  * [[include:replace4.md]]
   */
 
 
     	/**
-    	 * [[include:md/replace3.md]]
+    	 * [[include:./replace3.md]]
     	 */
 
 	/**
 	 * A few extra spaces and tabs were placed befor the next include.
 	 * Expect them to be ignored.
 	 *
-	 *  		[[include:md/replace4.md]]
+	 *  		[[include:replace4.md]]
 	 */

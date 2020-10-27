@@ -1,5 +1,5 @@
 recursive03.txt include recursive02.txt
-// BUILD_INCLUDE(./fixtures/recursive02.txt)
+// BUILD_INCLUDE(./recursive02.txt)
 
 recursive03.txt include replace2.txt
-// BUILD_INCLUDE(./fixtures/replace2.txt)
+// BUILD_INCLUDE(replace2.txt)

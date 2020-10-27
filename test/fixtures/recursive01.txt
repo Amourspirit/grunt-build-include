@@ -1,5 +1,5 @@
 asJsString option include a file that has its own include
-// BUILD_INCLUDE(./fixtures/sample01.js)
+// BUILD_INCLUDE(./sample01.js)
 
 include recursion01.js that contains another recursive include.
-// BUILD_INCLUDE(./fixtures/recursion01.js)
+// BUILD_INCLUDE(recursion01.js)

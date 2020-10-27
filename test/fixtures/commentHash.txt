@@ -1,15 +1,15 @@
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?padleft=# ]
-// BUILD_INCLUDE("./fixtures/replace3.txt")[text?padleft=# ]
+// BUILD_INCLUDE("./replace3.txt")[text?padleft=# ]
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?padleft=# &before=This is injected before\nAlso this is injected before\n]
-// BUILD_INCLUDE("./fixtures/replace3.txt")[text?padleft=# &before=This is injected before\nAlso this is injected before\n]
+// BUILD_INCLUDE("./replace3.txt")[text?padleft=# &before=This is injected before\nAlso this is injected before\n]
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?padleft=# ,breakstring?width=100&flags=word]
-// BUILD_INCLUDE("./fixtures/replace3.txt")[text?padleft=# ,breakstring?width=100&flags=word]
+// BUILD_INCLUDE("./replace3.txt")[text?padleft=# ,breakstring?width=100&flags=word]
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?before=# \u{1F913}\n# \u{1F44C}\n&padleft=#\u2014\u{1F600}\u2014,breakstring?width=50&flags=word]
-// BUILD_INCLUDE("./fixtures/replace3.txt")[text?before=# \u{1F913}\n# \u{1F44C}\n&padleft=#\u2014\u{1F600}\u2014,breakstring?width=50&flags=word]
+// BUILD_INCLUDE("./replace3.txt")[text?before=# \u{1F913}\n# \u{1F44C}\n&padleft=#\u2014\u{1F600}\u2014,breakstring?width=50&flags=word]

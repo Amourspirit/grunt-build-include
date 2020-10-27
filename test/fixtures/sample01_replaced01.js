@@ -31,6 +31,6 @@ nline-block}div.mem-fs-div-tog:hover{cursor:pointer}i.mem-fs-tog{border:solid #0
 px 3px 0;display:inline-block;padding:3px}i.mem-fs-tog.right{transform:rotate(-45deg);-webkit-trans\
 form:rotate(-45deg)}i.mem-fs-tog.left{transform:rotate(135deg);-webkit-transform:rotate(135deg)}i.m\
 em-fs-tog.up{transform:rotate(-135deg);-webkit-transform:rotate(-135deg)}i.mem-fs-tog.down{transfor\
-m:rotate(45deg);-webkit-transform:rotate(45deg)};';
+m:rotate(45deg);-webkit-transform:rotate(45deg)}';
   return css;
 };

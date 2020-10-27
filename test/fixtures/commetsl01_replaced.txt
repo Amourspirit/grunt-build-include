@@ -1,4 +1,4 @@
--------file: "./fixtures/replace3.txt")
+-------file: "./replace3.txt")
 -------options: [comment?type=Single]
 // The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
 // Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox.
@@ -9,7 +9,7 @@
 // A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack!
 // Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
--------file: "./fixtures/replace3.txt")
+-------file: "./replace3.txt")
 -------options: [comment?type=Single, breakstring?width=90&flags=word&eol=none]
 // The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz
 // graced by fox whelps.
@@ -31,7 +31,7 @@
 // gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ",
 // Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
--------file: "./fixtures/replace3.txt")
+-------file: "./replace3.txt")
 -------options: [comment?type=Single, breakstring?width=90&flags=word&eol=none,text?padleft=]
 //The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz
 //graced by fox whelps.
@@ -53,7 +53,7 @@
 //gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ",
 //Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=multi]
 /*
  * The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
@@ -66,7 +66,7 @@
  * Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
  */
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=jsdoc, breakstring?width=80&flags=word&eol=none]
 /**
  * The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog.
@@ -90,7 +90,7 @@
  * for blue quartz.
  */
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=jsdoc&padleft=0,text?padleft=0]
 /**
  *The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
@@ -103,7 +103,7 @@
  *Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
  */
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=jsdoc&padleft=4]
     /**
      * The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
@@ -116,7 +116,7 @@
      * Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
      */
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=jsdoc&padleft=4,, , text?padleft=6,, ]
     /**
      *      The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
@@ -129,7 +129,7 @@
      *      Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
      */
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=jsdoc,text?padleft= — , breakstring?width=70&flags=word&eol=none]
 /**
  * — The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz
@@ -156,7 +156,7 @@
  * — Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
  */
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=bad, breakstring?width=100&flags=word]
 The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced
 by fox whelps.Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs
@@ -172,7 +172,7 @@ TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
 
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=pound]
 # The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
 # Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox.
@@ -183,7 +183,7 @@ TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 # A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack!
 # Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=html, breakstring?width=100&flags=word]
 <!--
 The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced
@@ -199,15 +199,15 @@ by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopar
 TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 -->
 
--------file: ("./fixtures/replace1.txt")
+-------file: ("./replace1.txt")
 -------options: [comment?type=html, breakstring?width=100&flags=word]
 <!-- This is the text from replacement 1 -->
 
--------file: ("./fixtures/replace1.txt")
+-------file: ("./replace1.txt")
 -------options: [comment?type=jsAuto, breakstring?width=100&flags=word]
 // This is the text from replacement 1
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [comment?type=jsAuto, breakstring?width=100&flags=word]
 /*
  * The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced
@@ -223,7 +223,7 @@ TV quiz game. Woven silk pyjamas exchanged for blue quartz.
  * TV quiz game. Woven silk pyjamas exchanged for blue quartz.
  */
 
--------file: ("./fixtures/replace4.txt")
+-------file: ("./replace4.txt")
 -------options: [comment?type=jsAuto, breakstring?width=200&eol=none&flags=word]
 /*
  * This is a multi line from replace 4 with with four

@@ -20,7 +20,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildIncludeSlash'
         },
         src: '../scratch/test/sample_inline.js',
         dest: '../scratch/test/sample_inline.js'

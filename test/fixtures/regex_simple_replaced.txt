@@ -1,25 +1,25 @@
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: # INCLUDE_BUILD
 This is the text from replacement 1
 
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: #include_build
 This is the text from replacement 1
 
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: #   include_build
 This is the text from replacement 1
 
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: #		include_build
 -------using tabs
 This is the text from replacement 1
 
--------file:    ("./fixtures/replace3.txt")
+-------file:    ("./replace3.txt")
 -------options: [text?padleft=4&before=\n&after=\n,breakstring?width=90&flags=word]
 -------name: # include_BUILD
 "

@@ -1,46 +1,46 @@
-text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected: ]
+text with file: (./replace1.txt) options: [text?before=// this is injected: ]
 // this is injected: This is the text from replacement 1
 
-text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected:\n]
+text with file: (replace1.txt) options: [text?before=// this is injected:\n]
 // this is injected:
 This is the text from replacement 1
 
-text with file (./fixtures/replace1.txt) options: [text?after= // the previous is injected]
+text with file (./replace1.txt) options: [text?after= // the previous is injected]
 This is the text from replacement 1 // the previous is injected
 
-text with file: (./fixtures/replace1.txt) options: [text?after=\n// the previous is injected]
+text with file: (./replace1.txt) options: [text?after=\n// the previous is injected]
 This is the text from replacement 1
 // the previous is injected
 
-text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected: &after= // the previous is injected]
+text with file: (./replace1.txt) options: [text?before=// this is injected: &after= // the previous is injected]
 // this is injected: This is the text from replacement 1 // the previous is injected
 
-text with file: (./fixtures/replace1.txt) options: [text?before=// this is injected:\n&after=\n// the previous is injected]
+text with file: (./replace1.txt) options: [text?before=// this is injected:\n&after=\n// the previous is injected]
 // this is injected:
 This is the text from replacement 1
 // the previous is injected
 
-text with file: (./fixtures/replace1.txt) options: [text?padleft=    ]
+text with file: (./replace1.txt) options: [text?padleft=    ]
     This is the text from replacement 1
 
-text with file: (./fixtures/replace1.txt) options: [text?padleft=4]
+text with file: (./replace1.txt) options: [text?padleft=4]
     This is the text from replacement 1
 
-text with file: (./fixtures/replace1.txt) options: [text?padright=    ]
+text with file: (./replace1.txt) options: [text?padright=    ]
 This is the text from replacement 1    
 
-text with file: (./fixtures/replace1.txt) options: [text?padRight=4]
+text with file: (./replace1.txt) options: [text?padRight=4]
 This is the text from replacement 1    
 
--------file:    (./fixtures/replace1.txt)
+-------file:    (./replace1.txt)
 -------options: [text?padRight=4&PadLeft=4]
     This is the text from replacement 1    
 
--------file:    (./fixtures/replace1.txt)
+-------file:    (./replace1.txt)
 -------options: [text?padLeft=// &PadRight=####]
 // This is the text from replacement 1####
 
--------file:    ("./fixtures/replace2.txt")
+-------file:    ("./replace2.txt")
 -------options: [text?padleft=    ,breakstring?break=line]
     This is the text from replacement 2 
     A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
@@ -52,7 +52,7 @@ This is the text from replacement 1
     I should be incapable of drawing a single stroke at the present moment;
     
 
--------file:    ('./fixtures/replace2.txt')
+-------file:    ('./replace2.txt')
 -------options: [text?padleft=8,breakstring?width=90]
         This is the text from replacement 2 A wonderful serenity has taken possession of my entire
          soul, like these sweet mornings of spring which I enjoy with my whole heart.I am alone, a
@@ -61,7 +61,7 @@ This is the text from replacement 1
         e exquisite sense of mere tranquil existence, that I neglect my talents.I should be incapa
         ble of drawing a single stroke at the present moment;
 
--------file:    (./fixtures/replace2.txt)
+-------file:    (./replace2.txt)
 -------options: [text?code=base64]
 This is the text from replacement 2 
 A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
@@ -73,11 +73,11 @@ I am alone, and feel the charm of existence in this spot, which was created for 
 I should be incapable of drawing a single stroke at the present moment;
 
 
--------file:    (./fixtures/replace2.txt)
+-------file:    (./replace2.txt)
 -------options: [text?code=base64&kind=0]
 VGhpcyBpcyB0aGUgdGV4dCBmcm9tIHJlcGxhY2VtZW50IDIgCkEgd29uZGVyZnVsIHNlcmVuaXR5IGhhcyB0YWtlbiBwb3NzZXNzaW9uIG9mIG15IGVudGlyZSBzb3VsLCBsaWtlIHRoZXNlIHN3ZWV0IG1vcm5pbmdzIG9mIHNwcmluZyB3aGljaCBJIGVuam95IHdpdGggbXkgd2hvbGUgaGVhcnQuCgpJIGFtIGFsb25lLCBhbmQgZmVlbCB0aGUgY2hhcm0gb2YgZXhpc3RlbmNlIGluIHRoaXMgc3BvdCwgd2hpY2ggd2FzIGNyZWF0ZWQgZm9yIHRoZSBibGlzcyBvZiBzb3VscyBsaWtlIG1pbmUuCgogICAgICAgIC0tPmludGVudGlvbmFsIHNwYWNlIGJlZm9yZSBJIGFtIHNvIGhhcHB5LCBteSBkZWFyIGZyaWVuZCwgc28gYWJzb3JiZWQgaW4gdGhlIGV4cXVpc2l0ZSBzZW5zZSBvZiBtZXJlIHRyYW5xdWlsIGV4aXN0ZW5jZSwgdGhhdCBJIG5lZ2xlY3QgbXkgdGFsZW50cy4KCkkgc2hvdWxkIGJlIGluY2FwYWJsZSBvZiBkcmF3aW5nIGEgc2luZ2xlIHN0cm9rZSBhdCB0aGUgcHJlc2VudCBtb21lbnQ7Cg==
 
--------file:    (./fixtures/replace2.txt)
+-------file:    (./replace2.txt)
 -------options: [text?code=base64&kind=encode,breakstring]
 VGhpcyBpcyB0aGUgdGV4dCBmcm9tIHJlcGxhY2VtZW50IDIgCkEgd29uZGVyZnVsIHNlcmVuaXR5IGhh
 cyB0YWtlbiBwb3NzZXNzaW9uIG9mIG15IGVudGlyZSBzb3VsLCBsaWtlIHRoZXNlIHN3ZWV0IG1vcm5p
@@ -89,11 +89,11 @@ aW4gdGhlIGV4cXVpc2l0ZSBzZW5zZSBvZiBtZXJlIHRyYW5xdWlsIGV4aXN0ZW5jZSwgdGhhdCBJIG5l
 Z2xlY3QgbXkgdGFsZW50cy4KCkkgc2hvdWxkIGJlIGluY2FwYWJsZSBvZiBkcmF3aW5nIGEgc2luZ2xl
 IHN0cm9rZSBhdCB0aGUgcHJlc2VudCBtb21lbnQ7Cg==
 
--------file:    (./fixtures/replace1.txt)
+-------file:    (./replace1.txt)
 -------options: [text?code=uri&kind=encode]
 This%20is%20the%20text%20from%20replacement%201
 
--------file:    (./fixtures/style.min.css)
+-------file:    (./style.min.css)
 -------options: [text?code=jsstring&kind=encode,breakstring?width=100]
 .mem-fs-button::after{content:\"\";background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUg
 AAADIAAAAyCAYAAAAeP4ixAAACk0lEQVR42mNgGAWjYBSMUFAlx8RQI69IJJanyK5qOS4S7BIjzfAaeVmGFbr/icYLtH4zNClmkO

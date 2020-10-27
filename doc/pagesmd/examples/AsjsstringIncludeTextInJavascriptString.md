@@ -42,6 +42,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     build_include: {
       default: {
+        match: 'buildIncludeSlash',
         src: './lib/main.js',
         dest: './scratch/main.js'
       }
@@ -98,7 +99,7 @@ dth:0 3px 3px 0;display:inline-block;padding:3px}i.mem-fs-tog.right{transform:r\
 otate(-45deg);-webkit-transform:rotate(-45deg)}i.mem-fs-tog.left{transform:rota\
 te(135deg);-webkit-transform:rotate(135deg)}i.mem-fs-tog.up{transform:rotate(-1\
 35deg);-webkit-transform:rotate(-135deg)}i.mem-fs-tog.down{transform:rotate(45d\
-eg);-webkit-transform:rotate(45deg)};';
+eg);-webkit-transform:rotate(45deg)}';
   return css;
 };
 

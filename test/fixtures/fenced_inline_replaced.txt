@@ -1,4 +1,4 @@
--------file: ('./fixtures/replace5.txt')
+-------file: ('./replace5.txt')
 -------options: [comment?type=jsdoc, fence?type=flex]
 /**
  * file replace5.txt
@@ -39,7 +39,7 @@ Bawds jog, flick quartz, vex nymphs.
 ```
  */
 
--------file: ('./fixtures/replace5.txt')
+-------file: ('./replace5.txt')
 -------options: [comment?type=jsdoc, fence?type=flex&remove=true]
 /**
  * file replace5.txt
@@ -53,7 +53,7 @@ Bawds jog, flick quartz, vex nymphs.
  * some more fenced text
  */
 
--------file: ('./fixtures/replace5.txt')
+-------file: ('./replace5.txt')
 -------options: [comment?type=jsdoc, fence?type=flex&remove]
 /**
  * file replace5.txt
@@ -67,7 +67,7 @@ Bawds jog, flick quartz, vex nymphs.
  * some more fenced text
  */
 
--------file: ("./fixtures/md/replace6.md")
+-------file: ("./md/replace6.md")
 -------options: [comment?type=jsdoc, fence?type=strict]
 /**
  * # Sample Markdown file
@@ -144,7 +144,7 @@ eg);-webkit-transform:rotate(45deg)};';
  * All done with fencing.
  */
 
--------file: 	("./fixtures/md/replace6.md")
+-------file: 	("./md/replace6.md")
 -------options:	[comment?type=jsdoc,text?indent=true, fence?type=strict]
 		/**
 		 * # Sample Markdown file
@@ -221,7 +221,7 @@ eg);-webkit-transform:rotate(45deg)};';
 		 * All done with fencing.
 		 */
 
--------file: 	("./fixtures/md/replace7.md")
+-------file: 	("./md/replace7.md")
 -------options:	[comment?type=single,text?indent=true, fence?type=strict]
 	// # Sample Markdown file
 	// 
@@ -280,7 +280,7 @@ nline-block}div.mem-fs-div-tog:hover{cursor:pointer}i.mem-fs-tog{border:solid #0
 px 3px 0;display:inline-block;padding:3px}i.mem-fs-tog.right{transform:rotate(-45deg);-webkit-trans\
 form:rotate(-45deg)}i.mem-fs-tog.left{transform:rotate(135deg);-webkit-transform:rotate(135deg)}i.m\
 em-fs-tog.up{transform:rotate(-135deg);-webkit-transform:rotate(-135deg)}i.mem-fs-tog.down{transfor\
-m:rotate(45deg);-webkit-transform:rotate(45deg)};';
+m:rotate(45deg);-webkit-transform:rotate(45deg)}';
   return css;
 };
 ```
@@ -288,7 +288,7 @@ m:rotate(45deg);-webkit-transform:rotate(45deg)};';
 	// 
 	// All done with fencing.
 
--------file: 	("./fixtures/md/replace7.md")
+-------file: 	("./md/replace7.md")
 -------options:	[comment?type=single,text?indent=true, fence?type=strict&remove=true]
 	// # Sample Markdown file
 	// 
@@ -304,7 +304,7 @@ m:rotate(45deg);-webkit-transform:rotate(45deg)};';
 	// 
 	// All done with fencing.
 
--------file: ('./fixtures/replace6.txt')
+-------file: ('./replace6.txt')
 -------options: [comment?type=pound, text?indent=true, fence?start=**&end=**]
 		# file replace6.txt
 		# 

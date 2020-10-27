@@ -1,11 +1,11 @@
-[[include:md/replace5.md]]
+[[include:replace5.md]]
 
-In a sentence: [[include:md/replace5.md]]
+In a sentence: [[include:replace5.md]]
 
 /**
-[[include:md/replace2.md]](text?padleft= * )
+[[include:replace2.md]](text?padleft= * )
  */
 
- [[include:md/replace2.md]](text?padleft= * &before=/**\n&after=\n */)
+ [[include:replace2.md]](text?padleft= * &before=/**\n&after=\n */)
 
-      [[include:md/replace2.md]](text?padleft= * &before=      /**\n&after=\n       */&indent=true)
+      [[include:replace2.md]](text?padleft= * &before=      /**\n&after=\n       */&indent=true)

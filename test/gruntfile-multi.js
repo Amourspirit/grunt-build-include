@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildIncludeSlash'
         },
         src: '../scratch/test/simple.txt',
         dest: '../scratch/test/simple_replaced.txt'

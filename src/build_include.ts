@@ -1,6 +1,6 @@
 import { buildInc } from './modules/buildInc';
-import { defaultOptions } from './modules/defaultOptions';
-import { IBiGruntOpt } from './modules/interfaces';
+import { defaultOptions } from "build-include/cjs/opt/defaultOptions";
+import { IBiGruntOpt } from './Interfaces/interfaces';
 // @ts-ignore comment suppresses all errors that originate on the following line.
 import * as IGrunt from 'grunt';
 
@@ -14,7 +14,26 @@ module.exports = (grunt: IGrunt) => {
   const fileSyncCmp = require('file-sync-cmp');
   const isWindows = process.platform === 'win32';
   grunt.registerMultiTask('build_include', 'Replace BUILD_INCLUDE blocks', () => {
-    const options: IBiGruntOpt = grunt.task.current.options(defaultOptions);
+    const opt: IBiGruntOpt = {
+      encoding: defaultOptions.encoding,
+      process: false,
+      noProcess: {},
+      asJsString: defaultOptions.asJsString,
+      breakstring: defaultOptions.breakstring,
+      comment: defaultOptions.comment,
+      fence: defaultOptions.fence,
+      ignoreMissing: defaultOptions.ignoreMissing,
+      internal: defaultOptions.internal,
+      match: defaultOptions.match,
+      mode: false,
+      override: defaultOptions.override,
+      recursion: defaultOptions.recursion,
+      text: defaultOptions.text,
+      timestamp: false,
+      verbose: defaultOptions.verbose
+     };
+
+    const options: IBiGruntOpt = grunt.task.current.options(opt);
     const copyOptions: grunt.file.IFileWriteStringOption = {
       encoding: options.encoding,
       process: typeof options.process === 'function' ? options.process : buildInc,

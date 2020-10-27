@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildInclude'
         },
         src: './fixtures/simple_escape.txt',
         dest: '../scratch/test/simple_escape_replaced.txt'

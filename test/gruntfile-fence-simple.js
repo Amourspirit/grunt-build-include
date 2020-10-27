@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildIncludeSlash',
           fence: 'strict'
         },
         src: './fixtures/simple_fenced.txt',

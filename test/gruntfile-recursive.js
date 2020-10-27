@@ -18,7 +18,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildInclude'
         },
         src: './fixtures/recursive03.txt',
         dest: '../scratch/test/recursive03_replaced.txt'

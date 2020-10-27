@@ -24,6 +24,8 @@ This is a plugin for [Grunt](https://gruntjs.com/) that allows you to rescursivl
 
 Can be a simple include that replaces **build_include** statement with with the contents of a file.
 
+This plugin is a [grunt](https://gruntjs.com/) implementation of the [build_include](https://www.npmjs.com/package/build-include) package.
+
 **Example:**
 
 ```js

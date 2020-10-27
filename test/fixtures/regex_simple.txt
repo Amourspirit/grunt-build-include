@@ -1,25 +1,25 @@
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: # INCLUDE_BUILD
-# INCLUDE_BUILD(./fixtures/replace1.txt)
+# INCLUDE_BUILD(./replace1.txt)
 
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: #include_build
-#include_build(./fixtures/replace1.txt)
+#include_build(./replace1.txt)
 
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: #   include_build
-#   include_build(./fixtures/replace1.txt)
+#   include_build(./replace1.txt)
 
--------file:    ("./fixtures/replace1.txt")
+-------file:    ("./replace1.txt")
 -------options: none
 -------name: #		include_build
 -------using tabs
-#		include_build(./fixtures/replace1.txt)
+#		include_build(./replace1.txt)
 
--------file:    ("./fixtures/replace3.txt")
+-------file:    ("./replace3.txt")
 -------options: [text?padleft=4&before=\n&after=\n,breakstring?width=90&flags=word]
 -------name: # include_BUILD
-"# include_BUILD(./fixtures/replace3.txt)[text?padleft=4&before=\n&after=\n,breakstring?width=90&flags=word]"
+"# include_BUILD(./replace3.txt)[text?padleft=4&before=\n&after=\n,breakstring?width=90&flags=word]"

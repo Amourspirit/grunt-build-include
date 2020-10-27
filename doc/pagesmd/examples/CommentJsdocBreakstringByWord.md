@@ -37,6 +37,9 @@ module.exports = function (grunt) {
   grunt.initConfig({
     build_include: {
       default: {
+        match: {
+          kind: 'buildIncludeSlash'
+        },
         src: './lib/test.txt',
         dest: './scratch/test.txt'
       }

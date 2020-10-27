@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildIncludeSlash'
         },
         src: './fixtures/commentHash.txt',
         dest: '../scratch/test/commentHash_replaced.txt'

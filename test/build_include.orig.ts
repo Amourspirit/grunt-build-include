@@ -36,15 +36,15 @@ const fixDir = `${process.cwd()}/test/fixtures`;
 mkdirp.sync(`${outDir}/css`);
 
 describe('Build include Plugin', function () {
-  it('should write a simple file and replace the build_replace contents matching fixture simple_repalced.txt',
+  it.only('should write a simple file and replace the build_replace contents matching fixture simple_repalced.txt',
     function (done) {
       callGruntfile('gruntfile-simple.js', function (error: any, stdout: any, stderr: any) {
         expect(stdout).to.not.be.null;
-        // console.log(stdout);
+        console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.log(error);
-        // }
+        if(error) {
+          console.log(error);
+        }
         let src = fs.readFileSync(`${fixDir}/simple_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/simple_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -105,11 +105,8 @@ describe('Build include Plugin', function () {
     function (done) {
       callGruntfile('gruntfile-recursive.js', function (error: any, stdout: any, stderr: any) {
         expect(stdout).to.not.be.null;
-        //console.log(stdout);
+        // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/recursive03_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/recursive03_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -123,9 +120,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/commetsl01_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/commetsl01_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -139,9 +133,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/commentHash_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/commentHash_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -156,9 +147,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/simple_escape_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/simple_escape_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -176,9 +164,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/simple_newline_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/simple_newline_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -196,9 +181,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/simple_newline_replaced_crlf.txt`);
         let dest = fs.readFileSync(`${outDir}/simple_newline_replaced_crlf.txt`);
         expect(src.equals(dest)).equal(true);
@@ -213,9 +195,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/textOpt_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/textOpt_slash_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -231,9 +210,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/textOpt_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/textOpt_slash_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -249,9 +225,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/textOpt_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/textOpt_slash_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -266,9 +239,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/regex_simple_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/regex_simple_pound_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -283,9 +253,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/simple_html_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/simple_html_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -300,9 +267,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/includeBracket_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/includeBracket_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -318,9 +282,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/includeBracketMulti_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/includeBracketMulti_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -337,9 +298,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/includeBracketFence_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/includeBracketFence_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -355,9 +313,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/simple_fenced_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/simple_fenced_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -373,9 +328,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/fenced_inline_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/fenced_inline_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -392,9 +344,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/fence_multi_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/fence_multi_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -410,9 +359,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/gruntfile_asjsstring_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/gruntfile_asjsstring_replaced.txt`);
         expect(src.equals(dest)).equal(true);
@@ -427,9 +373,6 @@ describe('Build include Plugin', function () {
         expect(stdout).to.not.be.null;
         // console.log(stdout);
         expect(error).to.be.null;
-        // if (error) {
-        //   console.error(error);
-        // }
         let src = fs.readFileSync(`${fixDir}/gruntfile_breakstring100_replaced.txt`);
         let dest = fs.readFileSync(`${outDir}/gruntfile_breakstring100_replaced.txt`);
         expect(src.equals(dest)).equal(true);

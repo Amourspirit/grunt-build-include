@@ -1,4 +1,4 @@
--------file: (./fixtures/replace1.txt)
+-------file: (./replace1.txt)
 -------options:	[comment?type=jsdoc]
 /**
  * # Sample Markdown file
@@ -75,7 +75,7 @@ eg);-webkit-transform:rotate(45deg)};';
  * All done with fencing.
  */
 
--------file: 	(./fixtures/replace1.txt)
+-------file: 	(./replace1.txt)
 -------options:	[comment?type=jsdoc,text?indent=true]
 		/**
 		 * # Sample Markdown file
@@ -152,7 +152,7 @@ eg);-webkit-transform:rotate(45deg)};';
 		 * All done with fencing.
 		 */
 
--------file: 	(./fixtures/replace1.txt)
+-------file: 	(./replace1.txt)
 -------options:	[comment?type=single,text?indent=true]
 	// # Sample Markdown file
 	// 

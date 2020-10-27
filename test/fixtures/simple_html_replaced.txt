@@ -1,61 +1,61 @@
 see gruntfile-html.js
 -------without quotes
--------file: (./fixtures/replace1.txt)
+-------file: (./replace1.txt)
 This is the text from replacement 1
 
 -------with single quotes
--------file: ('./fixtures/replace1.txt')
+-------file: ('./replace1.txt')
 This is the text from replacement 1
 
 -------with double quotes
--------file: ("./fixtures/replace1.txt")
+-------file: ("./replace1.txt")
 This is the text from replacement 1
 
 -------with extra space
--------file: ("./fixtures/replace1.txt")-->
+-------file: ("./replace1.txt")-->
 This is the text from replacement 1
 
 -------with no space
--------file: ("./fixtures/replace1.txt")
+-------file: ("./replace1.txt")
 This is the text from replacement 1
 
-with html comments, no quotes, no space file: (./fixtures/replace1.txt)
+with html comments, no quotes, no space file: (./replace1.txt)
 This is the text from replacement 1
 
 -------with html comments, quotes, space
--------file: ( './fixtures/replace1.txt' )
+-------file: ( './replace1.txt' )
 This is the text from replacement 1
 
 -------In a sentence
--------file: ("./fixtures/replace1.txt")
+-------file: ("./replace1.txt")
 This part is permanent. THIS IS NOT: This is the text from replacement 1
 
 -------Lower case BUILD_HTML
--------file: ("./fixtures/replace1.txt")
+-------file: ("./replace1.txt")
 This is the text from replacement 1
 
 -------Mixed case BUILD_html
--------file: (  ./fixtures/replace1.txt  )
+-------file: (  ./replace1.txt  )
 This is the text from replacement 1
 
 -------with space on both sides of quote
--------file: (  "  ./fixtures/replace1.txt  "   )
+-------file: (  "  ./replace1.txt  "   )
 This is the text from replacement 1
 
 -------with file that spaces in the name
--------file: ( "./fixtures/replacement file 01.txt" )
+-------file: ( "./replacement file 01.txt" )
 This is the text from replacement file 01
 
 -------with file that spaces in the name not using quotes
--------file: ( ./fixtures/replacement file 01.txt )
+-------file: ( ./replacement file 01.txt )
 This is the text from replacement file 01
 
 -------with file that spaces in the name not using quotes,
--------file: ( ./fixtures/replacement file 01.txt )
+-------file: ( ./replacement file 01.txt )
 This is the text from replacement file 01
 
 -------with file that spaces in the name not using quotes,
--------file:    ("./fixtures/replace3.txt")
+-------file:    ("./replace3.txt")
 -------optons:  [breakstring?flags=word]
 The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog.
 Junk MTV quiz graced by fox whelps.Bawds jog, flick quartz, vex nymphs. Waltz, bad
@@ -72,9 +72,9 @@ gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "
 ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
 -------missing end --> should not be replaced
--------file: ("./fixtures/replace3.txt")
-<!-- BUILD_HTML("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
+<!-- BUILD_HTML("./replace3.txt")
 
 -------improper <-- should not be replaced
--------file: ("./fixtures/replace3.txt")
-<-- BUILD_HTML("./fixtures/replace3.txt") -->
+-------file: ("./replace3.txt")
+<-- BUILD_HTML("./replace3.txt") -->

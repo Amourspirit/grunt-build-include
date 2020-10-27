@@ -108,7 +108,7 @@ module.exports = function (grunt) {
     'build_include'
   ]);
 
-  grunt.registerTask('test', [
+  grunt.registerTask('test_nouse', [
     'clean:test',
     'nodeunit:test'
   ]);
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'clean:test',
     'run_test',
-    'clean:test'
+    // 'clean:test'
   ]);
   grunt.registerTask('run_test', 'run mocha', function () {
     var done = this.async();

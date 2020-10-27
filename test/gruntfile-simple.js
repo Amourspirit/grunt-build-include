@@ -3,13 +3,20 @@ module.exports = function (grunt) {
   var loader = require("./grunt-hacks.js");
   var gLoad = require('./grunt.load.this');
   grunt.initConfig({
-    clean: {
-      dirs: ['../scratch/test']
+    copy: {
+      fix: {
+        files: [{
+          // cwd: 'lib/',
+          src: './fixtures/replace1.txt',
+          dest: '../scratch/test/replace1.txt'
+          // expand: false
+        }],
+      }
     },
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildInclude'
         },
         src: './fixtures/simple.txt',
         dest: '../scratch/test/simple_replaced.txt'
@@ -19,10 +26,10 @@ module.exports = function (grunt) {
 
   // grunt.loadTasks('./../dist/commonjs');
   gLoad(grunt);
-  // loader.loadParentNpmTasks(grunt, 'grunt-contrib-copy');
+  loader.loadParentNpmTasks(grunt, 'grunt-contrib-copy');
   // Cannot delete files outside the current working directory
   // loader.loadParentNpmTasks(grunt, 'grunt-contrib-clean');
 
-  grunt.registerTask('default', ['build_include:default']);
+  grunt.registerTask('default', ['copy:fix', 'build_include:default']);
 
 };

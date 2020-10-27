@@ -6,8 +6,7 @@ module.exports = function (grunt) {
       default: {
         options: {
           match: {
-            kind: 'bracketIncludeMulti',
-            path: './fixtures/'
+            kind: 'bracketIncludeMulti'
           },
           comment: {
             type: 'singleAsterisk'

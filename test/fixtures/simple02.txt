@@ -1,4 +1,4 @@
-// BUILD_INCLUDE(../scratch/test/replace1.txt)
+// BUILD_INCLUDE(/scratch/test/replace1.txt)
  some other text
-<!-- BUILD_INCLUDE(../scratch/test/replace1.txt) -->
+<!-- BUILD_INCLUDE(../../scratch/test/replace1.txt) -->
 final line of text

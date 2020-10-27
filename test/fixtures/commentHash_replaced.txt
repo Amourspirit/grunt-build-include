@@ -1,4 +1,4 @@
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?padleft=# ]
 # The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps.
 # Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox.
@@ -9,7 +9,7 @@
 # A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack!
 # Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?padleft=# &before=This is injected before\nAlso this is injected before\n]
 This is injected before
 Also this is injected before
@@ -22,7 +22,7 @@ Also this is injected before
 # A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack!
 # Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?padleft=# ,breakstring?width=100&flags=word]
 # The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced
 # by fox whelps.Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs
@@ -36,7 +36,7 @@ Also this is injected before
 # by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy! ", Alex Trebek's fun
 # TV quiz game. Woven silk pyjamas exchanged for blue quartz.
 
--------file: ("./fixtures/replace3.txt")
+-------file: ("./replace3.txt")
 -------options: [text?before=# \u{1F913}\n# \u{1F44C}\n&padleft=#\u2014\u{1F600}\u2014,breakstring?width=50&flags=word]
 # 🤓
 # 👌

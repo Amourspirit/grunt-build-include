@@ -1,4 +1,4 @@
--------file: ('./fixtures/md/replace8.md')
+-------file: ('./md/replace8.md')
 -------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllWs]
 /**
  * # Fence Test
@@ -12,7 +12,7 @@
  * See Also: [flexFence](/modules/_modules_fenceoptions_.html#flexfence)  
  */
 
--------file: ('./fixtures/md/replace8.md')
+-------file: ('./md/replace8.md')
 -------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=removeAllEmpty]
 /**
  * # Fence Test
@@ -28,7 +28,7 @@
  *     
  */
 
--------file: ('./fixtures/md/replace8.md')
+-------file: ('./md/replace8.md')
 -------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=noTwoWsLn]
 /**
  * # Fence Test
@@ -48,7 +48,7 @@
  * 
  */
 
--------file: ('./fixtures/md/replace8.md')
+-------file: ('./md/replace8.md')
 -------options: [fence?type=multiflex&remove=true,comment?type=singleAsterisk,text?indent=true&whiteSpaceLine=noTwoEmptyLn]
 /**
  * # Fence Test
@@ -71,7 +71,7 @@
  *     
  */
 
--------file: ('./fixtures/md/replace8.md')
+-------file: ('./md/replace8.md')
 -------options: [fence?type=multiflex,comment?type=singleAsterisk,text?indent=true]
 /**
  * # Fence Test

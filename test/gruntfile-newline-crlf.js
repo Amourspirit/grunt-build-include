@@ -5,7 +5,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildInclude'
         },
         src: './fixtures/simple_newline_crlf.txt',
         dest: '../scratch/test/simple_newline_replaced_crlf.txt'

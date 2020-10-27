@@ -1,8 +1,8 @@
 recursive02.txt include recursive01.txt
-// BUILD_INCLUDE(./fixtures/recursive01.txt)
+// BUILD_INCLUDE(recursive01.txt)
 
 recursive02.txt include simple02.txt that contains two BUILD_INCLUDE statements
-// BUILD_INCLUDE(./fixtures/simple02.txt)
+// BUILD_INCLUDE(simple02.txt)
 
 recursive02.txt include replace2.txt
-// BUILD_INCLUDE(./fixtures/replace2.txt)
+// BUILD_INCLUDE(replace2.txt)

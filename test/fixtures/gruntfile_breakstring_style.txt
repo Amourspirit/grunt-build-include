@@ -1,2 +1,2 @@
 breakstring options set by grunt
-// BUILD_INCLUDE(./fixtures/style.min.css)
+// BUILD_INCLUDE(./style.min.css)

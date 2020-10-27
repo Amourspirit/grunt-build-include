@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     build_include: {
       default: {
         options: {
-          expand: true,
+          match: 'buildIncludeSlash'
         },
         src: './fixtures/badfile.txt',
         dest: '../scratch/test/badefile_replaces.txt'

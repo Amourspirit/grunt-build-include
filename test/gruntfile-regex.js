@@ -5,7 +5,6 @@ module.exports = function (grunt) {
     build_include: {
        default: {
         options: {
-          expand: true,
           match: {
             // see: https://regexr.com/4d0sd
             // see entire regular expression: https://regexr.com/4d13t
