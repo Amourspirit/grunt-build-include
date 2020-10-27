@@ -71,16 +71,20 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#build_include" id="build_include" style="color: inherit; text-decoration: none;">
-					<h1>BUILD_INCLUDE</h1>
+				<a href="#grunt-build-include" id="grunt-build-include" style="color: inherit; text-decoration: none;">
+					<h1>GRUNT-BUILD-INCLUDE</h1>
 				</a>
-				<p>Options that may be used with <strong>build_include</strong> statements.<br>In most cases it is recommended to use the <a href="Options/index.html">options</a> to set configuration options for a <strong>build_include</strong> statement.
+				<p>Options that may be used with <strong>grunt-build-include</strong> statements.<br>In most cases it is recommended to use the <a href="Options/index.html">options</a> to set configuration options for a <strong>build_include</strong> statement.
 				This allows for fine control of how each <strong>build_include</strong> statement is processed.</p>
-				<p>Sometimes more of a global approach is perfered. In these cases <a href="GruntFile/index.html">Grunt File</a> level options can be applied.<br>Consider the following scenario.<br>Your using a document generator in your TypeScript project that allows for <code>&#91;include:somePath/somefile.md&#93;&#93;</code> type include statments to be replaced by file contents during the document generation process. This might be preferable when you need finer control over markdown of some comments.<br>The down side to this approach is any <code>file.d.ts</code> types documents will contain <code>&#91;include:somePath/somefile.md&#93;&#93;</code> statments which may not be helpful for code completion help.<br>Using a <a href="GruntFile/index.html">Grunt File</a> configuraton can be helpful to transform your <code>file.d.ts</code> outputs to have <code>&#91;include:somePath/somefile.md&#93;&#93;</code> includes replaced with the actual markdown contents.</p>
+				<p><strong>Grunt-build-include</strong> is mainly a wrapper for <a href="https://www.npmjs.com/package/build-include">build-include</a> package.
+					<a href="https://amourspirit.github.io/build-include/pages/Docs/index.html">Docs</a>
+				for <a href="https://www.npmjs.com/package/build-include">build-include</a> can be viewed here with extensive with many examples and options.</p>
+				<p>Sometimes more of a global approach is perfered. In these cases <a href="GruntFile/index.html">Grunt File</a> level options can be applied.<br>Consider the following scenario.<br>Your using a document generator in your TypeScript project that allows for <code>&#91;&#91;include:somePath/somefile.md&#93;&#93;</code> type include statments to be replaced by file contents during the document generation process. This might be preferable when you need finer control over markdown of some comments.<br>The down side to this approach is any <code>file.d.ts</code> types documents will contain <code>&#91;&#91;include:somePath/somefile.md&#93;&#93;</code> statments which may not be helpful for code completion help.<br>Using a <a href="GruntFile/index.html">Grunt File</a> configuraton can be helpful to transform your <code>file.d.ts</code> outputs to have <code>&#91;&#91;include:somePath/somefile.md&#93;&#93;</code> includes replaced with the actual markdown contents.</p>
 				<ul>
 					<li><a href="Options/index.html">Options</a></li>
 					<li><a href="GruntFile/index.html">Grunt File</a></li>
 					<li><a href="misc/index.html">Misc</a></li>
+					<li><a href="https://www.npmjs.com/package/build-include">build-include</a></li>
 				</ul>
 			</div>
 		</div>
@@ -121,16 +125,13 @@
 						<a href="../../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../../modules/enums.html">enums</a>
+						<a href="../../modules/src_interfaces.html">src/<wbr>Interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/src_log.html">src/<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../../modules/src_modules.html">src/modules</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../../modules/src_modules_fences.html">src/modules/fences</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../../modules/src_modules_matches.html">src/modules/matches</a>
 					</li>
 				</ul>
 			</nav>
@@ -146,17 +147,11 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>

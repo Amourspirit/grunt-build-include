@@ -106,6 +106,9 @@
   grunt.initConfig({
     <span class="hljs-attr">build_include</span>: {
       <span class="hljs-attr">default</span>: {
+        <span class="hljs-attr">match</span>: {
+          <span class="hljs-attr">kind</span>: <span class="hljs-string">&#x27;buildIncludeSlash&#x27;</span>
+        },
         <span class="hljs-attr">src</span>: <span class="hljs-string">&#x27;./lib/test.txt&#x27;</span>,
         <span class="hljs-attr">dest</span>: <span class="hljs-string">&#x27;./scratch/test.txt&#x27;</span>
       }
@@ -229,16 +232,13 @@
 						<a href="../../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../../modules/enums.html">enums</a>
+						<a href="../../modules/src_interfaces.html">src/<wbr>Interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../../modules/src_log.html">src/<wbr>Log</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../../modules/src_modules.html">src/modules</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../../modules/src_modules_fences.html">src/modules/fences</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../../modules/src_modules_matches.html">src/modules/matches</a>
 					</li>
 				</ul>
 			</nav>
@@ -254,17 +254,11 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
