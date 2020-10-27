@@ -1,6 +1,6 @@
 {
   "name": "grunt-build-include",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Grunt task to replace BUILD_INCLIDE with options statments usng grunt",
   "main": "./task/build_include.js",
   "types": "./task/build_include.d.ts",
@@ -67,7 +67,7 @@
     "typescript": "^4.0.5"
   },
   "dependencies": {
-    "build-include": "^0.1.0",
+    "build-include": "^0.1.1",
     "file-sync-cmp": "^0.1.1",
     "multi-encoder": "^0.4.3",
     "string-breaker": "^1.0.0"
